@@ -2,11 +2,16 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Eleves;
+use App\Models\Utilisateurs;
 use Illuminate\Http\Request;
 
-class AjoutElevesController extends Controller
+class AjoutUtilisateursController extends Controller
 {
+    public function showForm()
+    {
+        return view('ajoututilisateurs');
+    }
+
     public function ajouter()
     {
         request()->validate([
@@ -18,7 +23,7 @@ class AjoutElevesController extends Controller
             'date_de_naiss' =>['required', 'date'],
             'type_membre' => ['required', 'string'],
         ]);
-        $eleve = Eleves::create([
+        $eleve = Utilisateurs::create([
         'prenom' => request('prenom'),
         'nom' => request('nom'),
         'email' => request('email'),
@@ -27,6 +32,6 @@ class AjoutElevesController extends Controller
         'date_de_naissance' => request('date_de_naiss'),
         'type_membre' => request('type_membre'),
         ]);
-        return 'Eleve ajouté avec succès !' ;
+        return 'Utilisateur ajouté avec succès !' ;
     }
 }

@@ -1,8 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\AjoutElevesController;
+use App\Http\Controllers\AjoutUtilisateursController;
 use App\Http\Controllers\InscriptionController; 
+use App\Http\Controllers\ConnexionController; 
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -16,15 +17,15 @@ use App\Http\Controllers\InscriptionController;
 
 Route::view('/', 'welcome');
 
-Route::get('/confirm/{id}', [ElevesController::class, 'confirm']);
+Route::get('/ajoututilisateurs', [AjoutUtilisateursController::class, 'showForm']);
 
-Route::get('/ajouteleves', function (){
-    return view('ajouteleves');
-});
+Route::post('/ajoututilisateurs', [AjoutUtilisateursController::class, 'ajouter']);
 
-Route::post('/ajouteleves', [AjoutElevesController::class, 'ajouter']);
-
-Route::get('/inscription', [InscriptionController::class, 'ShowForm']);
+Route::get('/inscription', [InscriptionController::class, 'showForm']);
 
 Route::post('/inscription', [InscriptionController::class, 'inscription']);
+
+Route::get('/connexion', [ConnexionController::class, 'showForm']);
+
+Route::post('/connexion', [ConnexionController::class, 'connexion']);
 

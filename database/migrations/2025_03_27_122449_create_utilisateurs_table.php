@@ -13,6 +13,17 @@ return new class extends Migration
     {
         Schema::create('utilisateurs', function (Blueprint $table) {
             $table->id();
+            $table->string('prenom');
+            $table->string('nom');
+            $table->string('email');
+            $table->string('login');
+            $table->string('mdp');
+            $table->integer('age');
+            $table->string('sexe');
+            $table->date('date_de_naissance');
+            $table->string('type_membre');
+            $table->integer('points_exp');
+            $table->string('niveau');
             $table->timestamps();
         });
     }

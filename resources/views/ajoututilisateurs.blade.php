@@ -1,6 +1,6 @@
 @extends('layout')
 @section('contenu')
-<form action='/ajouteleves' method='post'>
+<form action='/ajoututilisateurs' method='post'>
     @csrf
     @if ($errors->any())
         <div style="color: red;">
