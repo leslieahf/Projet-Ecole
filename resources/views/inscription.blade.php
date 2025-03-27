@@ -36,7 +36,6 @@
         <option>Professeur</option>
         <option>Administrateur</option>
     </select></br></br>
-    <!--testtt-->
     <button type='submit' name='sinscrire'>S'inscrire</button>
 </form>
 @endsection
