@@ -15,7 +15,7 @@ use App\Http\Controllers\ConnexionController;
 |
 */
 
-Route::view('/', 'welcome');
+Route::view('/', 'accueil');
 
 Route::get('/ajoututilisateurs', [AjoutUtilisateursController::class, 'showForm']);
 
