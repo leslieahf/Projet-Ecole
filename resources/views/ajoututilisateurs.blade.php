@@ -1,4 +1,10 @@
 @extends('layout')
+@if (session('success'))
+   <script>
+       alert("{{ session('success') }}");
+        window.location.href = "/ajoututilisateurs"; 
+   </script>
+@endif
 @section('contenu')
 <form action='/ajoututilisateurs' method='post'>
     @csrf

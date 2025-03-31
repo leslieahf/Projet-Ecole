@@ -20,7 +20,7 @@
 <label for='log'>Login:</label>
 <input type='text' name='login' id='log' value="{{old('login')}}"/></br></br>
 <label for='mdp'>Mot de passe:</label>
-<input type='password' name='mot_de_passe' id='mdp' value="{{old('mot_de_passe')}}"/></br></br>
+<input type='password' name='mot_de_passe' id='mdp'/></br></br>
 <button type='submit' name='connecter'>Se connecter</button>
 </form>
 @endsection

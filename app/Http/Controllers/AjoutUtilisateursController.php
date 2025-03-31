@@ -32,6 +32,6 @@ class AjoutUtilisateursController extends Controller
         'date_de_naissance' => request('date_de_naiss'),
         'type_membre' => request('type_membre'),
         ]);
-        return 'Utilisateur ajouté avec succès !' ;
+    return redirect('/ajoututilisateurs')->with(['success' => 'Utilisateur ajouté avec succès !']) ;
     }
 }

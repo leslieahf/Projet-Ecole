@@ -16,6 +16,7 @@ class InscriptionController extends Controller
     public function inscription()
     {
         request()->validate([
+            'photo' => ['required', 'image'],
             'prenom' => ['required', 'string'],
             'nom' => ['required', 'string'],
             'email' => ['required', 'email'],
@@ -26,14 +27,16 @@ class InscriptionController extends Controller
             'date_de_naiss' =>['required', 'date'],
             'type_membre' => ['required', 'string'],
         ]);
+        $path = request('photo')->store('photo', 'public');
         $utilisateur = Utilisateurs::where('email', request('email'))->first();
         if ($utilisateur) {
             $utilisateur->update([
+                'photo' => $path,
                 'login' => request('login'), 
                 'mdp' => bcrypt(request('mot_de_passe')), 
             ]);
             Mail::to($utilisateur)->send(new InscriptionConfirmation);
-            return redirect('/connexion')->with(['message' => 'Inscription réussie. Un email de confirmation a été envoyé.']);
+            return redirect('/connexion')->with(['message' => 'Inscription réussie ! Un email de confirmation a été envoyé.']);
         }
         else {
             return redirect()->back()->withErrors(['email' => 'Les informations fournies ne correspondent pas à un membre valide.']);

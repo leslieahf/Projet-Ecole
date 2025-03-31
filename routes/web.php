@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AjoutUtilisateursController;
 use App\Http\Controllers\InscriptionController; 
 use App\Http\Controllers\ConnexionController; 
+use App\Http\Controllers\ProfilController; 
+use App\Http\Controllers\ListeUtilisateursController; 
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -28,4 +30,12 @@ Route::post('/inscription', [InscriptionController::class, 'inscription']);
 Route::get('/connexion', [ConnexionController::class, 'showForm']);
 
 Route::post('/connexion', [ConnexionController::class, 'connexion']);
+
+Route::view('/gestion', 'gestion');
+
+Route::get('/profil', [ProfilController::class, 'showForm']);
+
+Route::post('/profil', [ProfilController::class, 'update']);
+
+Route::get('/profilautres', [ListeUtilisateursController::class, 'liste']);
 

@@ -13,6 +13,7 @@ class Utilisateurs extends Model implements Authenticatable
     use BasicAuthenticatable;
 
     protected $fillable = [
+        'photo',
         'prenom',
         'nom',
         'email',
@@ -35,5 +36,4 @@ class Utilisateurs extends Model implements Authenticatable
     {
         return $this->mdp;
     }
-
 }
