@@ -7,27 +7,19 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Contracts\Auth\Authenticatable;
 use Illuminate\Auth\Authenticatable as BasicAuthenticatable;
 
-class Utilisateurs extends Model implements Authenticatable
+class Outils extends Model implements Authenticatable
 {
     use HasFactory;
     use BasicAuthenticatable;
 
     protected $fillable = [
-        'photo',
-        'prenom',
+        'id',
         'nom',
-        'email',
-        'login',
-        'mdp',
-        'age',
-        'sexe',
-        'date_de_naissance',
-        'type_membre',
-        'nbre_connexions',
-        'nbre_consultations',
-        'points_exp',
-        'niveau',
+        'description',
     ];
+
+    public $incrementing = false;
+    protected $keyType = 'string';
     
     /**
      * Get the password for the user.

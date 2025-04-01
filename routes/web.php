@@ -6,6 +6,10 @@ use App\Http\Controllers\InscriptionController;
 use App\Http\Controllers\ConnexionController; 
 use App\Http\Controllers\ProfilController; 
 use App\Http\Controllers\ListeUtilisateursController; 
+use App\Http\Controllers\AjoutObjetsController;
+use App\Http\Controllers\RechercherObjetsController;
+use App\Http\Controllers\AjoutOutilsController;
+use App\Http\Controllers\ListeOutilsController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -38,4 +42,15 @@ Route::get('/profil', [ProfilController::class, 'showForm']);
 Route::post('/profil', [ProfilController::class, 'update']);
 
 Route::get('/profilautres', [ListeUtilisateursController::class, 'liste']);
+
+Route::get('/ajoutobjets', [AjoutObjetsController::class, 'showForm']);
+
+Route::post('/ajoutobjets', [AjoutObjetsController::class, 'ajouter']);
+
+Route::get('/gestion', [RechercherObjetsController::class, 'rechercher']);
+
+Route::get('/ajoutoutils', [AjoutOutilsController::class, 'showForm']);
+
+Route::post('/ajoutoutils', [AjoutOutilsController::class, 'ajouter']);
+
 

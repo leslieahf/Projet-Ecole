@@ -23,6 +23,8 @@ return new class extends Migration
             $table->string('sexe');
             $table->date('date_de_naissance');
             $table->string('type_membre');
+            $table->integer('nbre_connexions');
+            $table->integer('nbre_consultations');
             $table->integer('points_exp');
             $table->string('niveau');
             $table->timestamps();
