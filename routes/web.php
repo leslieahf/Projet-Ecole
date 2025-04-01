@@ -21,7 +21,7 @@ use App\Http\Controllers\ListeOutilsController;
 |
 */
 
-Route::view('/', 'welcome');
+Route::view('/', 'accueil');
 
 Route::get('/ajoututilisateurs', [AjoutUtilisateursController::class, 'showForm']);
 
