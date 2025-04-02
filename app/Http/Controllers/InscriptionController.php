@@ -16,7 +16,7 @@ class InscriptionController extends Controller
     public function inscription()
     {
         request()->validate([
-            'photo' => ['required', 'image'],
+            'photo' => ['image'],
             'prenom' => ['required', 'string'],
             'nom' => ['required', 'string'],
             'email' => ['required', 'email'],
@@ -27,7 +27,12 @@ class InscriptionController extends Controller
             'date_de_naiss' =>['required', 'date'],
             'type_membre' => ['required', 'string'],
         ]);
-        $path = request('photo')->store('photo', 'public');
+        if(request()->hasFile('photo') && request('photo')->isValid()){
+            $path = request('photo')->store('photo', 'public');
+        }
+        else{
+            $path=null;
+        }
         $utilisateur = Utilisateurs::where('email', request('email'))->first();
         if ($utilisateur) {
             $utilisateur->update([

@@ -73,7 +73,6 @@
     @endif
 @else
     <p>Voici les outils et services proposés par la plateforme :</p>
-    <?php //{{  Auth::user()->recherche_count }}?> 
     @foreach($outils as $outil)
         <?php $services = explode(',', $outil->description) ?>
         <h3>{{ $outil->nom }}</h3>

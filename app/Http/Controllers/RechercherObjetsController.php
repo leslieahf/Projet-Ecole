@@ -24,17 +24,32 @@ class RechercherObjetsController extends Controller
                 $query->where('nom', 'like', '%' . $search . '%')
                     ->orwhere('description', 'like', '%' . $search . '%');
             });
+            Auth::user()->increment('nbre_consultations');
+            if (Auth::check()) {
+                $nbre_connexions = Auth::user()->nbre_connexions;
+                $nbre_consultations = Auth::user()->nbre_consultations;
+                $points_exp = $nbre_connexions + $nbre_consultations;
+                $points_exp = Auth::user()->update(['points_exp' => $points_exp]);
+            }
+            else {
+                return redirect('connexion'); 
+            }
         }
         if ($mode) {
             $objet->where('mode', $mode);
+            Auth::user()->increment('nbre_consultations');
+            if (Auth::check()) {
+                $nbre_connexions = Auth::user()->nbre_connexions;
+                $nbre_consultations = Auth::user()->nbre_consultations;
+                $points_exp = $nbre_connexions + $nbre_consultations;
+                $points_exp = Auth::user()->update(['points_exp' => $points_exp]);
+            }
+            else {
+                return redirect('connexion'); 
+            }
         }
         $outil = $outil->get();
         $objet = $objet->get();
-        if (Auth::check()) {
-            $nbre_consultations = Auth::user()->increment('nbre_consultations');
-            $points_exp = Auth::user()->update('points_exp');
-            $points_exp = $nbre_consultations * $nbre_connexions;
-        }
         return view('gestion', ['objets' => $objet], ['outils'=> $outil],);
     }
 }
