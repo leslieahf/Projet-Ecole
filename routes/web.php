@@ -10,6 +10,7 @@ use App\Http\Controllers\AjoutObjetsController;
 use App\Http\Controllers\RechercherObjetsController;
 use App\Http\Controllers\AjoutOutilsController;
 use App\Http\Controllers\ListeOutilsController;
+use App\Http\Controllers\NiveauController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -53,4 +54,5 @@ Route::get('/ajoutoutils', [AjoutOutilsController::class, 'showForm']);
 
 Route::post('/ajoutoutils', [AjoutOutilsController::class, 'ajouter']);
 
+Route::post('/update-niveau', [NiveauController::class, 'updateNiveau'])->middleware('auth');
 

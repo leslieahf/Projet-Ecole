@@ -84,3 +84,69 @@
     @endforeach
 @endif
 @endsection
+<div class="container">
+    <h1>Bienvenue {{ auth()->user()->prenom }} {{ auth()->user()->nom }}</h1>
+    
+    <div class="user-info">
+        <p>Points d'expérience : {{ auth()->user()->points_exp }}</p>
+        <p>Niveau actuel : {{ auth()->user()->niveau }}</p>
+    </div>
+
+    @if(session('message'))
+        <div class="alert alert-success">
+            {{ session('message') }}
+        </div>
+    @endif
+
+    <form action="/update-niveau" method="post">
+        @csrf
+        <button type="submit" class="btn btn-primary">Mettre à jour mon niveau</button>
+    </form>
+
+    <style>
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .user-info {
+            background-color: #f8f9fa;
+            padding: 20px;
+            border-radius: 5px;
+            margin: 20px 0;
+        }
+        .alert {
+            padding: 15px;
+            margin-bottom: 20px;
+            border: 1px solid transparent;
+            border-radius: 4px;
+        }
+        .alert-success {
+            color: #155724;
+            background-color: #d4edda;
+            border-color: #c3e6cb;
+        }
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 1.5;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 4px;
+            border: 1px solid transparent;
+            cursor: pointer;
+        }
+        .btn-primary {
+            color: #fff;
+            background-color: #007bff;
+            border-color: #007bff;
+        }
+        .btn-primary:hover {
+            background-color: #0069d9;
+            border-color: #0062cc;
+        }
+    </style>
+</div>
+@endsection 
