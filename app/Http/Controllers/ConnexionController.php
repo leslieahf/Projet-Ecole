@@ -31,6 +31,7 @@ class ConnexionController extends Controller
             //$points_exp = Auth::user()->update(['points_exp' => $points_exp]);
 
             $utilisateur->points_exp += 1;
+            $utilisateur->nbre_connexions += 1;
             $utilisateur->save();
             return redirect('/gestion');
         } else {
