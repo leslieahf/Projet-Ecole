@@ -83,7 +83,8 @@
         </ul>
     @endforeach
 @endif
-@endsection
+
+
 <div class="container">
     <h1>Bienvenue {{ auth()->user()->prenom }} {{ auth()->user()->nom }}</h1>
     
