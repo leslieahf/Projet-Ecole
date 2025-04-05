@@ -10,6 +10,8 @@ use App\Http\Controllers\AjoutObjetsController;
 use App\Http\Controllers\RechercherObjetsController;
 use App\Http\Controllers\AjoutOutilsController;
 use App\Http\Controllers\ListeOutilsController;
+use App\Http\Controllers\AdminController;
+use App\Http\Controllers\ModifUtilisateursController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -53,4 +55,10 @@ Route::get('/ajoutoutils', [AjoutOutilsController::class, 'showForm']);
 
 Route::post('/ajoutoutils', [AjoutOutilsController::class, 'ajouter']);
 
+Route::get('/administration', [AdminController::class, 'liste2']);
 
+Route::get('/administration/{id}', [ModifUtilisateursController::class, 'showForm']);
+
+Route::post('/administration/{id}', [ModifUtilisateursController::class, 'update']);
+
+Route::delete('/administration/{id}', [ModifUtilisateursController::class, 'delete']);

@@ -13,11 +13,10 @@
             <div class="menu-dropdown">
                 <button class="menu-btn"><i class="fas fa-bars"></i></button>
                 <div class="dropdown-content">
-                    <a href="#">Accueil</a>
-                    <a href="#">Présentation</a>
-                    <a href="#">Formations</a>
-                    <a href="#">Vie scolaire</a>
-                    <a href="#">Contact</a>
+                    <a href='/'>Accueil</a>
+                    <a href="#">Visualisation</a>
+                    <a href="#">Gestion</a>
+                    <a href="#">Administration</a>
                 </div>
             </div>
             
@@ -26,7 +25,7 @@
             </div>
             
             <div class="login-btn">
-                <button>Se connecter</button>
+                <button>S'inscrire</button>
             </div>
         </nav>
     </header>
