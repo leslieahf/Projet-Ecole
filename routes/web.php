@@ -13,6 +13,7 @@ use App\Http\Controllers\ListeOutilsController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ModifUtilisateursController;
 use App\Http\Controllers\SupprimerObjetsController;
+use App\Http\Controllers\NiveauController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -57,6 +58,8 @@ Route::get('/ajoutoutils', [AjoutOutilsController::class, 'showForm']);
 Route::post('/ajoutoutils', [AjoutOutilsController::class, 'ajouter']);
 
 Route::get('/administration', [AdminController::class, 'liste2']);
+
+Route::post('/update-niveau', [NiveauController::class, 'updateNiveau'])->middleware('auth');
 
 Route::get('/administration/{id}', [ModifUtilisateursController::class, 'showForm']);
 

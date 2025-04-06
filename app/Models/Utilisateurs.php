@@ -38,4 +38,18 @@ class Utilisateurs extends Model implements Authenticatable
     {
         return $this->mdp;
     }
+
+    public function updateNiveau()
+    {
+        if ($this->points_exp >= 0 && $this->points_exp <= 9) {
+            $this->niveau = 'Débutant';
+        } elseif ($this->points_exp >= 10 && $this->points_exp <= 19) {
+            $this->niveau = 'Intermédiaire';
+        } elseif ($this->points_exp >= 20 && $this->points_exp <= 29) {
+            $this->niveau = 'Avancé';
+        } else {
+            $this->niveau = 'Expert';
+        }
+        $this->save();
+    }
 }

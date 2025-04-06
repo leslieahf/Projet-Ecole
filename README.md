@@ -53,7 +53,33 @@ Vous pouvez le copier/coller ou le renommer en `.env` pour l'utiliser :
 ```shell
 cp .env.example .env
 ```
-`
+
+### Mettre en place la base de données
+
+Le projet dispose de migrations SQL et de seeders pour mettre en place et peupler la base de données, déjà mise en place par défaut. Il faut pour cela
+exécuter les commandes suivantes :
+
+```php
+php artisan migrate:fresh
+```
+
+
+```php
+php artisan db:seed
+```
+
+Par défaut, trois utilisateurs sont déjà présents:
+- Administrateur
+  - login : `admin`
+  - Mot de passe : `admin`
+
+- Professeur
+  - login : `prof`
+  - Mot de passe : `prof`
+
+- Eleve
+  - login : `eleve`
+  - Mot de passe : `eleve`
 
 ## Lancer le serveur
 
@@ -66,3 +92,18 @@ php artisan serve
 
 Vous pourrez alors retrouver l'interface du projet à l'adresse http://127.0.0.1:8000/.
 
+### Mode réseau
+La commande devient :
+
+```shell
+php artisan serve --host 0.0.0.0 --port=8000
+```
+
+Il faut ensuite remplacer dans le navigateur la partie *127.0.0.1* de l'adresse précédent par l'adresse IP (locale ou public) ou le nom de domaine du serveur.
+
+Pour trouver l'adresse IP de votre ordi, vous pouvez taper dans le terminal linux :
+```shell
+hostname -I
+```
+
+Pensez à ouvrir une redirection de port pour les échanges réseaux via Internet. Un pare-feu peut également bloquer le bon fonctionnement du projet, il est donc important de vérifier ses paramètres.
