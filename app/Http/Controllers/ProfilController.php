@@ -40,24 +40,10 @@ class ProfilController extends Controller
                 'date_de_naissance' => request('date_de_naiss'),
                 'type_membre' => request('type_membre'),
             ]);
-            return redirect('/profil')->with(['success' => 'Votre profil a été modifié avec succès !']);
+            return redirect('/gestion')->with(['success' => 'Votre profil a été modifié avec succès !']);
         }
         else {
             return redirect()->back()->withErrors(['info' => 'Les informations fournies sont non conformes ']);
         }
-        /*
-
-        // Si une nouvelle photo a été téléchargée
-        if ($request->hasFile('photo')) {
-            // Supprimer l'ancienne photo si elle existe
-            if ($profile->photo) {
-                Storage::delete($profile->photo);
-            }
-
-            // Enregistrer la nouvelle photo
-            $path = $request->file('photo')->store('public/profile_photos');
-            $profile->photo = $path;
-        }
-        */
     }
 }

@@ -20,7 +20,7 @@
     <label for='nom'>Nom:</label>
     <input type='text' name='nom' id='nom' value="{{old('nom')}}"/></br></br>
     <label for='con'>Description:</label></br></br>
-    <textarea name='description' rows='5' cols='30' placeholder='Description du service ...'></textarea></br></br>
+    <textarea name='description' rows='5' cols='30' placeholder='Description du service ...' value="{{old('description')}}"></textarea></br></br>
     <button type='submit' name='ajouter'>Ajouter</button>
 </form>
 @endsection

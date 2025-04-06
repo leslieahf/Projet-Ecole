@@ -9,6 +9,7 @@
 <p>Voici la liste des utilisateurs de la plateforme :</p>
 <button><a href="/ajoututilisateurs">Ajouter un utilisateur</a></button>
 <table>
+    <caption><strong>Liste des utilisateurs<strong></caption>
     <tr>
         <th>Prenom</th>
         <th>Nom</th>
@@ -46,5 +47,65 @@
             </td>
         </tr>
 @endforeach
+</table>
+
+<p>Voici la liste des objets de la plateforme :</p>
+<button><a href="/ajoutobjets">Ajouter un objet</a></button>
+<table>
+    <caption><strong>Liste des objets<strong></caption>
+    <tr>
+        <th>ID</th>
+        <th>Nom</th>
+        <th>Connectivité</th>
+        <th>Statut</th>
+        <th>Mode</th>
+        <th>Etat de la batterie</th>
+        <th>Température</th>
+        <th>Niveau d'encre</th>
+        <th>Niveau de remplissage</th>
+    </tr>
+    @foreach($objets as $objet)
+    <tr>
+        <td>{{ $objet->id }}</td>
+        <td>{{ $objet->nom }}</td>
+        <td>{{ $objet->connectivite }}</td>
+        <td>{{ $objet->statut }}</td>
+        <td>{{ $objet->mode }}</td>
+        <td>{{ $objet->etat_batterie }}</td>
+        <td>{{ $objet->temperature ?? 'NULL' }}</td>
+        <td>{{ $objet->niveau_encre ?? 'NULL' }}</td>
+        <td>{{ $objet->niveau_remplissage ?? 'NULL' }}</td>
+        <td>
+            <form action="/administration/{{ $objet->id }}" method="POST" style="display:inline;">
+                @csrf
+                @method('delete')
+            <button type="submit">Supprimer</button>
+            </form>
+        </td>
+    </tr>
+    @endforeach
+</table>
+
+<p>Voici la liste des outils et services proposés par la plateforme :</p>
+<button><a href="/ajoutoutils">Ajouter un outil</a></button>
+<table>
+    <caption><strong>Liste des outils et services<strong></caption>
+    <tr>
+        <th>Nom</th>
+        <th>Description</th>
+    </tr>
+    @foreach($outils as $outil)
+    <tr>
+        <td>{{ $outil->nom }}</td>
+        <td>{{ $outil->description }}</td>
+        <td>
+            <form action="/administration/{{ $outil->id }}" method="POST" style="display:inline;">
+                @csrf
+                @method('delete')
+            <button type="submit">Supprimer</button>
+            </form>
+        </td>
+    </tr>
+    @endforeach
 </table>
 @endsection

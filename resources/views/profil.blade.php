@@ -38,16 +38,16 @@
     <input type='text' name='age' id='age' value="{{old('age', $utilisateur->age)}}"/></br></br>
     <label for='sex'>Sexe:</label>
     <select name='sexe' id='sex'>
-        <option>Feminin</option>
-        <option>Masculin</option>
+        <option value="Féminin" {{ old('sexe', $utilisateur->sexe) == 'Féminin' ? 'selected' : '' }}>Féminin</option>
+        <option value="Masculin" {{ old('sexe', $utilisateur->sexe) == 'Masculin' ? 'selected' : '' }}>Masculin</option>
     </select></br></br>
     <label for='dtn'>Date de naissance:</label>
     <input type='date' name='date_de_naiss' id='dtn' value="{{old('date_de_naiss', $utilisateur->date_de_naissance)}}"/></br></br>
     <label for='tpm'>Type de membre:</label>
     <select name='type_membre' id='tpm'>
-        <option>Eleve</option>
-        <option>Professeur</option>
-        <option>Administrateur</option>
+        <option value="Eleve" {{ old('type_membre', $utilisateur->type_membre) == 'Eleve' ? 'selected' : '' }}>Eleve</option>
+        <option value="Professeur" {{ old('type_membre', $utilisateur->type_membre) == 'Professeur' ? 'selected' : '' }}>Professeur</option>
+        <option value="Administrateur" {{ old('type_membre', $utilisateur->type_membre) == 'Administrateur' ? 'selected' : '' }}>Administrateur</option>
     </select></br></br>
     <button type='submit' name='modifier'>Modifier</button>
 </form>

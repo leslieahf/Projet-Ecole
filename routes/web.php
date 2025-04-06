@@ -12,6 +12,7 @@ use App\Http\Controllers\AjoutOutilsController;
 use App\Http\Controllers\ListeOutilsController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ModifUtilisateursController;
+use App\Http\Controllers\SupprimerObjetsController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -62,3 +63,5 @@ Route::get('/administration/{id}', [ModifUtilisateursController::class, 'showFor
 Route::post('/administration/{id}', [ModifUtilisateursController::class, 'update']);
 
 Route::delete('/administration/{id}', [ModifUtilisateursController::class, 'delete']);
+
+Route::delete('/administration/{id}', [SupprimerObjetsController::class, 'delete']);
