@@ -40,7 +40,7 @@ Le projet est basé sur le framework Laravel.
 Pour l'installer avec ses dépendances, il faut vous placer à l'intérieur du dossier et exécuter la commande suivante :
 
 ```php
-php composer install
+composer install
 ```
 
 ### Environnement
@@ -60,7 +60,7 @@ Le projet dispose de migrations SQL et de seeders pour mettre en place et peuple
 exécuter les commandes suivantes :
 
 ```php
-php artisan migrate:fresh
+php artisan migrate
 ```
 
 
