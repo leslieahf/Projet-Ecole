@@ -3,7 +3,7 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
-use App\Models\Utilisateurs; // Assure-toi d'importer ton modèle Utilisateurs
+use App\Models\Utilisateurs; // Importation du modèle Utilisateurs
 
 class UtilisateurSeeder extends Seeder
 {
