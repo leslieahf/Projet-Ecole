@@ -39,7 +39,7 @@
             <td>{{ $utilisateur->niveau }}</td>
             <td>
                 <button><a href="/administration/{{ $utilisateur->id }}">Modifier</a></button>
-                <form action="/administration/{{ $utilisateur->id }}" method="POST" style="display:inline;">
+                <form action="/administration/utilisateur/{{ $utilisateur->id }}" method="POST" style="display:inline;">
                     @csrf
                     @method('delete')
                 <button type="submit">Supprimer</button>
@@ -76,7 +76,7 @@
         <td>{{ $objet->niveau_encre ?? 'NULL' }}</td>
         <td>{{ $objet->niveau_remplissage ?? 'NULL' }}</td>
         <td>
-            <form action="/administration/{{ $objet->id }}" method="POST" style="display:inline;">
+            <form action="/administration/objet/{{ $objet->id }}" method="POST" style="display:inline;">
                 @csrf
                 @method('delete')
             <button type="submit">Supprimer</button>
@@ -99,7 +99,7 @@
         <td>{{ $outil->nom }}</td>
         <td>{{ $outil->description }}</td>
         <td>
-            <form action="/administration/{{ $outil->id }}" method="POST" style="display:inline;">
+            <form action="/administration/outil/{{ $outil->id }}" method="POST" style="display:inline;">
                 @csrf
                 @method('delete')
             <button type="submit">Supprimer</button>

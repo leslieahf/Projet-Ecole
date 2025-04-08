@@ -29,11 +29,7 @@ class ConnexionController extends Controller
             $nbre_consultations = Auth::user()->nbre_consultations;
             $points_exp = $nbre_connexions + $nbre_consultations;
             $points_exp = Auth::user()->update(['points_exp' => $points_exp]);
-
-            //$utilisateur->points_exp += 1;
-            //$utilisateur->nbre_connexions += 1;
-            //$utilisateur->save();
-            return redirect('/gestion');
+            return redirect('/visualisation');
         } else {
             return redirect()->back()->withErrors(['message' => 'Votre login ou mot de passe n\'est pas valide']);
         }

@@ -42,7 +42,7 @@ class UtilisateurSeeder extends Seeder
                     'sexe' => 'Masculin',
                     'date_de_naissance' => '1995-04-05',
                     'type_membre' => 'Professeur',
-                    'points_exp' => 50,
+                    'points_exp' => 25,
                     'niveau' => 'Avancé',
                 ]);
         }

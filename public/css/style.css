@@ -1,0 +1,190 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+/* Style header */
+
+nav{ display: flex; }
+
+nav form{ margin-right: 70px; }
+
+nav a{ font-size: 18px; margin-right: 15px; }
+
+nav a:hover{color: #ffcc00;}
+
+.accueil{ margin-left: 465px;}
+
+#current{color: #ffcc00;}
+
+/* Style formulaire */
+
+    .container {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #f8f9fa;
+    }
+
+    .user-info {
+        background-color: #f8f9fa;
+        padding: 20px;
+        border-radius: 5px;
+        margin: 20px 0;
+    }
+
+    .pfont1{ margin-left: 411px; margin-top: 1px; margin-bottom: 20px; }
+
+    .pfont2{ margin-left: 396px; margin-top: 1px; margin-bottom: 40px; }
+
+    .user-info input[type='file']::-webkit-file-upload-button{ 
+        cursor: pointer;
+        background-color: #3182ce;
+        color: #fff;
+        width: 110px;
+        font-size: 13px;
+        padding: 5px;
+        border: white;
+        border-radius: 5px;
+        margin-left: 100px;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        font-family: "Roboto", sans-serif;
+    }
+
+    .user-info input[type='file']::-webkit-file-upload-button:hover{background-color: #2b6cb0;}
+
+    .user-info input[type='text']{
+        width: 180px;
+        padding: 5px;
+        border: white;
+        border-radius: 5px;
+        margin-bottom: 5px;
+        font-family: "Roboto", sans-serif;
+    }
+
+    .user-info input[type='password']{
+        width: 180px;
+        padding: 5px;
+        border: white;
+        border-radius: 5px;
+        margin-bottom: 5px;
+        font-family: "Roboto", sans-serif;
+    }
+
+    .user-info input[type='date']{
+        width: 180px;
+        padding: 5px;
+        border: white;
+        border-radius: 5px;
+        margin-bottom: 5px;
+        font-family: "Roboto", sans-serif;
+    }
+
+    .user-info input[type='date']::-webkit-calendar-picker-indicator{ cursor: pointer;}
+
+    .user-info select{
+        cursor: pointer;
+        width: 180px;
+        padding: 5px;
+        border: white;
+        border-radius: 5px;
+        margin-bottom:5px;
+        font-family: "Roboto", sans-serif;
+    }
+
+    .user-info option{ border-radius: 5px; }
+
+    .pren{ margin-left: 85px;} .nom{ margin-left: 100px;} .mail{ margin-left: 93px;} 
+    .log{ margin-left: 95px;} .mdp{ margin-left: 53px;} .age{ margin-left: 109px;} 
+    .sex{ margin-left: 105px;} .dtn{ margin-left: 23px;} .tpm{ margin-left: 30px;} 
+
+    .alert {
+        padding: 15px;
+        margin-bottom: 20px;
+        border: 1px solid transparent;
+        border-radius: 4px;
+    }
+
+    .alert-success {
+        color: #155724;
+        background-color: #d4edda;
+        border-color: #c3e6cb;
+    }
+
+    .points{
+        display: flex;
+        gap: 190px;
+    }
+
+    .btn {
+        display: inline-block;
+        cursor: pointer;
+        padding: 10px;
+        font-size: 14px;
+        border-radius: 5px;
+        border: 1px;
+        font-family: "Roboto", sans-serif;
+    }
+
+    .btn-primary {
+        color: #fff;
+        background-color: #3182ce;
+        border-color: #3182ce;
+    }
+
+    .btn-primary:hover {
+        background-color: #2b6cb0;
+        border-color: #2b6cb0;
+    }
+
+    .btnmod{width: 110px; margin-left: 600px; padding: 5px; }
+
+    .recherche{ display: flex; margin-top: 15px;}
+
+    .recherche input[type='text']{
+        width: 230px;
+        padding: 4px;
+        border: white;
+        color: black;
+        border-radius: 5px;
+        font-family: "Roboto", sans-serif;
+        font-size: 14px;
+    }
+
+    .recherche select{
+        width: 150px;
+        padding: 4px;
+        margin-left: 5px ;
+        border: white;
+        color: black;
+        border-radius: 5px;
+        font-family: "Roboto", sans-serif;
+        font-size: 14px;
+    }
+
+    .recherche input[type='submit']{
+        width: 110px;
+        padding: 4px;
+        margin-left: 10px ;
+        background-color: #3182ce;
+        color: #fff;
+        cursor: pointer;
+        border-radius: 5px;
+        font-family: "Roboto", sans-serif;
+        font-size: 14px;
+    }
+
+    .recherche input[type='submit']:hover{ background-color: #2b6cb0; }
+
+/* Style tableau */
+
+table{
+    width:100%;
+    border-collapse: collapse;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+th, td{
+    border: 2px solid;
+    padding: 8px;
+    text-align: center;
+}

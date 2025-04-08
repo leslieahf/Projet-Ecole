@@ -13,7 +13,7 @@ use App\Http\Controllers\ListeOutilsController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ModifUtilisateursController;
 use App\Http\Controllers\SupprimerObjetsController;
-use App\Http\Controllers\NiveauController;
+use App\Http\Controllers\SupprimerOutilsController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -39,7 +39,7 @@ Route::get('/connexion', [ConnexionController::class, 'showForm']);
 
 Route::post('/connexion', [ConnexionController::class, 'connexion']);
 
-Route::view('/gestion', 'gestion');
+Route::view('/visualisation', 'visualisation');
 
 Route::get('/profil', [ProfilController::class, 'showForm']);
 
@@ -51,7 +51,7 @@ Route::get('/ajoutobjets', [AjoutObjetsController::class, 'showForm']);
 
 Route::post('/ajoutobjets', [AjoutObjetsController::class, 'ajouter']);
 
-Route::get('/gestion', [RechercherObjetsController::class, 'rechercher']);
+Route::get('/visualisation', [RechercherObjetsController::class, 'rechercher']);
 
 Route::get('/ajoutoutils', [AjoutOutilsController::class, 'showForm']);
 
@@ -59,12 +59,12 @@ Route::post('/ajoutoutils', [AjoutOutilsController::class, 'ajouter']);
 
 Route::get('/administration', [AdminController::class, 'liste2']);
 
-Route::post('/update-niveau', [NiveauController::class, 'updateNiveau'])->middleware('auth');
-
 Route::get('/administration/{id}', [ModifUtilisateursController::class, 'showForm']);
 
 Route::post('/administration/{id}', [ModifUtilisateursController::class, 'update']);
 
-Route::delete('/administration/{id}', [ModifUtilisateursController::class, 'delete']);
+Route::delete('/administration/utilisateur/{id}', [ModifUtilisateursController::class, 'delete']);
 
-Route::delete('/administration/{id}', [SupprimerObjetsController::class, 'delete']);
+Route::delete('/administration/objet/{id}', [SupprimerObjetsController::class, 'delete']);
+
+Route::delete('/administration/outil/{id}', [SupprimerOutilsController::class, 'delete']);

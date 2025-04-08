@@ -50,7 +50,7 @@ class RechercherObjetsController extends Controller
         }
         $outil = $outil->get();
         $objet = $objet->get();
-        return view('gestion', ['objets' => $objet], ['outils'=> $outil],);
+        return view('visualisation', ['objets' => $objet], ['outils'=> $outil],);
     }
 }
 
