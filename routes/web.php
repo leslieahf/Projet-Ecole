@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AjoutUtilisateursController;
 use App\Http\Controllers\InscriptionController; 
 use App\Http\Controllers\ConnexionController; 
+use App\Http\Controllers\CompteController; 
 use App\Http\Controllers\ProfilController; 
 use App\Http\Controllers\ListeUtilisateursController; 
 use App\Http\Controllers\AjoutObjetsController;
@@ -38,6 +39,9 @@ Route::post('/inscription', [InscriptionController::class, 'inscription']);
 Route::get('/connexion', [ConnexionController::class, 'showForm']);
 
 Route::post('/connexion', [ConnexionController::class, 'connexion']);
+
+Route::get('/deconnexion', [CompteController::class, 'deconnexion']);
+
 
 Route::view('/visualisation', 'visualisation');
 
