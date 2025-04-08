@@ -14,7 +14,9 @@
     <section class="hero">
         <div class="overlay"></div>
         <div class="hero-content">
-            <h1>Bienvenue sur le site du Lycée Connecté</h1>
+            <h1>IntelliSchool</h1>
+            <br>
+            <h2>Bienvenue sur le site du lycée connecté</h2>
             <p>Explorez nos formations, événements et bien plus encore</p>
             <a href="#connexion" class="btn-primary">Rejoindre la plateforme</a>
         </div>
@@ -24,7 +26,7 @@
     <section class="presentation">
         <div class="container">
             <h2>Découvrez notre établissement</h2>
-            <p>Le Lycée Connecté est un établissement innovant, dédié à l'excellence académique et à l'éducation moderne. Nos formations couvrent un large éventail de domaines, de la science aux arts, en passant par la technologie.</p>
+            <p>IntelliSchool est un établissement innovant, dédié à l'excellence académique et à l'éducation moderne. Nos formations couvrent un large éventail de domaines, de la science aux arts, en passant par la technologie.</p>
             <div class="cards">
                 <div class="card">
                     <h3>📚 Formations</h3>
@@ -77,7 +79,7 @@
 
     <!-- Footer -->
     <footer>
-        &copy; 2025 Lycée Connecté. Tous droits réservés.
+        &copy; 2025 Lycée Connecté IntelliSchool. Tous droits réservés.
     </footer>
 
 </body>

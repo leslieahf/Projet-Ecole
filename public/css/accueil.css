@@ -48,6 +48,12 @@ a {
     font-weight: bold;
 }
 
+.hero-content h2 {
+    font-size: 2.3rem;
+    font-weight: bold;
+    color: white;
+}
+
 .hero-content p {
     font-size: 1.25rem;
     margin-top: 10px;
