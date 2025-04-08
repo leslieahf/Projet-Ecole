@@ -17,10 +17,10 @@ return new class extends Migration
             $table->string('connectivite');
             $table->string('statut');
             $table->string('mode');
-            $table->integer('etat_batterie');
-            $table->integer('temperature');
-            $table->integer('niveau_encre');
-            $table->integer('niveau_remplissage');
+            $table->integer('etat_batterie')->nullable();
+            $table->integer('temperature')->nullable();
+            $table->integer('niveau_encre')->nullable();
+            $table->integer('niveau_remplissage')->nullable();
             $table->timestamps();
         });
     }

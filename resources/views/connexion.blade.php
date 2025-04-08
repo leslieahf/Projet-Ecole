@@ -1,26 +1,60 @@
 @extends('layout')
+
 @if (session('message'))
    <script>
        alert("{{ session('message') }}");
-        window.location.href = "/connexion"; 
+       window.location.href = "/connexion"; 
    </script>
 @endif
+
 @section('contenu')
-<form action='/connexion' method='post'>
-@csrf
-    @if ($errors->any())
-        <div style="color: red;">
-            <ul>
-                @foreach ($errors->all() as $error)
-                    <p>{{ $error }}</p>
-                @endforeach
-            </ul>
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Connexion - Lycée Connecté</title>
+    <link rel="stylesheet" href="{{ asset('css/connexion.css') }}">
+</head>
+
+<body>
+    <header>
+        <div>
+            <a href="{{ url('/') }}">IntelliSchool</a> <!-- Lien vers l'accueil -->
         </div>
-    @endif
-<label for='log'>Login:</label>
-<input type='text' name='login' id='log' value="{{old('login')}}"/></br></br>
-<label for='mdp'>Mot de passe:</label>
-<input type='password' name='mot_de_passe' id='mdp'/></br></br>
-<button type='submit' name='connecter'>Se connecter</button>
-</form>
+    </header>
+
+    <section class="container">
+        <h2>Connexion à votre compte</h2>
+        <div class="form-container">
+            <form action="/connexion" method="POST">
+                @csrf
+                @if ($errors->any())
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                @endif
+
+                <label for="login">Login:</label>
+                <input type="text" name="login" id="login" value="{{ old('login') }}"/>
+
+                <label for="mot_de_passe">Mot de passe:</label>
+                <input type="password" name="mot_de_passe" id="mot_de_passe"/>
+
+                <button type="submit">Se connecter</button>
+            </form>
+
+            <div class="mt-4">
+                <p>Pas encore inscrit ? <a href="/inscription">Créez un compte ici</a></p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        &copy; 2025 Lycée Connecté. Tous droits réservés.
+    </footer>
+</body>
+</html>
 @endsection
