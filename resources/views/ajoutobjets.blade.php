@@ -95,13 +95,4 @@
         </form>
     </div>
 
-
-    <!-- JavaScript pour toggle menu -->
-    <script>
-        const menu = document.querySelector('.dropdown');
-        menu.addEventListener('click', function() {
-            menu.classList.toggle('open');
-        });
-    </script>
-
 @endsection

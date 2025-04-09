@@ -1,5 +1,4 @@
- /* Général */
- body {
+body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-color: #f4f7fc;
     margin: 0;
@@ -13,7 +12,6 @@
 h1, h2, p {
     color: #003366; /* Bleu foncé */
 }
-
 
 /* Formulaire d'ajout d'utilisateur */
 form {
@@ -91,7 +89,6 @@ input[type='text'], select, input[type='date'] {
 }
 
 
-
 /* Style responsive */
 @media (max-width: 768px) {
     form {
@@ -103,21 +100,16 @@ input[type='text'], select, input[type='date'] {
     }
 }
 
+/* Garder le footer en bas de la page */
 .container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center; /* Centrer verticalement */
-    align-items: center; /* Centrer horizontalement */
-    flex: 1; /* Pour occuper tout l'espace disponible avant le footer */
+    flex: 1; /* Permet au contenu de prendre tout l'espace disponible avant le footer */
 }
-
 
 body {
     display: flex;
     flex-direction: column;
     min-height: 100vh; /* Forcer le body à occuper toute la hauteur de la fenêtre */
 }
-
 /* Titre dans le container */
 .container h2 {
     text-align: center; /* Centrer le titre horizontalement */
