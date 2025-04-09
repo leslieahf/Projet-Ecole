@@ -1,25 +1,68 @@
 <!DOCTYPE html>
-<html lang="fr">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Lycée Connecté</title>
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>@yield('title', 'IntelliSchool')</title>
 
-        <!-- Liens CSS communs -->
-        <link rel="stylesheet" href="{{ asset('css/style.css') }}"> <!-- Le fichier CSS principal -->
-        <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.1.2/dist/tailwind.min.css" rel="stylesheet">
-        <script src="https://kit.fontawesome.com/a076d05399.js"></script> <!-- Pour les icônes -->
+    <!-- Lien vers le fichier CSS -->
+    <link rel="stylesheet" href="{{ asset('css/layout.css') }}">
+    
+    @yield('head') <!-- Section pour le head spécifique de chaque page -->
+</head>
+<body>
 
-        <!-- Fonts -->
-        <link rel="preconnect" href="https://fonts.bunny.net">
-        <link href="https://fonts.bunny.net/css?family=figtree:400,600&display=swap" rel="stylesheet" />
+    <!-- Header -->
+    <header class="header-content">
+    <div class="menu">
+        <div class="dropdown">
+            <div class="menu-bar"></div>
+            <div class="menu-bar"></div>
+            <div class="menu-bar"></div>
+            <div class="dropdown-content">
+                <a href="/">Accueil</a>
+                <a href="/gestion">Gestion</a>
+                <a href="/administration">Administration</a>
+            </div>
+        </div>
+    </div>
 
-        <!-- Ici, tu ajoutes la section 'head' pour inclure les éléments spécifiques -->
-        @yield('head') <!-- Cette ligne permet d'ajouter les balises dans 'head' pour chaque page -->
-    </head>
+    <div class="logo-title">
+        <img src="{{ asset('images/logo.png') }}" alt="Logo" class="logo">
+        <span class="title">IntelliSchool</span>
+    </div>
 
-    <body>
-        <!-- Ici, tu inclues le contenu spécifique à chaque page -->
-        @yield('contenu') <!-- Cette ligne permet d'inclure le contenu principal de chaque page -->
-    </body>
+    <!-- Logo Profil à droite -->
+    <a href="/profil" class="profil-link">
+        <img src="{{ asset('images/logo_profil.png') }}" alt="Profil" class="profil-logo">
+    </a>
+</header>
+
+
+    <!-- Contenu Principal -->
+    <div class="main-content">
+        @yield('contenu')
+    </div>
+
+        <!-- Script JS pour le menu déroulant -->
+        <script>
+        // Sélectionne l'élément du menu déroulant
+        const dropdown = document.querySelector('.dropdown');
+        const dropdownContent = document.querySelector('.dropdown-content');
+
+        // Ouvrir ou fermer le menu lorsque l'utilisateur clique sur l'icône hamburger
+        dropdown.addEventListener('click', function(event) {
+            event.stopPropagation(); // Empêche le clic de se propager au document
+            dropdown.classList.toggle('open');
+        });
+
+        // Fermer le menu lorsque l'utilisateur clique ailleurs sur la page
+        document.addEventListener('click', function(event) {
+            if (!dropdown.contains(event.target)) {
+                dropdown.classList.remove('open');
+            }
+        });
+    </script>
+
+</body>
 </html>
