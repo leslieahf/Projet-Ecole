@@ -15,10 +15,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Connexion - Lycée Connecté</title>
     <link rel="stylesheet" href="{{ asset('css/connexion.css') }}">
-<<<<<<< HEAD
-=======
-
->>>>>>> 67a1e1a (Modofication CSS et modification de controlleurs d'objet, utilisateurs et outils)
 </head>
 
 <body>
