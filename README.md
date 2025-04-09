@@ -43,6 +43,10 @@ dossier et exécuter la commande suivante :
 composer install
 ```
 
+```php
+composer require laracasts/flash
+```
+
 ### Environnement
 
 Le projet dépend de variables stockées dans le fichier `.env`.

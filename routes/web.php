@@ -43,19 +43,19 @@ Route::post('/connexion', [ConnexionController::class, 'connexion']);
 Route::get('/deconnexion', [CompteController::class, 'deconnexion']);
 
 
-Route::view('/visualisation', 'visualisation');
+Route::view('/visualisation', 'visualisation') -> middleware('auth.custom');
 
-Route::get('/profil', [ProfilController::class, 'showForm']);
+Route::get('/profil', [ProfilController::class, 'showForm']) -> middleware('auth.custom');
 
-Route::post('/profil', [ProfilController::class, 'update']);
+Route::post('/profil', [ProfilController::class, 'update']) -> middleware('auth.custom');
 
-Route::get('/profilautres', [ListeUtilisateursController::class, 'liste']);
+Route::get('/profilautres', [ListeUtilisateursController::class, 'liste']) -> middleware('auth.custom');
 
 Route::get('/ajoutobjets', [AjoutObjetsController::class, 'showForm']);
 
 Route::post('/ajoutobjets', [AjoutObjetsController::class, 'ajouter']);
 
-Route::get('/visualisation', [RechercherObjetsController::class, 'rechercher']);
+Route::get('/visualisation', [RechercherObjetsController::class, 'rechercher']) -> middleware('auth.custom');
 
 Route::get('/ajoutoutils', [AjoutOutilsController::class, 'showForm']);
 
