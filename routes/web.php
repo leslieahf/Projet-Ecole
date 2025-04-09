@@ -74,6 +74,8 @@ Route::post('/administration/{id}', [ModifUtilisateursController::class, 'update
 Route::delete('/administration/utilisateur/{id}', [ModifUtilisateursController::class, 'delete']);
 <<<<<<< HEAD
 
+
+
 Route::delete('/administration/objet/{id}', [SupprimerObjetsController::class, 'delete']);
 
 Route::delete('/administration/outil/{id}', [SupprimerOutilsController::class, 'delete']);

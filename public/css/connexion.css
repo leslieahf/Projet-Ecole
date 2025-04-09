@@ -7,7 +7,7 @@ body {
     margin: 0;
     padding: 0;
     height: 100vh;
-    display: flex;
+    display: block;
     flex-direction: column;
     justify-content: flex-start; /* Le contenu est aligné en haut */
     align-items: center;
@@ -19,34 +19,7 @@ body {
     padding: 20px;
 }
 
-/* Header */
-header {
-    background-color: #1d4ed8; /* Bleu primaire */
-    color: white;
-    padding: 30px 0; /* Hauteur du header plus grande */
-    text-align: center;
-    width: 100%;
-    box-sizing: border-box;
-    position: absolute;
-    top: 0;
-    left: 0;
-}
 
-header div {
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-header a {
-    color: white;
-    text-decoration: none;
-    font-size: 30px; /* Agrandir la taille du texte */
-    font-weight: bold;
-}
-
-header a:hover {
-    text-decoration: underline;
-}
 
 /* Formulaire de connexion */
 section {

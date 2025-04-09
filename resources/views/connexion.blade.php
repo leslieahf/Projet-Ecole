@@ -22,11 +22,6 @@
 </head>
 
 <body>
-    <header>
-        <div>
-            <a href="{{ url('/') }}">IntelliSchool</a> <!-- Lien vers l'accueil -->
-        </div>
-    </header>
 
     <section class="container">
         <h2>Connexion à votre compte</h2>
