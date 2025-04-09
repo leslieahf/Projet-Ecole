@@ -1,20 +1,17 @@
 /* Général */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
 body {
     font-family: 'Arial', sans-serif;
     background-color: #f7fafc; /* Gris clair */
-    margin: 0;
-    padding: 0;
-    height: 100vh;
-    display: block;
+    display: flex;
     flex-direction: column;
-    justify-content: center; /* Le contenu est aligné en haut */
-    align-items: center;
-}
-
-.container {
-    max-width: 1200px;
-    width: 100%;
-    padding: 20px;
+    min-height: 100vh;
+    overflow-y: auto;
 }
 
 /* Contenu principal (entre header et footer) */
@@ -23,38 +20,46 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: flex-start; /* ou center si tu veux centrer verticalement */
-    padding: 40px 20px;
+    justify-content: flex-start;
+    padding: 2rem;
+    margin-top: 2rem;
 }
 
 /* Formulaire d'inscription */
 section {
     background-color: white;
-    padding: 40px;
-    border-radius: 8px;
+    padding: 2.5rem;
+    border-radius: 12px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     width: 100%;
-    max-width: 500px;
-    margin-top: 150px; /* Ajuster la marge du haut pour centrer la section */
+    max-width: 600px;
+    margin: 0 auto;
 }
 
 h2 {
-    font-size: 28px;
+    font-size: 2rem;
     color: #1d4ed8;
     text-align: center;
-    margin-bottom: 20px;
+    margin-bottom: 2rem;
 }
 
 /* Style du formulaire */
 form {
     display: flex;
     flex-direction: column;
+    gap: 1.5rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
 }
 
 label {
-    font-size: 16px;
-    margin-bottom: 8px;
-    color: #333;
+    font-size: 1rem;
+    color: #374151;
+    font-weight: 500;
 }
 
 input[type="text"],
@@ -62,64 +67,87 @@ input[type="password"],
 input[type="file"],
 input[type="date"],
 select {
-    padding: 12px;
-    margin-bottom: 20px;
-    border: 1px solid #ccc;
-    border-radius: 6px;
-    font-size: 16px;
+    padding: 0.75rem;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    font-size: 1rem;
     background-color: #f9fafb;
+    transition: all 0.3s ease;
 }
 
 input[type="text"]:focus,
 input[type="password"]:focus,
+input[type="file"]:focus,
+input[type="date"]:focus,
 select:focus {
     outline: none;
     border-color: #1d4ed8;
-    box-shadow: 0 0 5px rgba(29, 78, 216, 0.3);
+    box-shadow: 0 0 0 3px rgba(29, 78, 216, 0.1);
 }
 
 /* Bouton d'inscription */
 button {
-    padding: 14px;
+    padding: 1rem;
     background-color: #1d4ed8;
     color: white;
     border: none;
-    border-radius: 6px;
-    font-size: 18px;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: 600;
     cursor: pointer;
-    transition: background-color 0.3s;
+    transition: all 0.3s ease;
+    margin-top: 1rem;
 }
 
 button:hover {
-    background-color: #2563eb;
+    background-color: #1e40af;
+    transform: translateY(-1px);
+}
+
+button:active {
+    transform: translateY(0);
 }
 
 /* Erreurs */
 ul {
     background-color: #fee2e2;
     color: #b91c1c;
-    border-radius: 6px;
-    padding: 10px;
-    margin-bottom: 20px;
+    border-radius: 8px;
+    padding: 1rem;
+    margin-bottom: 1.5rem;
     list-style: none;
 }
 
 ul li {
-    margin-bottom: 5px;
+    margin-bottom: 0.5rem;
 }
 
 /* Style du lien de connexion */
 .connexion-link {
     text-align: center;
-    font-size: 14px;
-    margin-top: 20px;
+    margin-top: 1.5rem;
 }
 
 .connexion-link a {
-    color: #2563eb;
+    color: #1d4ed8;
     text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
 }
 
 .connexion-link a:hover {
+    color: #1e40af;
     text-decoration: underline;
+}
+
+/* Style de l'aperçu de la photo */
+#photo-preview-container {
+    margin-top: 0.5rem;
+    text-align: center;
+}
+
+#photo-preview {
+    max-width: 150px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
