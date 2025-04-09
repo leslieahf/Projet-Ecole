@@ -1,21 +1,20 @@
 @extends('layout')
 
+@section('head') <!-- Section pour remplir le head du layout -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Connexion - IntelliSchool</title>
+    <link href="{{ asset('css/connexion.css') }}" rel="stylesheet"> <!-- Lien vers le fichier CSS spécifique -->
+@endsection
+
+@section('contenu')
+
 @if (session('message'))
    <script>
        alert("{{ session('message') }}");
        window.location.href = "/connexion"; 
    </script>
 @endif
-
-@section('contenu')
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Connexion - Lycée Connecté</title>
-    <link rel="stylesheet" href="{{ asset('css/connexion.css') }}">
-</head>
 
 <body>
 
@@ -51,9 +50,6 @@
         </div>
     </section>
 
-    <footer>
-        &copy; 2025 Lycée Connecté. Tous droits réservés.
-    </footer>
+
 </body>
-</html>
 @endsection

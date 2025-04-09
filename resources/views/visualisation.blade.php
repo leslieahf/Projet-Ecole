@@ -19,10 +19,6 @@
         flex-grow: 1;
     }
 
-    footer {
-        margin-top: 20px;
-    }
-
     /* Styles déjà définis pour le contenu */
     .header-title {
         font-size: 32px;
@@ -82,10 +78,7 @@
 @section('contenu')
 <!-- Main Content -->
 <div class="main-content">
-    <!-- Header -->
-    <header class="bg-blue-900 text-white p-6 shadow-md">
-        <div class="header-content">
-                <p class="text-xl font-semibold">Lycée Connecté</p>
+    
         <nav>
             <form class='recherche' action="/visualisation" method="get">
                 <input type="text" name="search" placeholder="Rechercher par nom ou description" value="{{ request('search') }}">
@@ -102,7 +95,7 @@
             <a href='/profilautres'>Profil des autres membres</a>
         </nav>
         </div>
-    </header>
+
 
     <!-- Page Content -->
     <section class="py-16 px-6 bg-white">

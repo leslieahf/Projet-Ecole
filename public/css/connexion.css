@@ -1,26 +1,34 @@
-
-/* Général */
-body {
-    font-family: 'Arial', sans-serif;
-    background-color: #f7fafc; /* Gris clair */
+/* Réinitialisation de base */
+* {
     margin: 0;
     padding: 0;
-    height: 100vh;
-    display: block;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    font-family: 'Arial', sans-serif;
+    background-color: #f7fafc;
+}
+
+/* Layout global */
+body {
+    display: flex;
     flex-direction: column;
-    justify-content: flex-start; /* Le contenu est aligné en haut */
+    min-height: 100vh;
+}
+
+/* Contenu principal (entre header et footer) */
+.main-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
     align-items: center;
+    justify-content: flex-start; /* ou center si tu veux centrer verticalement */
+    padding: 40px 20px;
 }
 
-.container {
-    max-width: 1200px;
-    width: 100%;
-    padding: 20px;
-}
-
-
-
-/* Formulaire de connexion */
+/* Section formulaire */
 section {
     background-color: white;
     padding: 40px;
@@ -28,9 +36,9 @@ section {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     width: 100%;
     max-width: 500px;
-    margin-top: 150px; /* Ajuster la marge du haut pour centrer la section */
 }
 
+/* Titre */
 h2 {
     font-size: 28px;
     color: #1d4ed8;
@@ -38,7 +46,7 @@ h2 {
     margin-bottom: 20px;
 }
 
-/* Style du formulaire */
+/* Formulaire */
 form {
     display: flex;
     flex-direction: column;
@@ -51,7 +59,10 @@ label {
 }
 
 input[type="text"],
-input[type="password"] {
+input[type="password"],
+input[type="file"],
+input[type="date"],
+select {
     padding: 12px;
     margin-bottom: 20px;
     border: 1px solid #ccc;
@@ -60,14 +71,14 @@ input[type="password"] {
     background-color: #f9fafb;
 }
 
-input[type="text"]:focus,
-input[type="password"]:focus {
+input:focus,
+select:focus {
     outline: none;
     border-color: #1d4ed8;
     box-shadow: 0 0 5px rgba(29, 78, 216, 0.3);
 }
 
-/* Bouton de connexion */
+/* Bouton */
 button {
     padding: 14px;
     background-color: #1d4ed8;
@@ -97,7 +108,7 @@ ul li {
     margin-bottom: 5px;
 }
 
-/* Lien d'inscription */
+/* Lien inscription / Connexion */
 .mt-4 {
     text-align: center;
 }
@@ -109,16 +120,4 @@ ul li {
 
 .mt-4 a:hover {
     text-decoration: underline;
-}
-
-/* Footer */
-footer {
-    background-color: #e5e7eb; /* Gris clair */
-    color: #333;
-    text-align: center;
-    padding: 20px 0;
-    font-size: 14px;
-    position: absolute;
-    width: 100%;
-    bottom: 0;
 }

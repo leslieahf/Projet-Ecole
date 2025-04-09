@@ -44,6 +44,14 @@
         @yield('contenu')
     </div>
 
+
+    <!-- Footer -->
+    <footer>
+        &copy; 2025 Lycée Connecté. Tous droits réservés.
+    </footer>
+
+
+    
         <!-- Script JS pour le menu déroulant -->
         <script>
         // Sélectionne l'élément du menu déroulant

@@ -17,6 +17,15 @@ body {
     padding: 20px;
 }
 
+/* Contenu principal (entre header et footer) */
+.main-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start; /* ou center si tu veux centrer verticalement */
+    padding: 40px 20px;
+}
 
 /* Formulaire d'inscription */
 section {
@@ -97,19 +106,6 @@ ul {
 
 ul li {
     margin-bottom: 5px;
-}
-
-/* Footer */
-footer {
-    background-color: #e5e7eb; /* Gris clair */
-    color: #333;
-    text-align: center;
-    padding: 20px 0;
-    font-size: 14px;
-    width: 100%;
-    position: relative;
-    bottom: 0;
-    margin-top: auto; /* Place le footer en bas */
 }
 
 /* Style du lien de connexion */

@@ -9,23 +9,6 @@
 
 @section('contenu')
 
-    <!-- Header -->
-    <header>
-        Lycée Connecté
-        <!-- Menu Deroulant (Hamburger) -->
-        <div class="menu">
-            <div class="dropdown">
-                <div class="menu-bar"></div>
-                <div class="menu-bar"></div>
-                <div class="menu-bar"></div>
-                <div class="dropdown-content">
-                    <a href="/">Accueil</a>
-                    <a href="/gestion">Gestion</a>
-                    <a href="/administration">Administration</a>
-                </div>
-            </div>
-        </div>
-    </header>
 
     <div class="container">
         <!-- Titre centré à l'intérieur du formulaire -->
@@ -112,10 +95,6 @@
         </form>
     </div>
 
-    <!-- Footer -->
-    <footer>
-        &copy; 2025 Lycée Connecté. Tous droits réservés.
-    </footer>
 
     <!-- JavaScript pour toggle menu -->
     <script>

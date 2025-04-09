@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ajout Utilisateur - IntelliSchool</title>
-    <link href="{{ asset('css/ajoututilisateurs.css') }}" rel="stylesheet"> <!-- Lien vers le fichier CSS spécifique -->
+    <link href="{{ asset('css/ajoututil.css') }}" rel="stylesheet"> <!-- Lien vers le fichier CSS spécifique -->
 @endsection
 
 @section('contenu')
@@ -60,11 +60,6 @@
         <button type='submit' name='ajouter'>Ajouter</button>
     </form>
 
-
-    <!-- Footer -->
-    <footer>
-        &copy; 2025 Lycée Connecté. Tous droits réservés.
-    </footer>
 
 
 @endsection

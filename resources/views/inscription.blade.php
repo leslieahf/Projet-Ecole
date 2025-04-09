@@ -1,16 +1,16 @@
 @extends('layout')
 
-@section('contenu')
-<!DOCTYPE html>
-<html lang="fr">
-<head>
+@section('head') <!-- Section pour remplir le head du layout -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inscription - Lycée Connecté</title>
-    <link rel="stylesheet" href="{{ asset('css/inscription.css') }}">
-</head>
+    <title>inscription - IntelliSchool</title>
+    <link href="{{ asset('css/inscription.css') }}" rel="stylesheet"> <!-- Lien vers le fichier CSS spécifique -->
+@endsection
+
+
+
+@section('contenu')
 <body>
-    
 
     <section class="container">
         <h2>Inscription</h2>
@@ -94,9 +94,6 @@
         </div>
     </section>
 
-    <footer>
-        &copy; 2025 Lycée Connecté. Tous droits réservés.
-    </footer>
 
     <script>
         function previewImage(event) {
@@ -120,5 +117,4 @@
         }
     </script>
 </body>
-</html>
 @endsection
