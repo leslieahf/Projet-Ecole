@@ -21,7 +21,7 @@
             <div class="menu-bar"></div>
             <div class="dropdown-content">
                 <a href="/">Accueil</a>
-                <a href="/gestion">Gestion</a>
+                <a href="/visualisation">Visualisation</a>
                 <a href="/administration">Administration</a>
             </div>
         </div>
@@ -54,23 +54,23 @@
     
         <!-- Script JS pour le menu déroulant -->
         <script>
-        // Sélectionne l'élément du menu déroulant
-        const dropdown = document.querySelector('.dropdown');
-        const dropdownContent = document.querySelector('.dropdown-content');
+            // Sélectionne l'élément du menu déroulant
+            const dropdown = document.querySelector('.dropdown');
+            const dropdownContent = document.querySelector('.dropdown-content');
 
-        // Ouvrir ou fermer le menu lorsque l'utilisateur clique sur l'icône hamburger
-        dropdown.addEventListener('click', function(event) {
-            event.stopPropagation(); // Empêche le clic de se propager au document
-            dropdown.classList.toggle('open');
-        });
+            // Ouvrir ou fermer le menu lorsque l'utilisateur clique sur l'icône hamburger
+            dropdown.addEventListener('click', function(event) {
+                event.stopPropagation(); // Empêche le clic de se propager au document
+                dropdown.classList.toggle('open');
+            });
 
-        // Fermer le menu lorsque l'utilisateur clique ailleurs sur la page
-        document.addEventListener('click', function(event) {
-            if (!dropdown.contains(event.target)) {
-                dropdown.classList.remove('open');
-            }
-        });
-    </script>
+            // Fermer le menu lorsque l'utilisateur clique ailleurs sur la page
+            document.addEventListener('click', function(event) {
+                if (!dropdown.contains(event.target)) {
+                    dropdown.classList.remove('open');
+                }
+            });
+        </script>
 
 </body>
 </html>

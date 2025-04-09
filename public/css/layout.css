@@ -81,7 +81,7 @@ html, body {
 }
 
 .dropdown:hover .dropdown-content {
-    display: block;
+    display: none;
 }
 
 /* Menu-bar */
