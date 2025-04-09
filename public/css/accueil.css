@@ -58,7 +58,7 @@ a {
 /* Boutons communs */
 .btn-primary, .btn-secondary {
     display: inline-block;
-    background-color: #2563EB;
+    background-color: #003366;
     color: white;
     padding: 12px 25px;
     border-radius: 8px;
@@ -66,22 +66,22 @@ a {
     text-decoration: none;
     cursor: pointer;
     transition: all 0.3s ease;
-    border: 2px solid #2563EB;
+    border: 2px solid #003366;
 }
 
 .btn-secondary {
     background-color: transparent;
     border-color: white;
-}
+} 
 
 .btn-primary:hover {
-    background-color: #1D4ED8;
-    border-color: #1D4ED8;
+    background-color: white;
+    color: #003366;
 }
 
 .btn-secondary:hover {
     background-color: white;
-    color: #1D4ED8;
+    color: #003366;
 }
 
 /* Hero button specific */
@@ -106,6 +106,7 @@ h2 {
     color: #f0faff;
     margin-bottom: 20px;
 }
+
 
 p {
     font-size: 1.125rem;
@@ -185,10 +186,13 @@ p {
     margin-top: 10px;
 }
 
+.container h2{
+    color:#003366
+}
 /* Connexion Section */
 .inscription {
     padding: 50px 20px;
-    background-color: #1D4ED8;
+    background-color: #003366;
     color: white;
     text-align: center;
     border-radius: 10px;
@@ -237,3 +241,4 @@ footer {
     color: #4a5568;
     position: relative;
 }
+
