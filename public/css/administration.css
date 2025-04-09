@@ -1,0 +1,225 @@
+   /* Général */
+   body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f7fc;
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+h1, h2, p {
+    color: #003366; /* Bleu foncé */
+}
+
+/* Pour centrer uniquement les titres des tableaux */
+.table-caption {
+    font-size: 1.6em;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    color: #003366; /* Bleu foncé */
+    font-weight: bold;
+    text-align: center;
+}
+
+/* Header */
+header {
+    background-color: #003366; /* Bleu foncé */
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+    font-size: 26px;
+    font-weight: bold;
+    border-radius: 8px 8px 0 0;
+    position: relative;
+}
+
+/* Menu */
+.menu {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    cursor: pointer;
+}
+
+.menu-bar {
+    width: 35px;
+    height: 4px;
+    background-color: white;
+    margin: 6px 0;
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Dropdown Menu */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #003366; /* Bleu foncé */
+    min-width: 160px;
+    z-index: 1;
+    border-radius: 5px;
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
+    transition: opacity 0.4s ease, transform 0.3s ease;
+    opacity: 0;
+    transform: translateY(-10px);
+}
+
+.dropdown-content a {
+    color: white;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    font-size: 16px;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.dropdown-content a:hover {
+    background-color: #002244; /* Ton plus foncé au survol */
+}
+
+.dropdown.open .dropdown-content {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Boutons */
+button {
+    padding: 12px 25px;
+    margin: 10px 5px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    text-align: center;
+    display: inline-block;
+}
+
+/* Bouton "Ajouter" */
+.btn-add {
+    background-color: #003366; /* Bleu foncé */
+    color: white;
+    text-decoration: none;
+}
+
+.btn-add a {
+    color: white; /* Couleur du texte à l'intérieur du lien */
+    text-decoration: none;
+}
+
+.btn-add:hover {
+    background-color: #002244; /* Bleu plus foncé au survol */
+    transform: scale(1.05); /* Légère augmentation du bouton au survol */
+}
+
+/* Bouton "Modifier" */
+.btn-modify {
+    background-color: #ffc107; /* Jaune */
+    color: white;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 30px;
+    text-decoration: none; /* Enlever le soulignement du texte */
+}
+
+/* Assurer que le lien à l'intérieur du bouton est en blanc et sans soulignement */
+.btn-modify a {
+    color: white; /* Assurer que le texte dans le lien est blanc */
+    text-decoration: none; /* Enlever le soulignement du texte du lien */
+}
+
+.btn-modify:hover {
+    background-color: #e0a800; /* Jaune foncé */
+    transform: scale(1.05);
+}
+
+/* Bouton "Supprimer" */
+.btn-delete {
+    background-color: #dc3545; /* Rouge */
+    color: white;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 30px;
+}
+
+.btn-delete:hover {
+    background-color: #c82333; /* Rouge foncé */
+    transform: scale(1.05);
+}
+
+/* Conteneur principal */
+.container {
+    width: 90%; /* Augmentation de la taille du conteneur */
+    margin: 20px auto;
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+/* Table container with horizontal scrolling */
+.table-container {
+    width: 100%;
+    overflow-x: auto; /* Permet un défilement horizontal */
+    -webkit-overflow-scrolling: touch;
+}
+
+/* Tables */
+table th {
+    background-color: #003366; /* Bleu foncé pour les entêtes des colonnes */
+    color: white;
+    font-size: 16px;
+    position: sticky;
+    top: 0;
+    z-index: 2;
+}
+
+table th, table td {
+    padding: 15px 25px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+    word-wrap: break-word;
+    vertical-align: middle;
+    white-space: nowrap;
+}
+
+table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+table tr:hover {
+    background-color: #e9f5ff;
+}
+
+/* Style responsive */
+@media (max-width: 768px) {
+    table, th, td {
+        font-size: 14px;
+        white-space: nowrap;
+    }
+
+    .container {
+        width: 95%;
+        padding: 10px;
+    }
+
+    button {
+        padding: 8px 16px;
+        font-size: 14px;
+    }
+
+    .menu {
+        text-align: center;
+        margin-bottom: 15px;
+    }
+
+    .menu-bar {
+        width: 35px;
+        height: 4px;
+        margin: 6px 0;
+    }
+
+    .dropdown-content {
+        min-width: 140px;
+    }
+}

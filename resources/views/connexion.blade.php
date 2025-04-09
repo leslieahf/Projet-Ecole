@@ -15,6 +15,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Connexion - Lycée Connecté</title>
     <link rel="stylesheet" href="{{ asset('css/connexion.css') }}">
+<<<<<<< HEAD
+=======
+
+>>>>>>> 67a1e1a (Modofication CSS et modification de controlleurs d'objet, utilisateurs et outils)
 </head>
 
 <body>
@@ -37,11 +41,15 @@
                     </ul>
                 @endif
 
-                <label for="login">Login:</label>
-                <input type="text" name="login" id="login" value="{{ old('login') }}"/>
+                <div class="form-group">
+                    <label for="login">Login:</label>
+                    <input type="text" name="login" id="login" value="{{ old('login') }}"/>
+                </div>
 
-                <label for="mot_de_passe">Mot de passe:</label>
-                <input type="password" name="mot_de_passe" id="mot_de_passe"/>
+                <div class="form-group">
+                    <label for="mot_de_passe">Mot de passe:</label>
+                    <input type="password" name="mot_de_passe" id="mot_de_passe"/>
+                </div>
 
                 <button type="submit">Se connecter</button>
             </form>

@@ -1,0 +1,155 @@
+    /* Général */
+    body, html {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background-color: #f4f7fc;
+        color: #333;
+        display: flex;
+        flex-direction: column;
+    }
+
+    /* Header */
+    header {
+        background-color: #003366;
+        color: white;
+        padding: 20px 0;
+        text-align: center;
+        font-size: 26px;
+        font-weight: bold;
+        border-radius: 8px 8px 0 0;
+        position: relative;
+    }
+
+    /* Footer */
+    footer {
+        background-color: #e1e1e1;
+        color: #333;
+        padding: 15px 0;
+        text-align: center;
+        font-size: 14px;
+        border-radius: 0 0 8px 8px;
+    }
+
+    /* Conteneur principal */
+    .container {
+        width: 60%;
+        margin: 60px auto 20px auto;
+        padding: 20px;
+        background-color: white;
+        box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: auto;
+    }
+
+    /* Titre centré et bleu */
+    .title {
+        text-align: center;
+        color: #003366; /* Bleu foncé */
+        font-size: 28px;
+        margin-bottom: 20px;
+    }
+
+    /* Style pour les champs et labels alignés horizontalement */
+    .form-group {
+        display: flex;
+        align-items: center; /* Aligne verticalement les éléments */
+        margin-bottom: 8px; /* Réduit l'espace entre les champs */
+    }
+
+    label {
+        font-size: 18px; /* Agrandir la police des labels */
+        font-weight: bold;
+        color: #003366;
+        width: 30%; /* Largeur du label réduite */
+        margin-right: 10px; /* Espacement entre le label et le champ */
+        text-align: left; /* Alignement à gauche */
+    }
+
+    input[type='text'], select, textarea {
+        width: 50%; /* Réduit la largeur des champs */
+        padding: 12px; /* Augmenter le padding pour une meilleure lisibilité */
+        font-size: 16px; /* Agrandir la police dans les champs */
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+        margin-top: 5px; /* Espace au-dessus du champ */
+    }
+    /* Bouton Ajouter */
+    button[type='submit'] {
+        background-color: #003366; /* Bleu foncé pour le bouton Ajouter */
+        color: white;
+        padding: 8px 20px; /* Réduire la taille du bouton */
+        font-size: 14px; /* Réduire la taille du texte */
+        border-radius: 30px;
+        width: 40%; /* Permet au bouton de s'ajuster à son contenu */
+        text-align: center;
+        cursor: pointer;
+        transition: background-color 0.3s ease, transform 0.3s ease;
+        margin-top: 15px;
+        display: block; /* Applique le mode block pour le centrer */
+        margin-left: auto; /* Centre le bouton horizontalement */
+        margin-right: auto; /* Centre le bouton horizontalement */
+    }
+
+    button[type='submit']:hover {
+        background-color: #002244; /* Bleu plus foncé au survol */
+        box-shadow: 0 4px 10px rgba(0, 123, 255, 0.4); /* Ombre portée au survol */
+    }
+
+    button[type='submit']:active {
+        background-color: #001933; /* Un bleu encore plus foncé au clic */
+        box-shadow: 0 4px 10px rgba(0, 123, 255, 0.6); /* Ombre plus marquée au clic */
+    }
+        /* Menu */
+    .menu {
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        cursor: pointer;
+    }
+
+    .menu-bar {
+        width: 35px;
+        height: 4px;
+        background-color: white;
+        margin: 6px 0;
+        transition: transform 0.3s ease-in-out;
+    }
+
+    /* Dropdown Menu */
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #003366; /* Bleu foncé */
+        min-width: 160px;
+        z-index: 1;
+        border-radius: 5px;
+        box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
+        transition: opacity 0.4s ease, transform 0.3s ease;
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    .dropdown-content a {
+        color: white;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+        font-size: 16px;
+        transition: background-color 0.3s ease-in-out;
+    }
+
+    .dropdown-content a:hover {
+        background-color: #002244; /* Plus foncé au survol */
+    }
+
+    .dropdown.open .dropdown-content {
+        display: block;
+        opacity: 1;
+        transform: translateY(0);
+    }

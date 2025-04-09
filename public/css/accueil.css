@@ -1,4 +1,9 @@
+<<<<<<< HEAD
 * {
+=======
+ /* Global Styles */
+ * {
+>>>>>>> 67a1e1a (Modofication CSS et modification de controlleurs d'objet, utilisateurs et outils)
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -48,12 +53,15 @@ a {
     font-weight: bold;
 }
 
+<<<<<<< HEAD
 .hero-content h2 {
     font-size: 2.3rem;
     font-weight: bold;
     color: white;
 }
 
+=======
+>>>>>>> 67a1e1a (Modofication CSS et modification de controlleurs d'objet, utilisateurs et outils)
 .hero-content p {
     font-size: 1.25rem;
     margin-top: 10px;
@@ -170,7 +178,11 @@ p {
 }
 
 /* Connexion Section */
+<<<<<<< HEAD
 .connexion {
+=======
+.inscription {
+>>>>>>> 67a1e1a (Modofication CSS et modification de controlleurs d'objet, utilisateurs et outils)
     padding: 50px 20px;
     background-color: #1D4ED8;
     color: white;
@@ -178,13 +190,21 @@ p {
     border-radius: 10px;
 }
 
+<<<<<<< HEAD
 .connexion h2 {
+=======
+.inscription h2 {
+>>>>>>> 67a1e1a (Modofication CSS et modification de controlleurs d'objet, utilisateurs et outils)
     font-size: 2.5rem;
     margin-bottom: 20px;
     color: #ffffff;
 }
 
+<<<<<<< HEAD
 .connexion p {
+=======
+.inscription p {
+>>>>>>> 67a1e1a (Modofication CSS et modification de controlleurs d'objet, utilisateurs et outils)
     font-size: 1.25rem;
     margin-bottom: 30px;
     color: #ffffff;

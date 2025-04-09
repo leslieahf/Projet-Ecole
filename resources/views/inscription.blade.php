@@ -8,6 +8,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inscription - Lycée Connecté</title>
     <link rel="stylesheet" href="{{ asset('css/inscription.css') }}">
+<<<<<<< HEAD
+=======
+
+>>>>>>> 67a1e1a (Modofication CSS et modification de controlleurs d'objet, utilisateurs et outils)
 </head>
 <body>
     
@@ -31,45 +35,65 @@
                 </div>
             @endif
 
-            <label for='photo'>Photo:</label>
-            <div id="photo-preview-container">
-                <img id="photo-preview" width="100">
+            <div class="form-group">
+                <label for='photo'>Photo:</label>
+                <input type='file' name='photo' id='photo' onchange="previewImage(event)"/><br><br>
+                <div id="photo-preview-container" style="margin-left: 10px;">
+                    <img id="photo-preview" width="100">
+                </div>
             </div>
-            <input type='file' name='photo' id='photo' onchange="previewImage(event)"/><br><br>
 
-            <label for='pren'>Prénom:</label>
-            <input type='text' name='prenom' id='pren' value="{{old('prenom')}}"/><br><br>
+            <div class="form-group">
+                <label for='pren'>Prénom:</label>
+                <input type='text' name='prenom' id='pren' value="{{old('prenom')}}"/><br><br>
+            </div>
 
-            <label for='nom'>Nom:</label>
-            <input type='text' name='nom' id='nom' value="{{old('nom')}}"/><br><br>
+            <div class="form-group">
+                <label for='nom'>Nom:</label>
+                <input type='text' name='nom' id='nom' value="{{old('nom')}}"/><br><br>
+            </div>
 
-            <label for='mail'>Email:</label>
-            <input type='text' name='email' id='mail' value="{{old('email')}}"/><br><br>
+            <div class="form-group">
+                <label for='mail'>Email:</label>
+                <input type='text' name='email' id='mail' value="{{old('email')}}"/><br><br>
+            </div>
 
-            <label for='log'>Login:</label>
-            <input type='text' name='login' id='log' value="{{old('login')}}"/><br><br>
+            <div class="form-group">
+                <label for='log'>Login:</label>
+                <input type='text' name='login' id='log' value="{{old('login')}}"/><br><br>
+            </div>
 
-            <label for='mdp'>Mot de passe:</label>
-            <input type='password' name='mot_de_passe' id='mdp'/><br><br>
+            <div class="form-group">
+                <label for='mdp'>Mot de passe:</label>
+                <input type='password' name='mot_de_passe' id='mdp'/><br><br>
+            </div>
 
-            <label for='age'>Age:</label>
-            <input type='text' name='age' id='age' value="{{old('age')}}"/><br><br>
+            <div class="form-group">
+                <label for='age'>Age:</label>
+                <input type='text' name='age' id='age' value="{{old('age')}}"/><br><br>
+            </div>
 
-            <label for='sex'>Sexe:</label>
-            <select name='sexe' id='sex'>
-                <option value="Féminin" {{ old('sexe') == 'Féminin' ? 'selected' : '' }}>Féminin</option>
-                <option value="Masculin" {{ old('sexe') == 'Masculin' ? 'selected' : '' }}>Masculin</option>
-            </select><br><br>
+            <div class="form-group">
+                <label for='sex'>Sexe:</label>
+                <select name='sexe' id='sex'>
+                    <option value="Féminin" {{ old('sexe') == 'Féminin' ? 'selected' : '' }}>Féminin</option>
+                    <option value="Masculin" {{ old('sexe') == 'Masculin' ? 'selected' : '' }}>Masculin</option>
+                </select><br><br>
+            </div>
 
-            <label for='dtn'>Date de naissance:</label>
-            <input type='date' name='date_de_naiss' id='dtn' value="{{old('date_de_naiss')}}"/><br><br>
+            <div class="form-group">
+                <label for='dtn'>Date de naissance:</label>
+                <input type='date' name='date_de_naiss' id='dtn' value="{{old('date_de_naiss')}}"/><br><br>
+            </div>
 
-            <label for='tpm'>Type de membre:</label>
-            <select name='type_membre' id='tpm'>
-                <option value="Eleve" {{ old('type_membre') == 'Eleve' ? 'selected' : '' }}>Eleve</option>
-                <option value="Professeur" {{ old('type_membre') == 'Professeur' ? 'selected' : '' }}>Professeur</option>
-                <option value="Administrateur" {{ old('type_membre') == 'Administrateur' ? 'selected' : '' }}>Administrateur</option>
-            </select><br><br>
+            <div class="form-group">
+                <label for='tpm'>Type de membre:</label>
+                <select name='type_membre' id='tpm'>
+                    <option value="Eleve" {{ old('type_membre') == 'Eleve' ? 'selected' : '' }}>Eleve</option>
+                    <option value="Professeur" {{ old('type_membre') == 'Professeur' ? 'selected' : '' }}>Professeur</option>
+                    <option value="Administrateur" {{ old('type_membre') == 'Administrateur' ? 'selected' : '' }}>Administrateur</option>
+                </select><br><br>
+            </div>
 
             <button type='submit' name='sinscrire'>S'inscrire</button>
         </form>
@@ -95,7 +119,7 @@
 
                 reader.onload = function (e) {
                     previewImage.src = e.target.result;
-                    previewContainer.style.display = 'block';  
+                    previewContainer.style.display = 'inline-block';  
                 };
 
                 reader.readAsDataURL(file);

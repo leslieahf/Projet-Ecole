@@ -14,6 +14,10 @@ use App\Http\Controllers\ListeOutilsController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ModifUtilisateursController;
 use App\Http\Controllers\SupprimerObjetsController;
+<<<<<<< HEAD
+=======
+use App\Http\Controllers\NiveauController;
+>>>>>>> 67a1e1a (Modofication CSS et modification de controlleurs d'objet, utilisateurs et outils)
 use App\Http\Controllers\SupprimerOutilsController;
 /*
 |--------------------------------------------------------------------------
@@ -68,7 +72,15 @@ Route::get('/administration/{id}', [ModifUtilisateursController::class, 'showFor
 Route::post('/administration/{id}', [ModifUtilisateursController::class, 'update']);
 
 Route::delete('/administration/utilisateur/{id}', [ModifUtilisateursController::class, 'delete']);
+<<<<<<< HEAD
 
 Route::delete('/administration/objet/{id}', [SupprimerObjetsController::class, 'delete']);
 
 Route::delete('/administration/outil/{id}', [SupprimerOutilsController::class, 'delete']);
+=======
+
+Route::delete('/administration/objet/{id}', [SupprimerObjetsController::class, 'delete']);
+
+Route::delete('/administration/outil/{id}', [SupprimerOutilsController::class, 'delete']);
+
+>>>>>>> 67a1e1a (Modofication CSS et modification de controlleurs d'objet, utilisateurs et outils)

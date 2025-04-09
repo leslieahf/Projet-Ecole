@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 /* Général */
 body {
@@ -149,3 +150,180 @@ footer {
     width: 100%;
     bottom: 0;
 }
+=======
+        /* Général */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f7fc; /* Gris clair */
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center; /* Centrer verticalement */
+            align-items: center; /* Centrer horizontalement */
+        }
+
+        .container {
+            max-width: 1200px;
+            width: 100%;
+            padding: 20px;
+        }
+
+        /* Header */
+        header {
+            background-color: #003366; /* Bleu foncé */
+            color: white;
+            padding: 30px 0; /* Hauteur du header plus grande */
+            text-align: center;
+            width: 100%;
+            box-sizing: border-box;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        header div {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        header a {
+            color: white;
+            text-decoration: none;
+            font-size: 30px; /* Agrandir la taille du texte */
+            font-weight: bold;
+        }
+
+        header a:hover {
+            text-decoration: underline;
+        }
+
+        /* Formulaire de connexion */
+        section {
+            background-color: white;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 500px;
+            margin-top: 20px; /* Ajuster la marge du haut */
+            margin-bottom: 20px; /* Ajuster la marge du bas */
+            display: flex;
+            flex-direction: column;
+            justify-content: center; /* Centrer le formulaire */
+            align-items: center; /* Centrer le formulaire */
+        }
+
+        h2 {
+            font-size: 32px; /* Augmenter la taille de la police du titre */
+            color: #003366; /* Bleu foncé */
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        /* Style du formulaire */
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Style des éléments de formulaire avec alignement flex */
+        .form-group {
+            display: flex;
+            align-items: center; /* Aligne verticalement les éléments */
+            margin-bottom: 20px; /* Augmenter l'espacement entre les éléments */
+        }
+
+        /* Label à gauche */
+        label {
+            font-size: 18px; /* Augmenter la taille du texte des labels */
+            color: #003366; /* Couleur bleu foncé pour les labels */
+            width: 35%; /* Taille du label */
+            text-align: right; /* Aligné à droite */
+            margin-right: 10px; /* Espacement entre le label et le champ */
+            font-weight: bold; /* Mettre les labels en gras */
+        }
+        /* Champs d'écriture à droite */
+        input[type="text"],
+        input[type="password"] {
+            padding: 12px;
+            font-size: 20px; /* Augmenter la taille de la police des champs */
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            background-color: #f9fafb;
+            width: 250px; /* Taille des champs */
+        }
+
+        input[type="text"]:focus,
+        input[type="password"]:focus {
+            outline: none;
+            border-color: #003366; /* Bleu foncé au focus */
+            box-shadow: 0 0 5px rgba(0, 51, 102, 0.3); /* Ombre bleu foncé au focus */
+        }
+
+        /* Bouton de connexion */
+        button {
+            padding: 16px 35px; /* Taille agrandie pour le bouton */
+            background-color: #003366; /* Bleu foncé pour le bouton */
+            color: white;
+            border: 2px solid #003366; /* Bordure nette pour le bouton */
+            border-radius: 30px; /* Bords arrondis */
+            font-size: 18px; /* Augmenter la taille de la police du bouton */
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+            width: auto; /* Ajuster la largeur du bouton */
+            margin: 10px auto; /* Centrer le bouton */
+        }
+
+        button:hover {
+            background-color: #002244; /* Bleu plus foncé au survol */
+            transform: scale(1.05); /* Légère agrandissement au survol */
+            box-shadow: 0 4px 10px rgba(0, 51, 102, 0.5); /* Ombre portée au survol */
+        }
+
+        button:active {
+            background-color: #001933; /* Un bleu plus foncé au clic */
+            box-shadow: 0 4px 10px rgba(0, 51, 102, 0.6); /* Ombre plus marquée au clic */
+        }
+
+        /* Erreurs */
+        ul {
+            background-color: #fee2e2;
+            color: #b91c1c;
+            border-radius: 6px;
+            padding: 10px;
+            margin-bottom: 20px;
+            list-style: none;
+        }
+
+        ul li {
+            margin-bottom: 5px;
+        }
+
+        /* Lien d'inscription */
+        .mt-4 {
+            text-align: center;
+        }
+
+        .mt-4 a {
+            color: #003366; /* Bleu foncé */
+            text-decoration: none;
+        }
+
+        .mt-4 a:hover {
+            text-decoration: underline;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #e1e1e1; /* Gris clair */
+            color: #333;
+            text-align: center;
+            padding: 20px 0;
+            font-size: 14px;
+            position: absolute;
+            width: 100%;
+            bottom: 0;
+        }
+>>>>>>> 67a1e1a (Modofication CSS et modification de controlleurs d'objet, utilisateurs et outils)
