@@ -1,0 +1,141 @@
+/* profilautres.css */
+
+/* Reset et styles de base */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f5f7fa;
+    margin: 0;
+    padding: 0;
+}
+
+.main-content {
+    max-width: 4000px; /* Augmentation de la largeur maximale */
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Section principale - Agrandie */
+section {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 40px; /* Plus d'espace intérieur */
+    margin: 30px auto; /* Centrage vertical */
+    width: 100%; /* Utilisation de plus d'espace */
+    overflow: hidden; /* Empêche le débordement */
+}
+
+section p {
+    color: #4a5568;
+    font-size: 1.2rem; /* Texte légèrement plus grand */
+    margin-bottom: 25px;
+}
+
+/* Styles du tableau - Version agrandie */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 25px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    font-size: 1.1rem; /* Taille de police augmentée */
+}
+
+th, td {
+    padding: 20px 15px; /* Plus d'espace dans les cellules */
+    text-align: left;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+th {
+    background-color: #4299e1;
+    color: white;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.95rem; /* Taille légèrement augmentée */
+    letter-spacing: 0.5px;
+    padding: 20px 15px; /* Encore plus d'espace pour les en-têtes */
+}
+
+tr:nth-child(even) {
+    background-color: #f8fafc;
+}
+
+tr:hover {
+    background-color: #ebf8ff;
+    transform: scale(1.01); /* Légère mise en évidence au survol */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Styles pour les images de profil - Agrandies */
+img {
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #bee3f8;
+    width: 100px; /* Taille fixe plus grande */
+    height: 100px;
+}
+
+/* Responsive design */
+@media (max-width: 992px) {
+    .main-content {
+        padding: 15px;
+    }
+    
+    section {
+        padding: 30px 20px;
+        width: 100%;
+        margin: 20px 0;
+        border-radius: 0;
+    }
+    
+    table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+        font-size: 0.95rem;
+    }
+    
+    th, td {
+        padding: 15px 10px;
+        min-width: 120px; /* Largeur minimale pour les cellules */
+    }
+    
+    img {
+        width: 60px;
+        height: 60px;
+    }
+}
+
+/* Animation pour les lignes du tableau */
+tr {
+    transition: all 0.3s ease;
+}
+
+/* Style pour les différents types de membres */
+td:last-child {
+    font-weight: 600; /* Plus gras */
+    color: #2b6cb0;
+}
+
+/* Amélioration du texte */
+td {
+    color: #2d3748;
+    vertical-align: middle; /* Alignement vertical au centre */
+}
+
+/* Style pour les cellules vides */
+td:empty::before {
+    content: "-";
+    color: #a0aec0;
+    font-style: italic;
+}
+
+/* Conteneur du tableau avec barre de défilement si nécessaire */
+.table-container {
+    max-width: 100%;
+    overflow-x: auto;
+    margin: 0 auto;
+    padding: 10px 0;
+}
