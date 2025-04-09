@@ -73,7 +73,10 @@
         <div class="container">
             <h2>Rejoindre la plateforme</h2>
             <p>Inscrivez-vous dès maintenant pour accéder à tous les services et ressources de notre lycée.</p>
-            <a href="/inscription" class="btn-primary">S'inscrire maintenant</a>
+            <div class="inscription-buttons">
+                <a href="/inscription" class="btn-primary">S'inscrire maintenant</a>
+                <a href="/connexion" class="btn-secondary">Se connecter</a>
+            </div>
         </div>
     </section>
 

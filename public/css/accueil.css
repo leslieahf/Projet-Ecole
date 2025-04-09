@@ -55,17 +55,38 @@ a {
     color: white; /* Changement de la couleur du texte en blanc */
 }
 
-.btn-primary {
-    background-color: #38a169;
+/* Boutons communs */
+.btn-primary, .btn-secondary {
+    display: inline-block;
+    background-color: #2563EB;
     color: white;
-    padding: 10px 20px;
-    border-radius: 5px;
-    margin-top: 20px;
-    transition: background-color 0.3s ease;
+    padding: 12px 25px;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 2px solid #2563EB;
+}
+
+.btn-secondary {
+    background-color: transparent;
+    border-color: white;
 }
 
 .btn-primary:hover {
-    background-color: #2f855a;
+    background-color: #1D4ED8;
+    border-color: #1D4ED8;
+}
+
+.btn-secondary:hover {
+    background-color: white;
+    color: #1D4ED8;
+}
+
+/* Hero button specific */
+.hero-content .btn-primary {
+    margin-top: 20px;
 }
 
 /* Présentation Section */
@@ -185,17 +206,25 @@ p {
     color: #ffffff;
 }
 
-.btn-primary {
-    background-color: #2563EB;
-    color: white;
-    padding: 12px 25px;
-    border-radius: 8px;
-    transition: background-color 0.3s ease;
-    font-size: 1.1rem;
+/* Conteneur des boutons */
+.inscription-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
 }
 
-.btn-primary:hover {
-    background-color: #1D4ED8;
+/* Responsive design */
+@media (max-width: 640px) {
+    .inscription-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .btn-primary,
+    .btn-secondary {
+        width: 100%;
+        max-width: 300px;
+    }
 }
 
 /* Footer */
