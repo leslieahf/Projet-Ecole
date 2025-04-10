@@ -26,6 +26,7 @@ class ObjetSeeder extends Seeder
                 'temperature' => 0,
                 'niveau_encre' => null,
                 'niveau_remplissage' => null,
+                'conso_Wh' => 1200
             ]);
         }
 
@@ -40,6 +41,7 @@ class ObjetSeeder extends Seeder
                 'temperature' => null,
                 'niveau_encre' => null,
                 'niveau_remplissage' => null,
+                'conso_Wh' => 700
             ]);
         }
 
@@ -54,6 +56,7 @@ class ObjetSeeder extends Seeder
                 'temperature' => null,
                 'niveau_encre' => null,
                 'niveau_remplissage' => 70,
+                'conso_Wh' => 400
             ]);
         }
 
@@ -66,8 +69,9 @@ class ObjetSeeder extends Seeder
                 'mode' => 'Standard',
                 'etat_batterie' => 10,
                 'temperature' => null,
-                'niveau_encre' => 40,
+                'niveau_encre' => 45,
                 'niveau_remplissage' => null,
+                'conso_Wh' => 1000
             ]);
         }
 
@@ -82,6 +86,7 @@ class ObjetSeeder extends Seeder
                 'temperature' => null,
                 'niveau_encre' => null,
                 'niveau_remplissage' => null,
+                'conso_Wh' => 600
             ]);
         }
     }

@@ -21,6 +21,7 @@ return new class extends Migration
             $table->integer('temperature')->nullable();
             $table->integer('niveau_encre')->nullable();
             $table->integer('niveau_remplissage')->nullable();
+            $table->integer('conso_Wh')->default(0)->nullable();
             $table->timestamps();
         });
     }

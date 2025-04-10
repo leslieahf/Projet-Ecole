@@ -87,6 +87,7 @@
             <div class="inscription-buttons">
                 @if(auth()->guest())
                 <a href="/inscription" class="btn-primary btn-sinscrire">S'inscrire maintenant</a>
+                <a href="/connexion" class="btn-secondary">Se connecter</a>
                 @else
                 <a href="/profil" class="btn-primary">Mon profil</a>
                 <a href="/deconnexion" class="btn-ternary">Se déconnecter</a>
