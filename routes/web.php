@@ -76,4 +76,3 @@ Route::delete('/administration/outil/{id}', [SupprimerOutilsController::class, '
 Route::view('/gestion', 'gestion');
 
 Route::get('/rapport', [RapportController::class, 'generatePDF'])->middleware('auth.advanced_or_expert');
-
