@@ -63,6 +63,8 @@ label {
     color: #1e3a8a;
 }
 
+img{ width:40%; }
+
 input[type="text"],
 input[type="password"],
 input[type="date"],
