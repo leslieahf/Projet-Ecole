@@ -26,7 +26,7 @@ use App\Http\Controllers\SupprimerOutilsController;
 |
 */
 
-Route::view('/accueil1', 'accueil');
+Route::view('/', 'accueil');
 
 Route::get('/ajoututilisateurs', [AjoutUtilisateursController::class, 'showForm']);
 

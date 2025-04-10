@@ -1,5 +1,5 @@
     /* Général */
-    body, html {
+    body{
         height: 100%;
         margin: 0;
         padding: 0;
@@ -27,7 +27,7 @@
     /* Titre centré et bleu */
     .title {
         text-align: center;
-        color: #003366; /* Bleu foncé */
+        color: #fff; /* Bleu foncé */
         font-size: 28px;
         margin-bottom: 20px;
     }
@@ -48,7 +48,7 @@
         text-align: left; /* Alignement à gauche */
     }
 
-    input[type='text'], select, textarea {
+    input[type='text'], select, input[type='date']{
         width: 50%; /* Réduit la largeur des champs */
         padding: 12px; /* Augmenter le padding pour une meilleure lisibilité */
         font-size: 16px; /* Agrandir la police dans les champs */
@@ -57,6 +57,11 @@
         box-sizing: border-box;
         margin-top: 5px; /* Espace au-dessus du champ */
     }
+
+    input[type='date']::-webkit-calendar-picker-indicator{cursor: pointer;}
+
+    select{cursor: pointer;}
+
     /* Bouton Ajouter */
     button[type='submit'] {
         background-color: #003366; /* Bleu foncé pour le bouton Ajouter */

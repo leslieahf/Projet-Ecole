@@ -29,7 +29,7 @@
             
             <!-- Carte Modifier Profil -->
                 <div class="container">
-                    <form class="user-info" action='' method='post'>
+                    <form class="user-info" action='' method='post' enctype="multipart/form-data">
                         @csrf
                         @if ($errors->any())
                         <div style="color: red;">

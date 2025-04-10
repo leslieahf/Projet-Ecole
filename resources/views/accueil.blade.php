@@ -46,22 +46,35 @@
     <section class="events">
         <div class="container">
             <h2>Événements à venir</h2>
-            <div class="event-cards">
-                <div class="event-card">
-                    <h3>Journée Portes Ouvertes</h3>
-                    <p>Venez découvrir notre établissement le 15 septembre !</p>
-                    <p class="date">Date: 15 Septembre 2025</p>
-                </div>
-                <div class="event-card">
-                    <h3>Concours d'Informatique</h3>
-                    <p>Inscrivez-vous pour participer à notre concours de codage annuel !</p>
-                    <p class="date">Date: 20 Octobre 2025</p>
-                </div>
-                <div class="event-card">
-                    <h3>Festival des Arts</h3>
-                    <p>Venez admirer les créations artistiques de nos élèves !</p>
-                    <p class="date">Date: 5 Décembre 2025</p>
-                </div>
+                <nav>
+                    <form class='recherche' action="/" method="get">
+                        <input type="text" name="search" placeholder="Rechercher par nom ou description" value="{{ request('search') }}">
+                        <select name="mode">
+                            <option value="" disabled {{ request('mode') == '' ? 'selected' : '' }}>Filtrer par mode</option>
+                            <option value="Automatique" {{ request('mode') == 'Automatique' ? 'selected' : '' }}>Automatique</option>
+                            <option value="Standard" {{ request('mode') == 'Standard' ? 'selected' : '' }}>Standard</option>
+                            <option value="">Pas de filtre</option>
+                        </select>
+                        <input type='submit' value='Rechercher'/>
+                    </form>
+                </nav>
+            
+                <div class="event-cards">
+                    <div class="event-card">
+                        <h3>Journée Portes Ouvertes</h3>
+                        <p>Venez découvrir notre établissement le 15 septembre !</p>
+                        <p class="date">Date: 15 Septembre 2025</p>
+                    </div>
+                    <div class="event-card">
+                        <h3>Concours d'Informatique</h3>
+                        <p>Inscrivez-vous pour participer à notre concours de codage annuel !</p>
+                        <p class="date">Date: 20 Octobre 2025</p>
+                    </div>
+                    <div class="event-card">
+                        <h3>Festival des Arts</h3>
+                        <p>Venez admirer les créations artistiques de nos élèves !</p>
+                        <p class="date">Date: 5 Décembre 2025</p>
+                    </div>
             </div>
         </div>
     </section>
