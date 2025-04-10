@@ -1,21 +1,22 @@
 @extends('layout')
 
-@section('head') <!-- Section pour remplir le head du layout -->
+@section('head')
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Visualisation - IntelliSchool</title>
-    <link href="{{ asset('css/visualisation.css') }}" rel="stylesheet"> <!-- Lien vers le fichier CSS spécifique -->
+    <link href="{{ asset('css/visualisation.css') }}" rel="stylesheet">
 @endsection
 
 @if (session('success'))
-   <script>
-       alert("{{ session('success') }}");
+@section('scripts')
+    <script>
+        alert("{{ session('success') }}");
         window.location.href = "/visualisation"; 
-   </script>
+    </script>
+@endsection
 @endif
 
 @section('contenu')
-<!-- Main Content -->
 <div class="main-content">
         <nav>
             <form class='recherche' action="/visualisation" method="get">
@@ -33,74 +34,86 @@
             <a href='/profilautres'>Profil des autres membres</a>
         </nav>
         </div>
+    
+    <section class="welcome-section">
+        <h2 class="header-title">Bienvenue, {{Auth()->user()->prenom}} {{Auth()->user()->nom}}</h2>
+        <p class="welcome-message">Nous sommes heureux de vous voir connecté. Explorez les différentes fonctionnalités de la plateforme.</p>
+    </section>
 
-
-    <!-- Page Content -->
-    <section class="py-16 px-6 bg-white">
-        <div class="max-w-7xl mx-auto text-center">
-            <h2 class="header-title text-blue-900 mb-4">Bienvenue, {{Auth()->user()->prenom}} {{Auth()->user()->nom}}</h2>
-            <p class="text-lg text-gray-700 mb-8">Nous sommes heureux de vous voir connecté. Explorez les différentes fonctionnalités de la plateforme.</p>
-        </div>
+    <div class="dashboard-container">
+        <!-- Section Objets Connectés -->
 @if(request('search') || request('mode'))
+<section class="objects-section">
+    <h3 class="section-title">Objets Connectés</h3>
     @if($objets->count() > 0)
-        <p>Voici les objets correspondant à votre recherche :</p>
-        <table>
-            <tr>
-                <th>ID</th>
-                <th>Nom</th>
-                <th>Connectivité</th>
-                <th>Statut</th>
-                <th>Mode</th>
-                <th>Etat de la batterie</th>
-                <th>Température</th>
-                <th>Niveau d'encre</th>
-                <th>Niveau de remplissage</th>
-            </tr>
+        <div class="objects-grid">
             @foreach($objets as $objet)
-                <tr>
-                    <td>{{ $objet->id }}</td>
-                    <td>{{ $objet->nom }}</td>
-                    <td>{{ $objet->connectivite }}</td>
-                    <td>{{ $objet->statut }}</td>
-                    <td>{{ $objet->mode }}</td>
-                    <td>{{ $objet->etat_batterie }}</td>
-                    <td>{{ $objet->temperature ?? 'NULL' }}</td>
-                    <td>{{ $objet->niveau_encre ?? 'NULL' }}</td>
-                    <td>{{ $objet->niveau_remplissage ?? 'NULL' }}</td>
-                </tr>
+                <div class="object-card">
+                    <div class="object-header">
+                        <h4>{{ $objet->nom }}</h4>
+                        <span class="object-status {{ strtolower($objet->statut) }}">{{ $objet->statut }}</span>
+                    </div>
+                    <div class="object-details">
+                        <div class="detail">
+                            <span class="detail-label">Connectivité:</span>
+                            <span>{{ $objet->connectivite }}</span>
+                        </div>
+                        <div class="detail">
+                            <span class="detail-label">Mode:</span>
+                            <span>{{ $objet->mode }}</span>
+                        </div>
+                        <div class="detail">
+                            <span class="detail-label">Batterie:</span>
+                            <span class="battery-level" style="--level: {{ $objet->etat_batterie }}%">
+                                {{ $objet->etat_batterie }}%
+                            </span>
+                        </div>
+                        @if($objet->temperature)
+                        <div class="detail">
+                            <span class="detail-label">Température:</span>
+                            <span>{{ $objet->temperature }}°C</span>
+                        </div>
+                        @endif
+                        @if($objet->niveau_encre)
+                        <div class="detail">
+                            <span class="detail-label">Niveau d'encre:</span>
+                            <div class="ink-level">
+                                <div class="ink-level-bar" style="width: {{ $objet->niveau_encre }}%"></div>
+                            </div>
+                        </div>
+                        @endif
+                    </div>
+                </div>
             @endforeach
-        </table>
+        </div>
     @else
-        <p>Aucun objet trouvé</p></br>
+        <p class="no-results">Aucun objet correspondant à votre recherche.</p>
     @endif
-    @if($outils->count() > 0)
-        <p>Voici les outils/services correspondant à votre recherche :</p>
-        @foreach($outils as $outil)
-            <?php $services = explode(',', $outil->description) ?>
-            <h3 class="outil-title header-title text-blue-900 mb-4">{{ $outil->nom }}</h3>
-            <ul class="service-list">
-                @foreach($services as $service)
-                    <li>{{ $service }}</li>
-                @endforeach
-            </ul>
-        @endforeach
-    @else
-        <p>Aucun outil trouvé</p></br>
-    @endif
-@else
-    <p>Voici les outils et services proposés par la plateforme :</p>
-    @foreach($outils as $outil)
-        <?php $services = explode(',', $outil->description) ?>
-        <h3 class="outil-title header-title text-blue-900 mb-4">{{ $outil->nom }}</h3>
-        <ul class="service-list">
-            @foreach($services as $service)
-                <li>{{ $service }}</li>
-            @endforeach
-        </ul>
-    @endforeach
-@endif
 </section>
+@endif
+
+        <!-- Section Services Disponibles -->
+        <section class="services-section">
+            <h3 class="section-title">Services Disponibles</h3>
+            @if($outils->count() > 0)
+                <div class="services-grid">
+                    @foreach($outils as $outil)
+                        <div class="service-card">
+                            <h4>{{ $outil->nom }}</h4>
+                            <div class="service-description">
+                                <ul class="service-features">
+                                    @foreach(explode(',', $outil->description) as $service)
+                                        <li>{{ $service }}</li>
+                                    @endforeach
+                                </ul>
+                            </div>
+                        </div>
+                    @endforeach
+                </div>
+            @else
+                <p class="no-results">Aucun service correspondant à votre recherche</p>
+            @endif
+        </section>
+    </div>
 </div>
 @endsection
-
-

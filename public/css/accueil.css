@@ -56,9 +56,9 @@ a {
 }
 
 /* Boutons communs */
-.btn-primary, .btn-secondary {
+.btn-primary, .btn-secondary, .btn-ternary {
     display: inline-block;
-    background-color: #003366;
+    background-color: #14589c;
     color: white;
     padding: 12px 25px;
     border-radius: 8px;
@@ -72,8 +72,12 @@ a {
 .btn-sinscrire{  background-color: #1e5e9e; }
 
 .btn-secondary {
-    background-color: transparent;
+    background-color: rgba(0, 128, 0, 0.514);
     border-color: white;
+} 
+
+.btn-ternary {
+    background-color: rgba(255, 0, 0, 0.349);
 } 
 
 .btn-primary:hover {
@@ -83,7 +87,12 @@ a {
 
 .btn-secondary:hover {
     background-color: white;
-    color: #003366;
+    color: green;
+}
+
+.btn-ternary:hover {
+    background-color: #df1f1f;
+    color: white;
 }
 
 /* Hero button specific */

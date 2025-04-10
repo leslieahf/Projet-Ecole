@@ -3,6 +3,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Accueil - IntelliSchool</title>
+    <link rel="icon" type="image/png" href="{{ asset('images/logo.png') }}">
     <link href="{{ asset('css/accueil.css') }}" rel="stylesheet">
 @endsection
 @section('contenu')
@@ -71,7 +72,12 @@
             <h2>Rejoindre la plateforme</h2>
             <p>Inscrivez-vous dès maintenant pour accéder à tous les services et ressources de notre lycée.</p>
             <div class="inscription-buttons">
+                @if(auth()->guest())
                 <a href="/inscription" class="btn-primary btn-sinscrire">S'inscrire maintenant</a>
+                @else
+                <a href="/profil" class="btn-primary">Mon profil</a>
+                <a href="/deconnexion" class="btn-ternary">Se déconnecter</a>
+                @endif
             </div>
         </div>
     </section>

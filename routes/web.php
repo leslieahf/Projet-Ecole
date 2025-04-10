@@ -50,25 +50,25 @@ Route::post('/profil', [ProfilController::class, 'update']) -> middleware('auth.
 
 Route::get('/profilautres', [ListeUtilisateursController::class, 'liste']) -> middleware('auth.custom');
 
-Route::get('/ajoutobjets', [AjoutObjetsController::class, 'showForm']);
+Route::get('/ajoutobjets', [AjoutObjetsController::class, 'showForm'])-> middleware('auth.advanced_or_expert');
 
-Route::post('/ajoutobjets', [AjoutObjetsController::class, 'ajouter']);
+Route::post('/ajoutobjets', [AjoutObjetsController::class, 'ajouter'])-> middleware('auth.advanced_or_expert');
 
 Route::get('/visualisation', [RechercherObjetsController::class, 'rechercher']) -> middleware('auth.custom');
 
-Route::get('/ajoutoutils', [AjoutOutilsController::class, 'showForm']);
+Route::get('/ajoutoutils', [AjoutOutilsController::class, 'showForm'])-> middleware('auth.advanced_or_expert');
 
-Route::post('/ajoutoutils', [AjoutOutilsController::class, 'ajouter']);
+Route::post('/ajoutoutils', [AjoutOutilsController::class, 'ajouter'])-> middleware('auth.advanced_or_expert');
 
-Route::get('/administration', [AdminController::class, 'liste2']);
+Route::get('/administration', [AdminController::class, 'liste2'])-> middleware('auth.advanced_or_expert');
 
-Route::get('/administration/{id}', [ModifUtilisateursController::class, 'showForm']);
+Route::get('/administration/{id}', [ModifUtilisateursController::class, 'showForm'])-> middleware('auth.advanced_or_expert');
 
-Route::post('/administration/{id}', [ModifUtilisateursController::class, 'update']);
+Route::post('/administration/{id}', [ModifUtilisateursController::class, 'update'])-> middleware('auth.advanced_or_expert');
 
-Route::delete('/administration/utilisateur/{id}', [ModifUtilisateursController::class, 'delete']);
+Route::delete('/administration/utilisateur/{id}', [ModifUtilisateursController::class, 'delete'])-> middleware('auth.expert');
 
-Route::delete('/administration/objet/{id}', [SupprimerObjetsController::class, 'delete']);
+Route::delete('/administration/objet/{id}', [SupprimerObjetsController::class, 'delete'])-> middleware('auth.expert');
 
-Route::delete('/administration/outil/{id}', [SupprimerOutilsController::class, 'delete']);
+Route::delete('/administration/outil/{id}', [SupprimerOutilsController::class, 'delete'])-> middleware('auth.expert');
 

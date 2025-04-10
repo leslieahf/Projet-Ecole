@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>@yield('title', 'IntelliSchool')</title>
+    <link rel="icon" type="image/png" href="{{ asset('images/logo.png') }}">
 
     <!-- Lien vers le fichier CSS -->
     <link rel="stylesheet" href="{{ asset('css/layout.css') }}">
@@ -24,6 +25,9 @@
                 <a href="/gestion">Gestion</a>
                 <a href="/visualisation">Visualisation</a>
                 <a href="/administration">Administration</a>
+                @if(!auth()->guest())
+                    <a href="/deconnexion">Se déconnecter</a>
+                @endif
             </div>
         </div>
     </div>
@@ -42,6 +46,7 @@
 
     <!-- Contenu Principal -->
     <div class="main-content">
+        @include('flash::message')
         @yield('contenu')
     </div>
 

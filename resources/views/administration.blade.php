@@ -51,12 +51,13 @@
                     <td>{{ $utilisateur->niveau }}</td>
                     <td>
                         <button class="btn-modify"><a href="/administration/{{ $utilisateur->id }}">Modifier</a></button>
+                        @if(Auth::user()->niveau === 'Expert')
                         <form action="/administration/utilisateur/{{ $utilisateur->id }}" method="POST" style="display:inline;">
                             @csrf
                             @method('delete')
                             <button type="submit" class="btn-delete">Supprimer</button>
                         </form>
-
+                        @endif
                     </td>
                 </tr>
             @endforeach
@@ -84,7 +85,9 @@
                     <th>Température</th>
                     <th>Niveau d'encre</th>
                     <th>Niveau de remplissage</th>
+                    @if(Auth::user()->niveau === 'Expert')
                     <th>Actions</th> <!-- Nouvelle colonne pour les actions -->
+                    @endif
                 </tr>
                 @foreach($objets as $objet)
                 <tr>
@@ -97,6 +100,7 @@
                     <td>{{ $objet->temperature ?? 'NULL' }}</td>
                     <td>{{ $objet->niveau_encre ?? 'NULL' }}</td>
                     <td>{{ $objet->niveau_remplissage ?? 'NULL' }}</td>
+                    @if(Auth::user()->niveau === 'Expert')
                     <td>
                     <form action="/administration/objet/{{ $objet->id }}" method="POST" style="display:inline;">
                         @csrf
@@ -104,6 +108,7 @@
                         <button type="submit" class="btn-delete">Supprimer</button>
                     </form>
                     </td>
+                    @endif
                 </tr>
                 @endforeach
             </table>
@@ -123,12 +128,15 @@
                 <tr>
                     <th>Nom</th>
                     <th>Description</th>
+                    @if(Auth::user()->niveau === 'Expert')
                     <th>Actions</th> <!-- Nouvelle colonne pour les actions -->
+                    @endif
                 </tr>
                 @foreach($outils as $outil)
                 <tr>
                     <td>{{ $outil->nom }}</td>
                     <td>{{ $outil->description }}</td>
+                    @if(Auth::user()->niveau === 'Expert')
                     <td>
                     <form action="/administration/outil/{{ $outil->id }}" method="POST" style="display:inline;">
                         @csrf
@@ -137,6 +145,7 @@
                     </form>
 
                     </td>
+                    @endif
                 </tr>
                 @endforeach
             </table>
