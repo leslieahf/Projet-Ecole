@@ -1,4 +1,5 @@
-* {
+ /* Global Styles */
+ * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -48,29 +49,46 @@ a {
     font-weight: bold;
 }
 
-.hero-content h2 {
-    font-size: 2.3rem;
-    font-weight: bold;
-    color: white;
-}
-
 .hero-content p {
     font-size: 1.25rem;
     margin-top: 10px;
     color: white; /* Changement de la couleur du texte en blanc */
 }
 
-.btn-primary {
-    background-color: #38a169;
+/* Boutons communs */
+.btn-primary, .btn-secondary {
+    display: inline-block;
+    background-color: #003366;
     color: white;
-    padding: 10px 20px;
-    border-radius: 5px;
-    margin-top: 20px;
-    transition: background-color 0.3s ease;
+    padding: 12px 25px;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 2px solid #003366;
 }
 
+.btn-sinscrire{  background-color: #1e5e9e; }
+
+.btn-secondary {
+    background-color: transparent;
+    border-color: white;
+} 
+
 .btn-primary:hover {
-    background-color: #2f855a;
+    background-color: white;
+    color: #003366;
+}
+
+.btn-secondary:hover {
+    background-color: white;
+    color: #003366;
+}
+
+/* Hero button specific */
+.hero-content .btn-primary {
+    margin-top: 20px;
 }
 
 /* Présentation Section */
@@ -87,9 +105,10 @@ a {
 
 h2 {
     font-size: 2.5rem;
-    color: #1a365d;
+    color: #f0faff;
     margin-bottom: 20px;
 }
+
 
 p {
     font-size: 1.125rem;
@@ -169,38 +188,49 @@ p {
     margin-top: 10px;
 }
 
+.container h2{
+    color:#003366
+}
 /* Connexion Section */
-.connexion {
+.inscription {
     padding: 50px 20px;
-    background-color: #1D4ED8;
+    background-color: #003366;
     color: white;
     text-align: center;
     border-radius: 10px;
 }
 
-.connexion h2 {
+.inscription h2 {
     font-size: 2.5rem;
     margin-bottom: 20px;
     color: #ffffff;
 }
 
-.connexion p {
+.inscription p {
     font-size: 1.25rem;
     margin-bottom: 30px;
     color: #ffffff;
 }
 
-.btn-primary {
-    background-color: #2563EB;
-    color: white;
-    padding: 12px 25px;
-    border-radius: 8px;
-    transition: background-color 0.3s ease;
-    font-size: 1.1rem;
+/* Conteneur des boutons */
+.inscription-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
 }
 
-.btn-primary:hover {
-    background-color: #1D4ED8;
+/* Responsive design */
+@media (max-width: 640px) {
+    .inscription-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .btn-primary,
+    .btn-secondary {
+        width: 100%;
+        max-width: 300px;
+    }
 }
 
 /* Footer */
@@ -213,3 +243,4 @@ footer {
     color: #4a5568;
     position: relative;
 }
+

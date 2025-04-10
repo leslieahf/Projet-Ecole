@@ -1,0 +1,119 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f7fc;
+    margin: 0;
+    padding: 0;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Forcer le body à occuper toute la hauteur de la fenêtre */
+}
+
+h1, h2, p {
+    color: #003366; /* Bleu foncé */
+}
+
+/* Formulaire d'ajout d'utilisateur */
+form {
+    display: block;
+    width: 100%;
+    max-width: 600px; /* Limiter la largeur du formulaire */
+    margin: 20px auto; /* Centrer le formulaire */
+    padding: 30px;
+    background-color: white;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+/* Titre dans le formulaire */
+form h2 {
+    text-align: center; /* Centrer le titre dans le formulaire */
+    color: #003366; /* Bleu foncé */
+    margin-bottom: 30px; /* Espacement avant le formulaire */
+}
+
+/* Style des lignes du formulaire */
+.form-group {
+    display: flex;
+    align-items: center; /* Aligner les items verticalement au centre */
+    margin-bottom: 15px; /* Espacement entre les champs */
+}
+
+/* Style des labels */
+label {
+    font-size: 16px;
+    font-weight: bold;
+    color: #003366; /* Bleu foncé */
+    width: 30%; /* Largeur du label */
+    margin-right: 10px; /* Espacement entre le label et le champ */
+}
+
+/* Style des champs d'entrée et de sélection */
+input[type='text'], select, input[type='date'] {
+    width: 70%; /* Largeur du champ d'écriture */
+    padding: 12px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+/* Pour les erreurs de validation */
+.error {
+    color: red;
+    font-size: 14px;
+}
+
+/* Bouton Ajouter */
+.btn-add {
+    background-color: #003366; /* Bleu foncé pour le bouton Ajouter */
+    color: white;
+    padding: 12px 30px;
+    font-size: 16px;
+    border-radius: 30px;
+    width: 100%; /* Largeur à 100% pour occuper toute la largeur du formulaire */
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.btn-add:hover {
+    background-color: #002244; /* Bleu plus foncé au survol */
+    box-shadow: 0 4px 10px rgba(0, 123, 255, 0.4); /* Ombre portée au survol */
+}
+
+.btn-add:active {
+    background-color: #001933; /* Un bleu encore plus foncé au clic */
+    box-shadow: 0 4px 10px rgba(0, 123, 255, 0.6); /* Ombre plus marquée au clic */
+}
+
+
+/* Style responsive */
+@media (max-width: 768px) {
+    form {
+        padding: 20px; /* Réduire le padding sur mobile */
+    }
+
+    .btn-add {
+        padding: 12px 20px; /* Ajuster le bouton sur mobile */
+    }
+}
+
+/* Garder le footer en bas de la page */
+.container {
+    flex: 1; /* Permet au contenu de prendre tout l'espace disponible avant le footer */
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Forcer le body à occuper toute la hauteur de la fenêtre */
+}
+/* Titre dans le container */
+.container h2 {
+    text-align: center; /* Centrer le titre horizontalement */
+    color: #003366; /* Bleu foncé */
+    margin-bottom: 30px; /* Espacement avant le formulaire */
+    width: 100%; /* S'assurer que le titre prend toute la largeur du conteneur */
+}

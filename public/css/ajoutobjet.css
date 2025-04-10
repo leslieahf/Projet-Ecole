@@ -1,0 +1,100 @@
+       /* Général */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f7fc;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh; /* Forcer le body à occuper toute la hauteur de la fenêtre */
+        }
+
+        h1, h2, p {
+            color: #003366; /* Bleu foncé */
+        }
+
+
+        /* Formulaire d'ajout d'objet */
+        form {
+            display: block;
+            width: 100%;
+            max-width: 600px; /* Limiter la largeur du formulaire */
+            margin: 20px auto; /* Centrer le formulaire */
+            padding: 30px;
+            background-color: white;
+            box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        label {
+            font-size: 16px;
+            font-weight: bold;
+            color: #003366; /* Bleu foncé */
+            margin-bottom: 5px;
+            width: 30%; /* Largeur du label */
+            display: inline-block;
+        }
+
+        input[type='text'], select {
+            width: 65%; /* Largeur du champ d'écriture */
+            padding: 12px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+            box-sizing: border-box;
+            display: inline-block;
+        }
+
+        /* Pour les erreurs de validation */
+        .error {
+            color: red;
+            font-size: 14px;
+        }
+
+        /* Bouton Ajouter */
+        .btn-add {
+            background-color: #003366; /* Bleu foncé pour le bouton Ajouter */
+            color: white;
+            padding: 8px 20px; /* Réduire la taille du bouton */
+            font-size: 14px; /* Réduire la taille du texte */
+            border-radius: 30px;
+            width: 100%; /* Largeur à 100% pour occuper toute la largeur du formulaire */
+            text-align: center;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            margin-top: 15px; /* Espacement entre le dernier champ et le bouton */
+        }
+
+        .btn-add:hover {
+            background-color: #002244; /* Bleu plus foncé au survol */
+            box-shadow: 0 4px 10px rgba(0, 123, 255, 0.4); /* Ombre portée au survol */
+        }
+
+        .btn-add:active {
+            background-color: #001933; /* Un bleu encore plus foncé au clic */
+            box-shadow: 0 4px 10px rgba(0, 123, 255, 0.6); /* Ombre plus marquée au clic */
+        }
+
+
+
+        /* Style responsive */
+        @media (max-width: 768px) {
+            form {
+                padding: 20px; /* Réduire le padding sur mobile */
+            }
+
+            .btn-add {
+                padding: 10px 20px; /* Ajuster le bouton sur mobile */
+            }
+
+            label {
+                width: 100%; /* 100% sur mobile pour que le label prenne toute la largeur */
+                margin-bottom: 10px;
+            }
+
+            input[type='text'], select {
+                width: 100%; /* Largeur 100% sur mobile pour que le champ prenne toute la largeur */
+            }
+        }

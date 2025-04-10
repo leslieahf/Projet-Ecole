@@ -1,0 +1,210 @@
+/* Reset et base */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Structure générale */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f7fc;
+    color: #333;
+    line-height: 1.6;
+    min-height: 100vh;
+}
+
+/* Structure principale */
+.main-content {
+    padding: 2rem;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+/* Styles pour la navigation */
+nav {
+    background-color: #ffffff;
+    padding: 1rem 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 2rem;
+    justify-content: center;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+nav a {
+    color: #4a5568;
+    text-decoration: none;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+}
+
+nav a:hover, nav a#current {
+    color: #ffffff;
+    background-color: #3182ce;
+}
+
+/* Conteneur principal */
+.main-container {
+    width: 95%;
+    max-width: 1400px;
+    margin: 2rem auto;
+    padding: 1.5rem;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* En-tête */
+.section-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.section-title {
+    color: #003366;
+    font-size: 1.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+}
+
+.section-subtitle {
+    color: #555;
+    font-size: 1.1rem;
+}
+
+/* Conteneur du tableau */
+.table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+    margin: 1.5rem 0;
+    border-radius: 6px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+}
+
+/* Tableau - Style principal */
+.profile-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    font-size: 0.95rem;
+    background: white;
+}
+
+/* En-têtes de colonnes */
+.profile-table thead th {
+    background-color: #003366;
+    color: white;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    padding: 1rem 1.25rem;
+    text-align: left;
+    position: sticky;
+    top: 0;
+    vertical-align: middle; /* Alignement vertical */
+    border-bottom: 2px solid #002244;
+    width: 1000px;
+}
+
+/* Cellules du tableau */
+.profile-table tbody td {
+    padding: 1.25rem;
+    color: #444;
+    vertical-align: middle; /* Alignement vertical */
+    border-bottom: 1px solid #e0e0e0;
+    height: 60px; /* Hauteur fixe pour uniformité */
+}
+
+/* Lignes alternées */
+.profile-table tbody tr:nth-child(even) {
+    background-color: #f8fafc;
+}
+
+/* Survol des lignes */
+.profile-table tbody tr:hover {
+    background-color: #f0f7ff;
+}
+
+/* Image de profil */
+.profile-avatar {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #003366;
+    display: block;
+    margin: 0 auto;
+}
+
+/* Type de membre */
+.member-type {
+    font-weight: 600;
+    color: #003366;
+    text-transform: capitalize;
+}
+
+/* Cellules vides */
+.profile-table td:empty::before {
+    content: "—";
+    color: #999;
+    font-style: italic;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+    .main-container {
+        width: 98%;
+        padding: 1rem;
+    }
+    
+    .profile-table thead th,
+    .profile-table tbody td {
+        padding: 0.8rem;
+        font-size: 0.9rem;
+    }
+    
+    .profile-avatar {
+        width: 50px;
+        height: 50px;
+    }
+}
+
+@media (max-width: 768px) {
+    .profile-table {
+        display: block;
+        white-space: nowrap;
+    }
+    
+    .section-title {
+        font-size: 1.5rem;
+    }
+}
+
+/* Boutons cohérents avec administration.css */
+.action-btn {
+    display: inline-block;
+    padding: 0.6rem 1.2rem;
+    border-radius: 4px;
+    font-weight: 500;
+    text-align: center;
+    transition: all 0.2s;
+    cursor: pointer;
+}
+
+.btn-primary {
+    background: #003366;
+    color: white;
+    border: 1px solid #002244;
+}
+
+.btn-primary:hover {
+    background: #002244;
+    transform: translateY(-1px);
+}

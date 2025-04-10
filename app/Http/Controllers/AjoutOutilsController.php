@@ -7,21 +7,28 @@ use Illuminate\Http\Request;
 
 class AjoutOutilsController extends Controller
 {
+    // Affichage du formulaire d'ajout
     public function showForm()
     {
         return view('ajoutoutils');
     }
 
+    // Méthode pour ajouter un outil
     public function ajouter()
     {
+        // Validation des champs du formulaire
         request()->validate([
             'nom' => ['required', 'string'],
             'description' => ['required', 'string'],
         ]);
+        
+        // Création d'un nouvel outil
         $outil = Outils::create([
-        'nom' => request('nom'),
-        'description' => request('description'),
+            'nom' => request('nom'),
+            'description' => request('description'),
         ]);
-    return redirect('/ajoutoutils')->with(['success' => 'Outil ajouté avec succès !']) ;
+
+        // Redirection vers la page d'administration avec un message de succès
+        return redirect('/administration')->with(['success' => 'Outil ajouté avec succès !']);
     }
 }

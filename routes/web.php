@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AjoutUtilisateursController;
 use App\Http\Controllers\InscriptionController; 
 use App\Http\Controllers\ConnexionController; 
+use App\Http\Controllers\CompteController; 
 use App\Http\Controllers\ProfilController; 
 use App\Http\Controllers\ListeUtilisateursController; 
 use App\Http\Controllers\AjoutObjetsController;
@@ -25,7 +26,7 @@ use App\Http\Controllers\SupprimerOutilsController;
 |
 */
 
-Route::view('/', 'accueil');
+Route::view('/accueil1', 'accueil');
 
 Route::get('/ajoututilisateurs', [AjoutUtilisateursController::class, 'showForm']);
 
@@ -39,19 +40,21 @@ Route::get('/connexion', [ConnexionController::class, 'showForm']);
 
 Route::post('/connexion', [ConnexionController::class, 'connexion']);
 
-Route::view('/visualisation', 'visualisation');
+Route::get('/deconnexion', [CompteController::class, 'deconnexion']);
 
-Route::get('/profil', [ProfilController::class, 'showForm']);
+Route::view('/visualisation', 'visualisation') -> middleware('auth.custom');
 
-Route::post('/profil', [ProfilController::class, 'update']);
+Route::get('/profil', [ProfilController::class, 'showForm']) -> middleware('auth.custom');
 
-Route::get('/profilautres', [ListeUtilisateursController::class, 'liste']);
+Route::post('/profil', [ProfilController::class, 'update']) -> middleware('auth.custom');
+
+Route::get('/profilautres', [ListeUtilisateursController::class, 'liste']) -> middleware('auth.custom');
 
 Route::get('/ajoutobjets', [AjoutObjetsController::class, 'showForm']);
 
 Route::post('/ajoutobjets', [AjoutObjetsController::class, 'ajouter']);
 
-Route::get('/visualisation', [RechercherObjetsController::class, 'rechercher']);
+Route::get('/visualisation', [RechercherObjetsController::class, 'rechercher']) -> middleware('auth.custom');
 
 Route::get('/ajoutoutils', [AjoutOutilsController::class, 'showForm']);
 
@@ -68,3 +71,4 @@ Route::delete('/administration/utilisateur/{id}', [ModifUtilisateursController::
 Route::delete('/administration/objet/{id}', [SupprimerObjetsController::class, 'delete']);
 
 Route::delete('/administration/outil/{id}', [SupprimerOutilsController::class, 'delete']);
+

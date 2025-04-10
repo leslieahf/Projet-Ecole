@@ -1,95 +1,26 @@
 @extends('layout')
+
+@section('head') <!-- Section pour remplir le head du layout -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visualisation - IntelliSchool</title>
+    <link href="{{ asset('css/visualisation.css') }}" rel="stylesheet"> <!-- Lien vers le fichier CSS spécifique -->
+@endsection
+
 @if (session('success'))
    <script>
        alert("{{ session('success') }}");
         window.location.href = "/visualisation"; 
    </script>
 @endif
-<style>
-    body {
-        font-family: 'Roboto', sans-serif;
-        min-height: 100vh;
-        background-color: #f7fafc;
-        margin: 0;
-    }
 
-    /* Contenu principal ajusté */
-    .main-content {
-        padding: 20px;
-        flex-grow: 1;
-    }
-
-    footer {
-        margin-top: 20px;
-    }
-
-    /* Styles déjà définis pour le contenu */
-    .header-title {
-        font-size: 32px;
-        font-weight: 600;
-    }
-
-    .section-header {
-        font-size: 24px;
-        font-weight: 500;
-    }
-
-    /* Assurer que le texte ne dépasse pas */
-    .cta-button {
-        background-color: #3182ce;
-        color: white;
-        padding: 12px 24px;
-        border-radius: 8px;
-        text-transform: uppercase;
-        font-weight: bold;
-        width: 100%;
-        text-align: center;
-        transition: background-color 0.3s ease;
-        margin-top: auto;
-        box-sizing: border-box;
-    }
-
-    .cta-button:hover {
-        background-color: #2b6cb0;
-    }
-
-    /* Header avec un bouton de déconnexion à droite */
-    .header-content {
-        width: 100%;
-    }
-
-    /* Style pour le titre des outils (en gras et plus grand) */
-    .outil-title {
-        font-size: 24px;
-        font-weight: bold; 
-        margin-top: 20px;
-        margin-bottom: 10px;
-    }
-
-    /* Liste des services avec des puces */
-    .service-list {
-        list-style-type: disc; 
-        padding-left: 20px; 
-        color: #555; 
-    }
-
-    .service-list li {
-        font-size: 16px; 
-        margin-bottom: 8px; 
-    }
-
-</style>
 @section('contenu')
 <!-- Main Content -->
 <div class="main-content">
-    <!-- Header -->
-    <header class="bg-blue-900 text-white p-6 shadow-md">
-        <div class="header-content">
-                <p class="text-xl font-semibold">Lycée Connecté</p>
         <nav>
             <form class='recherche' action="/visualisation" method="get">
                 <input type="text" name="search" placeholder="Rechercher par nom ou description" value="{{ request('search') }}">
-                <select name="mode">
+                <select class='filtrerselect' name="mode">
                     <option value="" disabled {{ request('mode') == '' ? 'selected' : '' }}>Filtrer par mode</option>
                     <option value="Automatique" {{ request('mode') == 'Automatique' ? 'selected' : '' }}>Automatique</option>
                     <option value="Standard" {{ request('mode') == 'Standard' ? 'selected' : '' }}>Standard</option>
@@ -102,7 +33,7 @@
             <a href='/profilautres'>Profil des autres membres</a>
         </nav>
         </div>
-    </header>
+
 
     <!-- Page Content -->
     <section class="py-16 px-6 bg-white">

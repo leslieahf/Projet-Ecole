@@ -1,43 +1,75 @@
 @extends('layout')
+<link rel="stylesheet" href="{{ asset('css/ajoututil.css') }}">
 @if (session('success'))
    <script>
        alert("{{ session('success') }}");
-        window.location.href = "/ajoututilisateurs"; 
+       window.location.href = "/ajoututilisateurs"; 
    </script>
 @endif
+
 @section('contenu')
-<form action='/ajoututilisateurs' method='post'>
-    @csrf
-    @if ($errors->any())
-        <div style="color: red;">
-            <ul>
-                @foreach ($errors->all() as $error)
-                    <p>{{ $error }}</p>
-                @endforeach
-            </ul>
-        </div>
-    @endif
-    <label for='pren'>Prenom:</label>
-    <input type='text' name='prenom' id='pren' value="{{old('prenom')}}"/></br></br>
-    <label for='nom'>Nom:</label>
-    <input type='text' name='nom' id='nom' value="{{old('nom')}}"/></br></br>
-    <label for='mail'>Email:</label>
-    <input type='text' name='email' id='mail' value="{{old('email')}}"/></br></br>
-    <label for='age'>Age:</label>
-    <input type='text' name='age' id='age' value="{{old('age')}}"/></br></br>
-    <label for='sex'>Sexe:</label>
-    <select name='sexe' id='sex'>
-        <option value="Féminin" {{ old('sexe') == 'Féminin' ? 'selected' : '' }}>Féminin</option>
-        <option value="Masculin" {{ old('sexe') == 'Masculin' ? 'selected' : '' }}>Masculin</option>
-    </select></br></br>
-    <label for='dtn'>Date de naissance:</label>
-    <input type='date' name='date_de_naiss' id='dtn' value="{{old('date_de_naiss')}}"/></br></br>
-    <label for='tpm'>Type de membre:</label>
-    <select name='type_membre' id='tpm'>
-        <option value="Eleve" {{ old('type_membre') == 'Eleve' ? 'selected' : '' }}>Eleve</option>
-        <option value="Professeur" {{ old('type_membre') == 'Professeur' ? 'selected' : '' }}>Professeur</option>
-        <option value="Administrateur" {{ old('type_membre') == 'Administrateur' ? 'selected' : '' }}>Administrateur</option>
-    </select></br></br>
-    <button type='submit' name='ajouter'>Ajouter</button>
-</form>
+
+    <div class="container">
+        
+        <h2>Ajouter un utilisateur</h2>
+        <!-- Formulaire d'ajout d'utilisateur avec le titre inclus -->
+        <form action='/ajoututilisateurs' method='post'>
+            
+            @csrf
+            @if ($errors->any())
+                <div class="error">
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+            @endif
+
+            <div class="form-group">
+                <label for='pren'>Prénom:</label>
+                <input type='text' name='prenom' id='pren' value="{{ old('prenom') }}"/>
+            </div>
+
+            <div class="form-group">
+                <label for='nom'>Nom:</label>
+                <input type='text' name='nom' id='nom' value="{{ old('nom') }}"/>
+            </div>
+
+            <div class="form-group">
+                <label for='mail'>Email:</label>
+                <input type='text' name='email' id='mail' value="{{ old('email') }}"/>
+            </div>
+
+            <div class="form-group">
+                <label for='age'>Âge:</label>
+                <input type='text' name='age' id='age' value="{{ old('age') }}"/>
+            </div>
+
+            <div class="form-group">
+                <label for='sex'>Sexe:</label>
+                <select name='sexe' id='sex'>
+                    <option value="Féminin" {{ old('sexe') == 'Féminin' ? 'selected' : '' }}>Féminin</option>
+                    <option value="Masculin" {{ old('sexe') == 'Masculin' ? 'selected' : '' }}>Masculin</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for='dtn'>Date de naissance:</label>
+                <input type='date' name='date_de_naiss' id='dtn' value="{{ old('date_de_naiss') }}"/>
+            </div>
+
+            <div class="form-group">
+                <label for='tpm'>Type de membre:</label>
+                <select name='type_membre' id='tpm'>
+                    <option value="Eleve" {{ old('type_membre') == 'Eleve' ? 'selected' : '' }}>Élève</option>
+                    <option value="Professeur" {{ old('type_membre') == 'Professeur' ? 'selected' : '' }}>Professeur</option>
+                    <option value="Administrateur" {{ old('type_membre') == 'Administrateur' ? 'selected' : '' }}>Administrateur</option>
+                </select>
+            </div>
+
+            <button type='submit' name='ajouter' class="btn-add">Ajouter</button>
+        </form>
+    </div>
+
 @endsection

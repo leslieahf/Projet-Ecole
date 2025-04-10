@@ -1,15 +1,12 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
+@extends('layout')
+@section('head')
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Bienvenue sur le site du Lycée Connecté. Découvrez nos formations, événements et bien plus encore.">
-    <title>Accueil - Lycée Connecté</title>
-    <link rel="stylesheet" href="{{ asset('css/accueil.css') }}">
-</head>
-
-<body>
-
+    <title>Accueil - IntelliSchool</title>
+    <link href="{{ asset('css/accueil.css') }}" rel="stylesheet">
+@endsection
+@section('contenu')
+<div class="main-container">
     <!-- Hero Section -->
     <section class="hero">
         <div class="overlay"></div>
@@ -18,7 +15,7 @@
             <br>
             <h2>Bienvenue sur le site du lycée connecté</h2>
             <p>Explorez nos formations, événements et bien plus encore</p>
-            <a href="#connexion" class="btn-primary">Rejoindre la plateforme</a>
+            <a href="#inscription" class="btn-primary">Rejoindre la plateforme</a>
         </div>
     </section>
 
@@ -68,19 +65,16 @@
         </div>
     </section>
 
-    <!-- Section Connexion -->
-    <section id="connexion" class="connexion">
+    <!-- Section Inscription -->
+    <section id="inscription" class="inscription">
         <div class="container">
             <h2>Rejoindre la plateforme</h2>
-            <p>Connectez-vous dès maintenant pour accéder à tous les services et ressources de notre lycée.</p>
-            <a href="/connexion" class="btn-primary">Se connecter maintenant</a>
+            <p>Inscrivez-vous dès maintenant pour accéder à tous les services et ressources de notre lycée.</p>
+            <div class="inscription-buttons">
+                <a href="/inscription" class="btn-primary btn-sinscrire">S'inscrire maintenant</a>
+            </div>
         </div>
     </section>
+@endsection
 
-    <!-- Footer -->
-    <footer>
-        &copy; 2025 Lycée Connecté IntelliSchool. Tous droits réservés.
-    </footer>
-
-</body>
-</html>
+    
