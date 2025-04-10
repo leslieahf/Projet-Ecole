@@ -9,6 +9,13 @@
 
 @section('contenu')
 <div class="main-container">
+    
+    <nav>
+        <a href='/visualisation'>Accueil</a>
+        <a href='/profil'>Profil</a>
+        <a class='profilautres' href='/profilautres' id='current'>Profil des autres membres</a>
+    </nav>
+    
     <!-- En-tête de section -->
     <div class="section-header">
         <h1 class="section-title">Profil des membres</h1>

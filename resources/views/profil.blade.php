@@ -9,6 +9,13 @@
 
 @section('contenu')
 
+    <nav>
+        <a href='/visualisation'>Accueil</a>
+        <a class='profil' href='/profil' id='current'>Profil</a>
+        <a href='/profilautres'>Profil des autres membres</a>
+    </nav>
+
+
     <!-- Page Content -->
     <section class="py-16 px-6 bg-white">
         @if(session('message'))
