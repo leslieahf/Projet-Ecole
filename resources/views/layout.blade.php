@@ -41,6 +41,7 @@
 
     <!-- Contenu Principal -->
     <div class="main-content">
+        @include('flash::message')
         @yield('contenu')
     </div>
 
