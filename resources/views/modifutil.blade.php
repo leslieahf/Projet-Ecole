@@ -4,7 +4,7 @@
     <div class="content">
         <div class="container">
             <!-- Titre centré et bleu -->
-            <h2 class="title">Modifier un utilisateur</h2>
+            <h2>Modifier un utilisateur</h2>
 
             <!-- Formulaire de modification d'utilisateur -->
             <form action='/administration/{{ $utilisateur->id }}' method='post'>
