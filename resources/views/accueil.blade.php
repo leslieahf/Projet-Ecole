@@ -74,8 +74,13 @@
             <h2>Rejoindre la plateforme</h2>
             <p>Inscrivez-vous dès maintenant pour accéder à tous les services et ressources de notre lycée.</p>
             <div class="inscription-buttons">
+                @if(auth()->guest())
                 <a href="/inscription" class="btn-primary">S'inscrire maintenant</a>
                 <a href="/connexion" class="btn-secondary">Se connecter</a>
+                @else
+                <a href="/profil" class="btn-primary">Mon profil</a>
+                <a href="/deconnexion" class="btn-ternary">Se déconnecter</a>
+                @endif
             </div>
         </div>
     </section>
