@@ -21,8 +21,8 @@
             <div class="menu-bar"></div>
             <div class="menu-bar"></div>
             <div class="dropdown-content">
-                @if(!auth()->guest())
                 <a href="/">Accueil</a>
+                @if(!auth()->guest())
                 <a href="/visualisation">Visualisation</a>
                 <a href="/gestion">Gestion</a>
                 <a href="/administration">Administration</a>
