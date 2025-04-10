@@ -96,5 +96,11 @@
         </div>
     </section>
 @endsection
+@if(session()->has('js_message3'))
+    <script>
+        alert("{!! session('js_message3') !!}");
+        {{ session()->forget('js_message3') }} 
+    </script>
+@endif
 
     

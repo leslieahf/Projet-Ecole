@@ -61,11 +61,11 @@ Route::get('/ajoutoutils', [AjoutOutilsController::class, 'showForm'])-> middlew
 
 Route::post('/ajoutoutils', [AjoutOutilsController::class, 'ajouter'])-> middleware('auth.advanced_or_expert');
 
-Route::get('/administration', [AdminController::class, 'liste2'])-> middleware('auth.advanced_or_expert');
+Route::get('/administration', [AdminController::class, 'liste2'])-> middleware('auth.expert');
 
-Route::get('/administration/{id}', [ModifUtilisateursController::class, 'showForm'])-> middleware('auth.advanced_or_expert');
+Route::get('/administration/{id}', [ModifUtilisateursController::class, 'showForm'])-> middleware('auth.expert');
 
-Route::post('/administration/{id}', [ModifUtilisateursController::class, 'update'])-> middleware('auth.advanced_or_expert');
+Route::post('/administration/{id}', [ModifUtilisateursController::class, 'update'])-> middleware('auth.expert');
 
 Route::delete('/administration/utilisateur/{id}', [ModifUtilisateursController::class, 'delete'])-> middleware('auth.expert');
 
@@ -73,6 +73,6 @@ Route::delete('/administration/objet/{id}', [SupprimerObjetsController::class, '
 
 Route::delete('/administration/outil/{id}', [SupprimerOutilsController::class, 'delete'])-> middleware('auth.expert');
 
-Route::view('/gestion', 'gestion');
+Route::view('/gestion', 'gestion')-> middleware('auth.advanced_or_expert');
 
 Route::get('/rapport', [RapportController::class, 'generatePDF'])->middleware('auth.advanced_or_expert');

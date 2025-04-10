@@ -47,7 +47,7 @@
 
     <!-- Contenu Principal -->
     <div class="main-content">
-        @include('flash::message')
+       
         @yield('contenu')
     </div>
 
@@ -77,6 +77,7 @@
                 }
             });
         </script>
-
+        
 </body>
+@yield('scripts')
 </html>

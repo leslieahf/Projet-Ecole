@@ -16,6 +16,7 @@
 @endsection
 @endif
 
+
 @section('contenu')
 <div class="main-content">
         <nav>
@@ -117,3 +118,16 @@
     </div>
 </div>
 @endsection
+@if (session('js_message'))
+    <script>
+        alert("{{ session('js_message') }}");
+        {{ session()->forget('js_message') }} 
+    </script>
+@endif
+
+@if(session()->has('js_message2'))
+    <script>
+        alert("{!! session('js_message2') !!}");
+        {{ session()->forget('js_message2') }} 
+    </script>
+@endif

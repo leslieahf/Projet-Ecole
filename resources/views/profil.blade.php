@@ -52,6 +52,8 @@
 
                         <div class='points'>
                             <div>
+                                <p class='pfont1'>Nombre de connexions : {{ auth()->user()->nbre_connexions }}</p>
+                                <p class='pfont1'>Nombre de consultations : {{ auth()->user()->nbre_consultations }}</p>
                                 <p class='pfont1'>Points d'expérience : {{ auth()->user()->points_exp }}</p>
                                 <p class='pfont2'>Niveau actuel : {{ auth()->user()->niveau }}</p>
                             </div>

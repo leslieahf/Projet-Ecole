@@ -53,3 +53,9 @@
 
 </body>
 @endsection
+@if(session()->has('js_message'))
+    <script>
+        alert("{{ session('js_message') }}");
+        {{ session()->forget('js_message') }}
+    </script>
+@endif
