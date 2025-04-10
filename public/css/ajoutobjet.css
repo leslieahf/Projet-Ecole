@@ -14,7 +14,6 @@
             color: #003366; /* Bleu foncé */
         }
 
-
         /* Formulaire d'ajout d'objet */
         form {
             display: block;
@@ -46,6 +45,8 @@
             box-sizing: border-box;
             display: inline-block;
         }
+
+        select{ cursor: pointer;}
 
         /* Pour les erreurs de validation */
         .error {

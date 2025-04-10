@@ -31,7 +31,6 @@
 
 
 
-
         /* Formulaire d'ajout d'objet */
         form {
             flex: 1;
@@ -111,8 +110,6 @@
             }
         }
 
-
-
         .content {
             flex: 1; /* Cette section prend tout l'espace restant */
         }
@@ -125,16 +122,4 @@
             margin-bottom: 20px;
         }
 
-        /* Conteneur principal */
-        .container {
-            width: 60%; /* Réduit la largeur à 60% */
-            margin: 20px auto;
-            padding: 20px;
-            background-color: white;
-            box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
-            border-radius: 8px;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between; /* Garantit que le contenu et le bouton sont espacés */
-            height: 350px; /* Réduit la hauteur du conteneur */
-        }
+    

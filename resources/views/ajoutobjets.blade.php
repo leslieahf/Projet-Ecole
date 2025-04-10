@@ -9,10 +9,8 @@
 
 @section('contenu')
 
-
+<div class="content">
     <div class="container">
-        <!-- Titre centré à l'intérieur du formulaire -->
-        <h2 style="text-align: center; margin-bottom: 20px;">Ajouter un objet</h2>
 
         <!-- Formulaire d'ajout d'objet -->
         <form action='/ajoutobjets' method='post'>
@@ -26,7 +24,8 @@
                     </ul>
                 </div>
             @endif
-
+            <!-- Titre centré à l'intérieur du formulaire -->
+            <h2 style="text-align: center; margin-bottom: 20px;">Ajouter un objet</h2>
             <div class="form-group">
                 <label for='id'>ID unique:</label>
                 <input type='text' name='id' id='id' value="{{ old('id') }}"/>
@@ -94,5 +93,5 @@
             <button type='submit' name='ajouter' class="btn-add">Ajouter</button>
         </form>
     </div>
-
+</div>
 @endsection

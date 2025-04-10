@@ -72,3 +72,5 @@ Route::delete('/administration/objet/{id}', [SupprimerObjetsController::class, '
 
 Route::delete('/administration/outil/{id}', [SupprimerOutilsController::class, 'delete'])-> middleware('auth.expert');
 
+Route::view('/gestion', 'gestion');
+

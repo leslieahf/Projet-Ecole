@@ -1,5 +1,5 @@
 @extends('layout')
-
+<link rel="stylesheet" href="{{ asset('css/ajoutoutils.css') }}">
 @if (session('success'))
    <script>
        alert("{{ session('success') }}");
@@ -8,10 +8,6 @@
 @endif
 
 @section('contenu')
-
-<link rel="stylesheet" href="{{ asset('css/ajoutoutils.css') }}">
-
-    
 
     <div class="content">
         <div class="container">

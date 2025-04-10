@@ -10,11 +10,10 @@
 @section('contenu')
 
     <div class="container">
-        
-        <h2>Ajouter un utilisateur</h2>
+    
         <!-- Formulaire d'ajout d'utilisateur avec le titre inclus -->
         <form action='/ajoututilisateurs' method='post'>
-            
+            <h2>Ajouter un utilisateur</h2>
             @csrf
             @if ($errors->any())
                 <div class="error">

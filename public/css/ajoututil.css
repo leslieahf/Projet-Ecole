@@ -59,6 +59,10 @@ input[type='text'], select, input[type='date'] {
     box-sizing: border-box;
 }
 
+input[type='date']::-webkit-calendar-picker-indicator{cursor: pointer;}
+
+select{cursor: pointer;}
+
 /* Pour les erreurs de validation */
 .error {
     color: red;
