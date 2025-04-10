@@ -42,10 +42,11 @@ class ProfilController extends Controller
                 'sexe' => ['required', 'string'],
                 'date_de_naiss' =>['required', 'date'],
                 'type_membre' => ['required', 'string'],
+                'photo' => ['image', 'nullable'],
             ]);
             $utilisateur = Auth::user();
             if($utilisateur && request()->validate='true'){
-                $utilisateur->update([
+                $data = [
                     'prenom' => request('prenom'),
                     'nom' => request('nom'),
                     'email' => request('email'),
@@ -55,7 +56,14 @@ class ProfilController extends Controller
                     'sexe' => request('sexe'),
                     'date_de_naissance' => request('date_de_naiss'),
                     'type_membre' => request('type_membre'),
-                ]);
+                ];
+
+                if(request()->hasFile('photo') && request('photo')->isValid()){
+                    $path = request('photo')->store('photo', 'public');
+                    $data['photo'] = $path;
+                }
+
+                $utilisateur->update($data);
                 return redirect('/visualisation')->with(['success' => 'Votre profil a été modifié avec succès !']);
             }
             else {
