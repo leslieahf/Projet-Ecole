@@ -67,8 +67,12 @@ par défaut. Il faut pour cela exécuter les commandes suivantes :
 php artisan migrate
 ```
 
-```phpser
+```php
 php artisan db:seed
+```
+
+```php
+php artisan storage:link
 ```
 
 Par défaut, trois utilisateurs sont déjà présents:
