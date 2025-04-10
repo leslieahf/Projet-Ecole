@@ -15,6 +15,7 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ModifUtilisateursController;
 use App\Http\Controllers\SupprimerObjetsController;
 use App\Http\Controllers\SupprimerOutilsController;
+use App\Http\Controllers\RapportController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -73,4 +74,6 @@ Route::delete('/administration/objet/{id}', [SupprimerObjetsController::class, '
 Route::delete('/administration/outil/{id}', [SupprimerOutilsController::class, 'delete'])-> middleware('auth.expert');
 
 Route::view('/gestion', 'gestion');
+
+Route::get('/rapport', [RapportController::class, 'generatePDF'])->middleware('auth.advanced_or_expert');
 

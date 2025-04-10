@@ -37,7 +37,7 @@ Note : vous pouvez également préciser la version de PHP souhaitée dans le nom
 ### Installer les dépendances du projet
 
 Le projet est basé sur le framework Laravel. Pour l'installer avec ses dépendances, il faut vous placer à l'intérieur du
-dossier et exécuter la commande suivante :
+dossier et exécuter les commandes suivantes :
 
 ```php
 composer install
@@ -45,6 +45,10 @@ composer install
 
 ```php
 composer require laracasts/flash
+```
+
+```php
+composer require barryvdh/laravel-dompdf
 ```
 
 ### Environnement

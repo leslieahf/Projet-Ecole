@@ -41,13 +41,13 @@
                     <td>{{ $utilisateur->prenom }}</td>
                     <td>{{ $utilisateur->nom }}</td>
                     <td>{{ $utilisateur->email }}</td>
-                    <td>{{ $utilisateur->age }}</td>
+                    <td style="text-align: center;">{{ $utilisateur->age }}</td>
                     <td>{{ $utilisateur->sexe }}</td>
-                    <td>{{ $utilisateur->date_de_naissance }}</td>
+                    <td style="text-align: center;">{{ $utilisateur->date_de_naissance }}</td>
                     <td>{{ $utilisateur->type_membre }}</td>
-                    <td>{{ $utilisateur->nbre_connexions }}</td>
-                    <td>{{ $utilisateur->nbre_consultations }}</td>
-                    <td>{{ $utilisateur->points_exp }}</td>
+                    <td style="text-align: center;">{{ $utilisateur->nbre_connexions }}</td>
+                    <td style="text-align: center;">{{ $utilisateur->nbre_consultations }}</td>
+                    <td style="text-align: center;">{{ $utilisateur->points_exp }}</td>
                     <td>{{ $utilisateur->niveau }}</td>
                     <td>
                         <button class="btn-modify"><a href="/administration/{{ $utilisateur->id }}">Modifier</a></button>
@@ -85,21 +85,23 @@
                     <th>Température</th>
                     <th>Niveau d'encre</th>
                     <th>Niveau de remplissage</th>
+                    <th>Consommation (Wh)</th>
                     @if(Auth::user()->niveau === 'Expert')
                     <th>Actions</th> <!-- Nouvelle colonne pour les actions -->
                     @endif
                 </tr>
                 @foreach($objets as $objet)
                 <tr>
-                    <td>{{ $objet->id }}</td>
+                    <td style="text-align: left;">{{ $objet->id }}</td>
                     <td>{{ $objet->nom }}</td>
                     <td>{{ $objet->connectivite }}</td>
                     <td>{{ $objet->statut }}</td>
                     <td>{{ $objet->mode }}</td>
-                    <td>{{ $objet->etat_batterie }}</td>
-                    <td>{{ $objet->temperature ?? 'NULL' }}</td>
-                    <td>{{ $objet->niveau_encre ?? 'NULL' }}</td>
-                    <td>{{ $objet->niveau_remplissage ?? 'NULL' }}</td>
+                    <td style="text-align: center;">{{ $objet->etat_batterie }}</td>
+                    <td style="text-align: center;" >{{ $objet->temperature ?? 'NULL' }}</td>
+                    <td style="text-align: center;">{{ $objet->niveau_encre ?? 'NULL' }}</td>
+                    <td style="text-align: center;">{{ $objet->niveau_remplissage ?? 'NULL' }}</td>
+                    <td style="text-align: center;">{{ $objet->conso_Wh ?? 'NULL' }}</td>
                     @if(Auth::user()->niveau === 'Expert')
                     <td>
                     <form action="/administration/objet/{{ $objet->id }}" method="POST" style="display:inline;">
