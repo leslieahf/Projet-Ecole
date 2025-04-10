@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Bienvenue sur le site du Lycée Connecté. Découvrez nos formations, événements et bien plus encore.">
     <title>Accueil - Lycée Connecté</title>
+    <link rel="icon" type="image/png" href="{{ asset('images/logo.png') }}">
     <link rel="stylesheet" href="{{ asset('css/accueil.css') }}">
 </head>
 
