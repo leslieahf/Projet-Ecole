@@ -21,11 +21,12 @@
             <div class="menu-bar"></div>
             <div class="menu-bar"></div>
             <div class="dropdown-content">
-                <a href="/accueil1">Accueil</a>
-                <a href="/gestion">Gestion</a>
-                <a href="/visualisation">Visualisation</a>
-                <a href="/administration">Administration</a>
+                
+                <a href="/">Accueil</a>
                 @if(!auth()->guest())
+                    <a href="/gestion">Gestion</a>
+                    <a href="/visualisation">Visualisation</a>
+                    <a href="/administration">Administration</a>
                     <a href="/deconnexion">Se déconnecter</a>
                 @endif
             </div>
@@ -36,7 +37,8 @@
         <img src="{{ asset('images/logo.png') }}" alt="Logo" class="logo">
         <span class="title">IntelliSchool</span>
     </div>
-
+    
+        
     <!-- Logo Profil à droite -->
     <a href="/profil" class="profil-link">
         <img src="{{ asset('images/logo_profil.png') }}" alt="Profil" class="profil-logo">
@@ -55,7 +57,6 @@
     <footer>
         &copy; 2025 Lycée Connecté IntelliSchool. Tous droits réservés.
     </footer>
-
 
     
         <!-- Script JS pour le menu déroulant -->
