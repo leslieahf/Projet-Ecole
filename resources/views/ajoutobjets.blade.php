@@ -14,6 +14,8 @@
 
         <!-- Formulaire d'ajout d'objet -->
         <form action='/ajoutobjets' method='post'>
+            <!-- Titre centré à l'intérieur du formulaire -->
+            <h2 style="text-align: center; margin-bottom: 20px;">Ajouter un objet</h2>
             @csrf
             @if ($errors->any())
                 <div class="error">
@@ -24,8 +26,6 @@
                     </ul>
                 </div>
             @endif
-            <!-- Titre centré à l'intérieur du formulaire -->
-            <h2 style="text-align: center; margin-bottom: 20px;">Ajouter un objet</h2>
             <div class="form-group">
                 <label for='id'>ID unique:</label>
                 <input type='text' name='id' id='id' value="{{ old('id') }}"/>
@@ -88,6 +88,11 @@
             <div class="form-group">
                 <label for='niv_remp'>Niveau de remplissage:</label>
                 <input type='text' name='niveau_remplissage' id='niv_remp' value="{{ old('niveau_remplissage') }}"/>
+            </div>
+
+            <div class="form-group">
+                <label for='conso_wh'>Consommation(Wh):</label>
+                <input type='text' name='conso_wh' id='conso_wh' value="{{ old('conso_wh') }}"/>
             </div>
 
             <button type='submit' name='ajouter' class="btn-add">Ajouter</button>

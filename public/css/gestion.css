@@ -69,6 +69,7 @@ h1, h2, h3 {
     box-shadow: 0 2px 10px rgba(0,0,0,0.1); /* Ombre légère */
     padding: 20px;           /* Espacement intérieur */
     margin-bottom: 20px;     /* Marge entre les cartes */
+    overflow-x: auto;
 }
 
 /* 
@@ -115,6 +116,15 @@ h1, h2, h3 {
 /* 
  * Styles des tableaux 
  */
+.table-caption {
+    font-size: 1.6em;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    color: #003366; /* Bleu foncé */
+    font-weight: bold;
+    text-align: center;
+}
+
 table {
     width: 100%;            /* Pleine largeur */
     border-collapse: collapse; /* Bordures fusionnées */
@@ -125,9 +135,14 @@ table {
  * Cellules de tableau 
  */
 th, td {
-    padding: 12px 15px;     /* Espacement intérieur */
+    padding: 4px;     /* Espacement intérieur */
     text-align: left;       /* Alignement du texte */
     border-bottom: 1px solid #ddd; /* Bordure inférieure */
+}
+
+table th:nth-child(6){
+    white-space: nowrap; /* Force le texte à rester sur une seule ligne */
+    min-width: 1px;
 }
 
 /* 
@@ -179,6 +194,10 @@ tr:hover {
     color: white;
 }
 
+ .add{
+    color: #fff;
+    text-decoration: none;
+ }
 /* 
  * Groupes de formulaire 
  */

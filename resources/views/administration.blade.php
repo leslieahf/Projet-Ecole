@@ -3,7 +3,6 @@
 @if (session('success'))
    <script>
        alert("{{ session('success') }}");
-       window.location.href = "/administration"; 
    </script>
 @endif
 
@@ -23,7 +22,7 @@
         <div class="table-container">
             <table>
                 <tr>
-                    <th>Prenom</th>
+                    <th>Prénom</th>
                     <th>Nom</th>
                     <th>Email</th>
                     <th>Age</th>

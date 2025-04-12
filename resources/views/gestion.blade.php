@@ -7,21 +7,143 @@
     <link href="{{ asset('css/gestion.css') }}" rel="stylesheet">
 @endsection
 
+@if (session('success_dem'))
+   <script>
+       alert("{{ session('success_dem') }}");
+   </script>
+@endif
+
+@if (session('success_stat'))
+   <script>
+       alert("{{ session('success_stat') }}");
+   </script>
+@endif
+
+@if (session('success_obj'))
+   <script>
+       alert("{{ session('success_obj') }}");
+   </script>
+@endif
+
 @section('contenu')
     <section class="welcome-section">
         <h1 class="header-title">Gestion des Objets Connectés</h1>
-        <p class="welcome-message">Configuration et surveillance des équipements intelligents</p>
+        <p class="welcome-message">Gestion, configuration et surveillance des équipements intelligents</p>
     </section>
 
     <div class="container">
         <div class="tabs">
-            <div class="tab active" onclick="openTab('configuration')">Configuration</div>
+            <div class="tab active" onclick="openTab('gestion')">Gestion</div>
+            <div class="tab" onclick="openTab('configuration')">Configuration</div>
             <div class="tab" onclick="openTab('surveillance')">Surveillance</div>
             <div class="tab" onclick="openTab('rapports')">Rapports</div>
         </div>
         
+        <!-- Onglet Gestion -->
+<div id="gestion" class="tab-content active">
+    <div class="card">
+        <h2>Gestions des objets connectés</h2></br>
+        <button class='btn btn-primary'><a class='add' href='/ajoutobjets'>Ajouter un objet</a></button>
+      
+        <!-- Container for the table with horizontal scrolling -->
+        <div class="table-caption">
+            <strong>Liste des objets</strong>
+        </div>
+            <table>
+                <tr>
+                    <th>ID</th>
+                    <th>Nom</th>
+                    <th>Connectivité</th>
+                    <th>Statut</th>
+                    <th>Mode</th>
+                    <th>Etat de la batterie</th>
+                    <th>Température</th>
+                    <th>Niveau d'encre</th>
+                    <th>Niveau de remplissage</th>
+                    <th>Consommation (Wh)</th>
+                    <th>Actions</th> 
+                </tr>
+                @foreach($objets as $objet)
+                <tr>
+                    <td>{{ $objet->id }}</td>
+                    <td>{{ $objet->nom }}</td>
+                    <td>{{ $objet->connectivite }}</td>
+                    <td>{{ $objet->statut }}</td>
+                    <td>{{ $objet->mode }}</td>
+                    <td style="text-align: center;">{{ $objet->etat_batterie }}</td>
+                    <td style="text-align: center;">{{ $objet->temperature ?? 'NULL' }}</td>
+                    <td style="text-align: center;">{{ $objet->niveau_encre ?? 'NULL' }}</td>
+                    <td style="text-align: center;">{{ $objet->niveau_remplissage ?? 'NULL' }}</td>
+                    <td style="text-align: center;">{{ $objet->conso_Wh ?? 'NULL' }}</td>
+                    <td>
+                    <form action="/gestion/demandesup/{{ $objet->id }}" method="post" style="display:inline;">
+                        @csrf
+                        <button class="btn btn-primary" type='submit'>Demander la suppression</button></br>
+                    </form>
+                    <div style="display: flex; gap: 3px;">
+                    <button class="btn btn-warning"><a class="add" href="/gestion/{{ $objet->id }}">Modifier</a></button></br>
+                    @php
+                        // Définir les classes & libellés selon le statut
+                        $statut = $objet->statut;
+                        switch ($statut) {
+                            case 'Actif':
+                                $btnClass = 'btn-danger';
+                                $label = 'Désactiver';
+                                break;
+                            case 'Inactif':
+                                $btnClass = 'btn-secondary';
+                                $label = 'Activer';
+                                break;
+                            case 'Déverrouillé':
+                                $btnClass = 'btn-danger';
+                                $label = 'Verrouiller';
+                                break;
+                            case 'Verrouillé':
+                                $btnClass = 'btn-secondary';
+                                $label = 'Déverrouiller';
+                                break;
+                            case 'En ligne':
+                                $btnClass = 'btn-danger';
+                                $label = 'Mettre hors ligne';
+                                break;
+                            case 'Hors ligne':
+                                $btnClass = 'btn-secondary';
+                                $label = 'Mettre en ligne';
+                                break;
+                            case 'Plein':
+                                $btnClass = 'btn-danger';
+                                $label = 'Vider';
+                                break;
+                            case 'Vide':
+                                $btnClass = 'btn-secondary';
+                                $label = 'Remplir';
+                                break;
+                            case 'En marche':
+                                $btnClass = 'btn-danger';
+                                $label = 'Eteindre';
+                                break;
+                            case 'Eteint':
+                                $btnClass = 'btn-secondary';
+                                $label = 'Allumer';
+                                break;
+                        }
+                    @endphp
+                    <form action="/gestion/controlstatut/{{ $objet->id }}" method="POST" style="display:inline;">
+                        @csrf
+                        <button class="btn {{ $btnClass }}" type="submit">
+                            {{ $label }}
+                        </button>
+                    </form>
+                    </div>
+                    </td>
+                </tr>
+                @endforeach
+            </table>
+    </div>
+</div>
+
         <!-- Onglet Configuration -->
-        <div id="configuration" class="tab-content active">
+        <div id="configuration" class="tab-content">
             <div class="card">
                 <h2>Associer des objets à des zones</h2>
                 <div class="form-group">

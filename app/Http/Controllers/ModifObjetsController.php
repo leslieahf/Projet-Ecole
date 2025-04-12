@@ -5,18 +5,20 @@ namespace App\Http\Controllers;
 use App\Models\Objets;
 use Illuminate\Http\Request;
 
-class AjoutObjetsController extends Controller
+class ModifObjetsController extends Controller
 {
-    public function showForm()
+
+    public function showForm($id)
     {
-        return view('ajoutobjets');
+        $objet = Objets::find($id); 
+        return view('modifobjets', compact('objet')); 
     }
 
-    public function ajouter()
+    public function update($id)
     {
-        // Validation des données du formulaire
-        request()->validate([
-            'id' => ['required', 'string', 'unique:objets,id'],
+      $objet = Objets::find($id); 
+      request()->validate([
+            'id' => ['required', 'string'],
             'nom' => ['required', 'string'],
             'connectivite' => ['required', 'string'],
             'statut' => ['required', 'string'],
@@ -27,9 +29,9 @@ class AjoutObjetsController extends Controller
             'niveau_remplissage' => ['nullable', 'integer'],
             'conso_wh' => ['nullable', 'integer'],
         ]);
-
-        // Création de l'objet dans la base de données
-        Objets::create([
+        $objet = Objets::find($id);
+        if($objet && request()->validate='true'){
+        $objet->update([
             'id' => request('id'),
             'nom' => request('nom'),
             'connectivite' => request('connectivite'),
@@ -40,8 +42,8 @@ class AjoutObjetsController extends Controller
             'niveau_encre' => request('niveau_encre'),
             'niveau_remplissage' => request('niveau_remplissage'),
             'conso_Wh' => request('conso_wh'),
-        ]);
-        
-        return redirect()->back()->with('success', 'Objet ajouté avec succès !');
+            ]);
+            return redirect('/gestion')->with(['success_obj' => 'Objet modifié avec succès !']);
+        }
     }
 }

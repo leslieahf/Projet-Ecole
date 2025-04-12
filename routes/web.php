@@ -16,6 +16,9 @@ use App\Http\Controllers\ModifUtilisateursController;
 use App\Http\Controllers\SupprimerObjetsController;
 use App\Http\Controllers\SupprimerOutilsController;
 use App\Http\Controllers\RapportController;
+use App\Http\Controllers\DemandeSuppressionController;
+use App\Http\Controllers\ControlerStatutController;
+use App\Http\Controllers\ModifObjetsController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -76,3 +79,13 @@ Route::delete('/administration/outil/{id}', [SupprimerOutilsController::class, '
 Route::view('/gestion', 'gestion')-> middleware('auth.advanced_or_expert');
 
 Route::get('/rapport', [RapportController::class, 'generatePDF'])->middleware('auth.advanced_or_expert');
+
+Route::get('/gestion', [DemandeSuppressionController::class, 'showlisteobjets'])->middleware('auth.advanced_or_expert');
+
+Route::get('/gestion/{id}', [ModifObjetsController::class, 'showForm'])->middleware('auth.advanced_or_expert');
+
+Route::post('/gestion/{id}', [ModifObjetsController::class, 'update'])->middleware('auth.advanced_or_expert');
+
+Route::post('/gestion/demandesup/{id}', [DemandeSuppressionController::class, 'demandesup'])->middleware('auth.advanced_or_expert');
+
+Route::post('/gestion/controlstatut/{id}', [ControlerStatutController::class, 'controlstatut'])->middleware('auth.advanced_or_expert');
