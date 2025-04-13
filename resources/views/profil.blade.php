@@ -97,7 +97,36 @@
                             <option value="Administrateur" {{ old('type_membre', $utilisateur->type_membre) == 'Administrateur' ? 'selected' : '' }}>Administrateur</option>
                         </select>
 
-                        <button class="btn btn-primary btnmod" name='action' value='action2' type='submit' name='modifier'>Modifier</button>
+                        <!-- Réinitialisation du mot de passe -->
+                        <div class="password-reset-section" style="margin: 1.5rem 0;">
+                            <button type="button" 
+                                    class="btn btn-secondary" 
+                                    onclick="showPasswordReset()"
+                                    style="background-color: #e53e3e; color: white;">
+                                Réinitialiser le mot de passe
+                            </button>
+
+                            <div id="passwordResetForm" style="display: none; margin-top: 1rem;">
+                                <label for="current_password">Mot de passe actuel:</label>
+                                <input type="password" name="current_password" id="current_password" class="mdp">
+
+                                <label for="new_password">Nouveau mot de passe:</label>
+                                <input type="password" name="new_password" id="new_password" class="mdp">
+
+                                <label for="new_password_confirmation">Confirmer le nouveau mot de passe:</label>
+                                <input type="password" name="new_password_confirmation" id="new_password_confirmation" class="mdp">
+
+                                <button type="submit" 
+                                        class="btn btn-primary" 
+                                        name="action" 
+                                        value="reset_password"
+                                        style="margin-top: 1rem;">
+                                    Confirmer la réinitialisation
+                                </button>
+                            </div>
+                        </div>
+
+                      <button class="btn btn-primary btnmod" name='action' value='action2' type='submit' name='modifier'>Modifier</button>
                     </form>
                 </div>
             </div>
@@ -123,6 +152,12 @@
             previewContainer.style.display = 'none';  
         }
     }
+    
+    function showPasswordReset() {
+    const form = document.getElementById('passwordResetForm');
+    form.style.display = form.style.display === 'none' ? 'block' : 'none';
+}
+    
 </script>
 
 @endsection

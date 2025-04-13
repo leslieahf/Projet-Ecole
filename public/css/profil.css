@@ -253,4 +253,30 @@ select:focus {
         gap: 1rem;
     }
 }
-    
+
+/* Styles pour la réinitialisation de mot de passe */
+.password-reset-section {
+    background-color: #fff5f5;
+    padding: 1.5rem;
+    border-radius: 8px;
+    border-left: 4px solid #e53e3e;
+}
+
+.btn-secondary {
+    background-color: #e53e3e;
+    color: white;
+    border: none;
+}
+
+.btn-secondary:hover {
+    background-color: #c53030;
+}
+
+#passwordResetForm {
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}    
