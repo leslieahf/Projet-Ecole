@@ -109,6 +109,8 @@
                             <tr>
                                 <th>ID</th>
                                 <th>Nom</th>
+                                <th>Type</th>
+                                <th class="text-center">Salle</th>
                                 <th>Connectivité</th>
                                 <th>Statut</th>
                                 <th>Mode</th>
@@ -127,6 +129,8 @@
                             <tr>
                                 <td>{{ $objet->id }}</td>
                                 <td>{{ $objet->nom }}</td>
+                                <td>{{ $objet->type }}</td>
+                                <td class="text-center">{{ $objet->salle }}</td>
                                 <td>{{ $objet->connectivite }}</td>
                                 <td>{{ $objet->statut }}</td>
                                 <td>{{ $objet->mode }}</td>

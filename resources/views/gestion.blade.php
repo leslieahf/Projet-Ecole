@@ -53,22 +53,26 @@
                 <tr>
                     <th>ID</th>
                     <th>Nom</th>
+                    <th>Type</th>
+                    <th style="text-align: center;">Salle</th>
                     <th>Connectivité</th>
-                    <th>Statut</th>
+                    <th style="text-align: center;">Statut</th>
                     <th>Mode</th>
-                    <th>Etat de la batterie</th>
+                    <th style="text-align: center;">Etat de la batterie</th>
                     <th>Température</th>
                     <th>Niveau d'encre</th>
                     <th>Niveau de remplissage</th>
-                    <th>Consommation (Wh)</th>
+                    <th style="text-align: center;">Consommation (Wh)</th>
                     <th>Actions</th> 
                 </tr>
                 @foreach($objets as $objet)
                 <tr>
                     <td>{{ $objet->id }}</td>
                     <td>{{ $objet->nom }}</td>
-                    <td>{{ $objet->connectivite }}</td>
-                    <td>{{ $objet->statut }}</td>
+                    <td>{{ $objet->type }}</td>
+                    <td style="text-align: center;">{{ $objet->salle }}</td>
+                    <td style="text-align: center;">{{ $objet->connectivite }}</td>
+                    <td style="text-align: center;">{{ $objet->statut }}</td>
                     <td>{{ $objet->mode }}</td>
                     <td style="text-align: center;">{{ $objet->etat_batterie }}</td>
                     <td style="text-align: center;">{{ $objet->temperature ?? 'NULL' }}</td>

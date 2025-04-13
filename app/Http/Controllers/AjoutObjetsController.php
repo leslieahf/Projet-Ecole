@@ -18,6 +18,8 @@ class AjoutObjetsController extends Controller
         request()->validate([
             'id' => ['required', 'string', 'unique:objets,id'],
             'nom' => ['required', 'string'],
+            'type' => ['required', 'string'],
+            'salle' => ['required', 'string'],
             'connectivite' => ['required', 'string'],
             'statut' => ['required', 'string'],
             'mode' => ['required', 'string'],
@@ -32,6 +34,8 @@ class AjoutObjetsController extends Controller
         Objets::create([
             'id' => request('id'),
             'nom' => request('nom'),
+            'type' => request('type'),
+            'salle' => request('salle'),
             'connectivite' => request('connectivite'),
             'statut' => request('statut'),
             'mode' => request('mode'),

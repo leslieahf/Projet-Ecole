@@ -20,6 +20,8 @@ class ModifObjetsController extends Controller
       request()->validate([
             'id' => ['required', 'string'],
             'nom' => ['required', 'string'],
+            'type' => ['required', 'string'],
+            'salle' => ['required', 'string'],
             'connectivite' => ['required', 'string'],
             'statut' => ['required', 'string'],
             'mode' => ['required', 'string'],
@@ -34,6 +36,8 @@ class ModifObjetsController extends Controller
         $objet->update([
             'id' => request('id'),
             'nom' => request('nom'),
+            'type' => request('type'),
+            'salle' => request('salle'),
             'connectivite' => request('connectivite'),
             'statut' => request('statut'),
             'mode' => request('mode'),

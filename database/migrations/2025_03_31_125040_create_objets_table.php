@@ -14,6 +14,8 @@ return new class extends Migration
         Schema::create('objets', function (Blueprint $table) {
             $table->string('id');
             $table->string('nom');
+            $table->string('type');
+            $table->string('salle');
             $table->string('connectivite');
             $table->string('statut');
             $table->string('mode');

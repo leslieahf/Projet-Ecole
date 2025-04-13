@@ -42,6 +42,7 @@
     /* Style pour les champs et labels alignés horizontalement */
     .form-group {
         display: flex;
+        flex-direction: row; /* Maintenir l'alignement horizontal */
         align-items: center; /* Aligne verticalement les éléments */
         margin-bottom: 8px; /* Réduit l'espace entre les champs */
     }
@@ -56,7 +57,7 @@
     }
 
     input[type='text'], select, input[type='date']{
-        width: 50%; /* Réduit la largeur des champs */
+        width: 70%; /* Réduit la largeur des champs */
         padding: 12px; /* Augmenter le padding pour une meilleure lisibilité */
         font-size: 16px; /* Agrandir la police dans les champs */
         border: 1px solid #ccc;

@@ -15,6 +15,8 @@ class Objets extends Model implements Authenticatable
     protected $fillable = [
         'id',
         'nom',
+        'type',
+        'salle',
         'connectivite',
         'statut',
         'mode',
