@@ -19,6 +19,7 @@ use App\Http\Controllers\RapportController;
 use App\Http\Controllers\DemandeSuppressionController;
 use App\Http\Controllers\ControlerStatutController;
 use App\Http\Controllers\ModifObjetsController;
+use App\Http\Controllers\RechercherEvenementsController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -31,6 +32,8 @@ use App\Http\Controllers\ModifObjetsController;
 */
 
 Route::view('/', 'accueil');
+
+Route::get('/', [RechercherEvenementsController::class, 'rechercher']);
 
 Route::get('/ajoututilisateurs', [AjoutUtilisateursController::class, 'showForm']);
 

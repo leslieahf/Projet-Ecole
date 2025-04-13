@@ -1,4 +1,8 @@
 @extends('layout')
+@php
+    use Carbon\Carbon;
+@endphp
+
 @section('head')
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -43,10 +47,11 @@
     </section>
 
     <!-- Section des événements -->
-    <section class="events">
+    <section id="events" class="events">
         <div class="container">
             <h2>Événements à venir</h2>
-            <nav>
+
+<!--            <nav>
                 <form class='recherche' id="filterForm">
                     <input type="text" id="searchInput" placeholder="Rechercher par nom ou description">
                     <select id="modeSelect">
@@ -75,6 +80,32 @@
                     <p class="date">Date: 5 Décembre 2025</p>
                 </div>
             </div>
+        -->
+
+                <nav>
+                    <form class='recherche' id="filterForm" action="/#events" method="get">
+                        <input type="text" name="search" placeholder="Rechercher par titre ou description" value="{{ request('search') }}">
+                        <select name="annee">
+                            <option value="" disabled {{ request('annee') == '' ? 'selected' : '' }}>Filtrer par année</option>
+                            <option value="2025" {{ request('annee') == '2025' ? 'selected' : '' }}>2025</option>
+                            <option value="2026" {{ request('annee') == '2026' ? 'selected' : '' }}>2026</option>
+                            <option value="">Pas de filtre</option>
+                        </select>
+                        <input type='submit' value='Rechercher'/>
+                    </form>
+                </nav>
+
+                @if(request('search') || request('annee'))
+                <div class="event-cards">
+                    @foreach($evenements as $evenement)
+                    <div class="event-card">
+                        <h3>{{ $evenement->titre }}</h3>
+                        <p>{{ $evenement->description }}</p>
+                        <p class="date">Date: {{ $evenement->date->locale('fr')->isoFormat('D MMMM YYYY') }}</p>
+                    </div>
+                    @endforeach
+                </div>
+                @endif
         </div>
     </section>
 
