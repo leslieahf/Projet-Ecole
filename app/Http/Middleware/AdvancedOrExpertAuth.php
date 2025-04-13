@@ -21,7 +21,7 @@ class AdvancedOrExpertAuth
             return redirect('/connexion');
         }
 
-        if(auth()->user()->niveau === 'Avancé' || auth()->user()->niveau === 'Expert') {
+        if(auth()->user()->niveau === 'Avancé' || auth()->user()->niveau === 'Expert' || auth()->user()->type_membre === "Professeur"|| auth()->user()->type_membre === "Administrateur"){
             return $next($request);
         }
         //flash("Vous n'avez pas le niveau requis pour cela.")->error();

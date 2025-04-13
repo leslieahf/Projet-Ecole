@@ -15,7 +15,7 @@ class IntermediaireOrAdvancedOrExpertAuth
      */
     public function handle(Request $request, Closure $next): Response
     {
-        if(auth()->guest()){
+/*         if(auth()->guest()){
             flash("Vous devez être connecté pour voir cette page.")->error();
             return redirect('/connexion');
         }
@@ -24,7 +24,7 @@ class IntermediaireOrAdvancedOrExpertAuth
             return $next($request);
         }
 
-        flash("Vous n'avez pas le niveau requis pour cela.")->error();
+        flash("Vous n'avez pas le niveau requis pour cela.")->error(); */
         return redirect('/visualisation');
     }
 } 

@@ -21,12 +21,19 @@ class ExpertAuth
             return redirect('/connexion');
         }
 
-        if(auth()->user()->niveau !== 'Expert') {
+/*         if(auth()->user()->niveau !== 'Expert') {
             //flash("Vous n'avez pas le niveau requis pour cela.")->error();
             session()->put('js_message2', "Vous n'avez pas le niveau requis pour accéder à ce module");
             return redirect('/visualisation');
         }
 
-        return $next($request);
+        return $next($request); */
+
+        if(auth()->user()->niveau === 'Expert' || auth()->user()->type_membre === "Administrateur"){
+            return $next($request);
+        }
+        
+        session()->put('js_message2', "Vous n'avez pas le niveau requis pour accéder à ce module");
+        return redirect('/visualisation');
     }
 } 

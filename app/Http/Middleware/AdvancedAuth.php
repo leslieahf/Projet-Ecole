@@ -15,7 +15,7 @@ class AdvancedAuth
      */
     public function handle(Request $request, Closure $next): Response
     {
-        if(auth()->guest()){
+/*         if(auth()->guest()){
             flash("Vous devez être connecté pour voir cette page.")->error();
             return redirect('/connexion');
         }
@@ -23,7 +23,7 @@ class AdvancedAuth
         if(!in_array(auth()->user()->niveau, ['Avancé', 'Expert'])) {
             flash("Vous n'avez pas le niveau requis pour cela.")->error();
             return redirect('/visualisation');
-        }
+        } */
 
         return $next($request);
     }
