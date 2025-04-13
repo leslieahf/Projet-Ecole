@@ -72,6 +72,11 @@
     margin-bottom: 20px;
 }
 
+/* Espacement sous le titre de section */
+.card h2 {
+    margin-bottom: 1rem; /* Ajustez cette valeur selon vos besoins */
+}
+
 /* Tableaux - Style amélioré */
 .table-caption {
     font-size: 1.4rem;
@@ -156,6 +161,8 @@ tr:hover {
     background-color: #c62828;
 }
 
+
+
 /* Alignements spécifiques */
 .text-center {
     text-align: center;
@@ -213,4 +220,49 @@ tr:hover {
 .flex-column {
     display: flex;
     flex-direction: column;
+}
+
+/* Ajoutez à la fin du fichier */
+
+/* Styles pour le formulaire de rapport */
+.form-label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: var(--primary);
+}
+
+.form-select, .form-control {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin-bottom: 1rem;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -0.5rem;
+}
+
+.col-md-4, .col-md-6 {
+    padding: 0 0.5rem;
+    flex: 0 0 100%;
+}
+
+@media (min-width: 768px) {
+    .col-md-4 {
+        flex: 0 0 33.333%;
+    }
+    .col-md-6 {
+        flex: 0 0 50%;
+    }
+}
+
+/* Styles pour les cartes de statistiques */
+.card h3 {
+    font-size: 1.2rem;
+    color: var(--primary);
+    margin-bottom: 0.8rem;
 }

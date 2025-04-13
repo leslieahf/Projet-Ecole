@@ -24,6 +24,7 @@
             <div class="tab active" onclick="openTab('utilisateurs')">Utilisateurs</div>
             <div class="tab" onclick="openTab('objets')">Objets</div>
             <div class="tab" onclick="openTab('outils')">Outils</div>
+            <div class="tab" onclick="openTab('rapports')">Rapports</div>
         </div>
         
         <!-- Onglet Utilisateurs -->
@@ -195,6 +196,103 @@
                 </div>
             </div>
         </div>
+        
+        <!-- Onglet Rapport -->
+        <div id="rapports" class="tab-content">
+            <div class="card">
+                <h2>Génération de rapports</h2>
+
+                <div class="mb-3">
+                    <form method="POST" action="/generer-rapport">
+                        @csrf
+                        <div class="mb-3">
+                            <label for="type_rapport" class="form-label">Type de rapport</label>
+                            <select class="form-select" id="type_rapport" name="type_rapport" required>
+                                <option value="">Sélectionner un type</option>
+                                <option value="utilisation">Utilisation de la plateforme</option>
+                                <option value="energie">Consommation énergétique</option>
+                                <option value="connexion">Taux de connexion</option>
+                                <option value="services">Services les plus utilisés</option>
+                            </select>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="periode" class="form-label">Période</label>
+                            <select class="form-select" id="periode" name="periode" required>
+                                <option value="7">7 derniers jours</option>
+                                <option value="30">30 derniers jours</option>
+                                <option value="90">3 derniers mois</option>
+                                <option value="365">1 an</option>
+                                <option value="custom">Personnalisée</option>
+                            </select>
+                        </div>
+
+                        <div id="custom-date-range" class="mb-3" style="display: none;">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <label for="date_debut" class="form-label">Date de début</label>
+                                    <input type="date" class="form-control" id="date_debut" name="date_debut">
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="date_fin" class="form-label">Date de fin</label>
+                                    <input type="date" class="form-control" id="date_fin" name="date_fin">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="format" class="form-label">Format d'export</label>
+                            <select class="form-select" id="format" name="format" required>
+                                <option value="pdf">PDF</option>
+                                <option value="csv">CSV</option>
+                                <option value="excel">Excel</option>
+                            </select>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary">Générer le rapport</button>
+                    </form>
+                </div>
+
+                <!-- Section pour afficher les statistiques -->
+                <div class="table-caption">
+                    <strong>Statistiques globales</strong>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="card">
+                            <h3>Consommation énergétique</h3>
+                            <p>Total: {{ $stats['conso_totale'] ?? 0 }} Wh</p>
+                            <p>Moyenne/jour: {{ $stats['conso_moyenne'] ?? 0 }} Wh</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card">
+                            <h3>Utilisateurs</h3>
+                            <p>Taux de connexion: {{ $stats['taux_connexion'] ?? 0 }}%</p>
+                            <p>Actifs (7j): {{ $stats['utilisateurs_actifs'] ?? 0 }}</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card">
+                            <h3>Services</h3>
+                            @if(isset($stats['services_populaires']))
+                                @foreach($stats['services_populaires'] as $service)
+                                    <p>{{ $service->nom }}: {{ $service->count }} utilisations</p>
+                                @endforeach
+                            @endif
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        
+        
+        
+        
+        
+        
     </div>
 
     <script>

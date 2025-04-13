@@ -46,35 +46,34 @@
     <section class="events">
         <div class="container">
             <h2>Événements à venir</h2>
-                <nav>
-                    <form class='recherche' action="/" method="get">
-                        <input type="text" name="search" placeholder="Rechercher par nom ou description" value="{{ request('search') }}">
-                        <select name="mode">
-                            <option value="" disabled {{ request('mode') == '' ? 'selected' : '' }}>Filtrer par mode</option>
-                            <option value="Automatique" {{ request('mode') == 'Automatique' ? 'selected' : '' }}>Automatique</option>
-                            <option value="Standard" {{ request('mode') == 'Standard' ? 'selected' : '' }}>Standard</option>
-                            <option value="">Pas de filtre</option>
-                        </select>
-                        <input type='submit' value='Rechercher'/>
-                    </form>
-                </nav>
-            
-                <div class="event-cards">
-                    <div class="event-card">
-                        <h3>Journée Portes Ouvertes</h3>
-                        <p>Venez découvrir notre établissement le 15 septembre !</p>
-                        <p class="date">Date: 15 Septembre 2025</p>
-                    </div>
-                    <div class="event-card">
-                        <h3>Concours d'Informatique</h3>
-                        <p>Inscrivez-vous pour participer à notre concours de codage annuel !</p>
-                        <p class="date">Date: 20 Octobre 2025</p>
-                    </div>
-                    <div class="event-card">
-                        <h3>Festival des Arts</h3>
-                        <p>Venez admirer les créations artistiques de nos élèves !</p>
-                        <p class="date">Date: 5 Décembre 2025</p>
-                    </div>
+            <nav>
+                <form class='recherche' id="filterForm">
+                    <input type="text" id="searchInput" placeholder="Rechercher par nom ou description">
+                    <select id="modeSelect">
+                        <option value="">Tous les événements</option>
+                        <option value="Scolaire">Scolaire</option>
+                        <option value="Extra-Scolaire">Extra-Scolaire</option>
+                    </select>
+                    <button type="button" id="searchButton">Rechercher</button>
+                </form>
+            </nav>
+
+            <div class="event-cards">
+                <div class="event-card" data-title="Journée Portes Ouvertes" data-mode="Scolaire">
+                    <h3>Journée Portes Ouvertes</h3>
+                    <p>Venez découvrir notre établissement le 15 septembre !</p>
+                    <p class="date">Date: 15 Septembre 2025</p>
+                </div>
+                <div class="event-card" data-title="Concours d'Informatique" data-mode="Scolaire">
+                    <h3>Concours d'Informatique</h3>
+                    <p>Inscrivez-vous pour participer à notre concours de codage annuel !</p>
+                    <p class="date">Date: 20 Octobre 2025</p>
+                </div>
+                <div class="event-card" data-title="Festival des Arts" data-mode="Extra-Scolaire">
+                    <h3>Festival des Arts</h3>
+                    <p>Venez admirer les créations artistiques de nos élèves !</p>
+                    <p class="date">Date: 5 Décembre 2025</p>
+                </div>
             </div>
         </div>
     </section>
@@ -102,5 +101,45 @@
         {{ session()->forget('js_message3') }} 
     </script>
 @endif
+
+
+@section('scripts')
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const searchInput = document.getElementById('searchInput');
+    const modeSelect = document.getElementById('modeSelect');
+    const searchButton = document.getElementById('searchButton');
+    const eventCards = document.querySelectorAll('.event-card');
+
+    function filterEvents() {
+        const searchTerm = searchInput.value.toLowerCase();
+        const selectedMode = modeSelect.value;
+
+        eventCards.forEach(card => {
+            const title = card.dataset.title.toLowerCase();
+            const mode = card.dataset.mode;
+            
+            const matchesSearch = title.includes(searchTerm) || searchTerm === '';
+            const matchesMode = mode === selectedMode || selectedMode === '';
+            
+            if (matchesSearch && matchesMode) {
+                card.style.display = 'block';
+            } else {
+                card.style.display = 'none';
+            }
+        });
+    }
+
+    // Écouteurs d'événements
+    searchButton.addEventListener('click', filterEvents);
+    searchInput.addEventListener('keyup', function(e) {
+        if (e.key === 'Enter') {
+            filterEvents();
+        }
+    });
+    modeSelect.addEventListener('change', filterEvents);
+});
+</script>
+@endsection
 
     

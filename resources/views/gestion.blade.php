@@ -42,7 +42,7 @@
         <!-- Onglet Gestion -->
 <div id="gestion" class="tab-content active">
     <div class="card">
-        <h2>Gestions des objets connectés</h2></br>
+        <h2>Gestions des objets connectés</h2>
         <button class='btn btn-primary'><a class='add' href='/ajoutobjets'>Ajouter un objet</a></button>
       
         <!-- Container for the table with horizontal scrolling -->
@@ -78,10 +78,10 @@
                     <td>
                     <form action="/gestion/demandesup/{{ $objet->id }}" method="post" style="display:inline;">
                         @csrf
-                        <button class="btn btn-primary" type='submit'>Demander la suppression</button></br>
+                        <button class="btn btn-primary" type='submit'>Demander la suppression</button>
                     </form>
                     <div style="display: flex; gap: 3px;">
-                    <button class="btn btn-warning"><a class="add" href="/gestion/{{ $objet->id }}">Modifier</a></button></br>
+                    <button class="btn btn-warning"><a class="add" href="/gestion/{{ $objet->id }}">Modifier</a></button>
                     @php
                         // Définir les classes & libellés selon le statut
                         $statut = $objet->statut;

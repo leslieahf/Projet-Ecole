@@ -191,6 +191,12 @@ p {
     font-weight: bold;
 }
 
+.event-card.hidden {
+    display: none;
+    opacity: 0;
+    transform: scale(0.9);
+}
+
 .date {
     font-size: 0.875rem;
     color: #718096;
@@ -251,5 +257,53 @@ footer {
     font-size: 0.875rem;
     color: #4a5568;
     position: relative;
+}
+
+/* Style pour le formulaire de recherche */
+form.recherche {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    align-items: center;
+    flex-grow: 1;
+    margin-bottom: 40px;
+}
+
+form.recherche input[type="text"] {
+    padding: 0.75rem 1rem;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    flex-grow: 1;
+    min-width: 250px;
+}
+
+form.recherche select {
+    padding: 0.75rem 1rem;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    background-color: white;
+    cursor: pointer;
+}
+
+.filtrerselect{cursor: pointer;}
+
+/* Nouveau style pour le bouton Rechercher */
+form.recherche input[type="submit"],
+form.recherche button {
+    background-color: #14589c; /* Bleu principal de votre thème */
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border: 2px solid #003366; /* Bordure bleue plus foncée */
+    border-radius: 8px; /* Pour correspondre à vos autres boutons */
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+form.recherche input[type="submit"]:hover,
+form.recherche button:hover {
+    background-color: #003366; /* Bleu plus foncé au survol */
+    transform: translateY(-2px); /* Léger effet de profondeur */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
