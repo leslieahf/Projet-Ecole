@@ -316,3 +316,116 @@ form.recherche input[type="submit"]:hover {
         grid-template-columns: 1fr;
     }
 }
+
+/* Styles pour le thème sombre */
+.dark-theme {
+    background-color: #1a1a1a;
+    color: #e0e0e0;
+}
+
+.dark-theme .welcome-section {
+    background: #2d2d2d;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    color: #e0e0e0;
+}
+
+.dark-theme .section-title {
+    color: #60a5fa;
+    border-bottom-color: #4a4a4a;
+}
+
+.dark-theme nav {
+    background-color: #2d2d2d;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.dark-theme nav a {
+    color: #e0e0e0;
+}
+
+.dark-theme nav a:hover, 
+.dark-theme nav a#current {
+    background-color: #2563eb;
+}
+
+.dark-theme form.recherche input[type="text"],
+.dark-theme form.recherche select {
+    background-color: #333333;
+    border-color: #4a4a4a;
+    color: #ffffff;
+}
+
+.dark-theme form.recherche input[type="submit"] {
+    background-color: #2563eb;
+}
+
+.dark-theme form.recherche input[type="submit"]:hover {
+    background-color: #1d4ed8;
+}
+
+.dark-theme .objects-section, 
+.dark-theme .services-section {
+    background: #2d2d2d;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.dark-theme .service-card {
+    background: #333333;
+    border-color: #4a4a4a;
+    color: #e0e0e0;
+}
+
+.dark-theme .service-card h4 {
+    color: #60a5fa;
+    border-bottom-color: #4a4a4a;
+}
+
+.dark-theme .object-card {
+    background: #2d2d2d;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    color: #e0e0e0;
+}
+
+.dark-theme .object-header h4 {
+    color: #60a5fa;
+}
+
+.dark-theme .object-header {
+    border-bottom-color: #4a4a4a;
+}
+
+.dark-theme .object-status.actif {
+    background-color: #064e3b;
+    color: #6ee7b7;
+}
+
+.dark-theme .object-status.inactif {
+    background-color: #7f1d1d;
+    color: #fca5a5;
+}
+
+.dark-theme .detail-label {
+    color: #9ca3af;
+}
+
+.dark-theme .battery-level::before {
+    border-color: #4a4a4a;
+}
+
+.dark-theme .ink-level {
+    background: #4a4a4a;
+}
+
+.dark-theme .ink-level-bar {
+    background: #60a5fa;
+}
+
+.dark-theme .tool-card, 
+.dark-theme .service-card {
+    background: #2d2d2d;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.dark-theme .service-features li::before {
+    color: #60a5fa;
+}

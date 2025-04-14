@@ -57,12 +57,41 @@ html, body {
     font-weight: 600;
 }
 
-/* Logo Profil à droite */
+/* Boutons à droite */
+.right-buttons {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+/* Style pour le bouton de thème */
+.theme-toggle {
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    padding: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+    transition: background-color 0.3s ease;
+}
+
+.theme-toggle:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.theme-toggle i {
+    font-size: 1.2rem;
+}
+
+/* Logo Profil */
 .profil-link {
     display: flex;
     align-items: center;
-    justify-content: flex-end;
-    padding-left: 20px; /* Écart entre le logo et les autres éléments */
 }
 
 .profil-logo {
@@ -152,6 +181,37 @@ footer {
     position: relative;
     bottom: 0;
     margin-top: auto; /* Place le footer en bas */
+}
+
+/* Styles pour le thème sombre */
+.dark-theme {
+    background-color: #1a1a1a;
+    color: #ffffff;
+}
+
+.dark-theme .header-content {
+    background-color: #1a1a1a;
+    border-bottom: 1px solid #333;
+}
+
+.dark-theme .dropdown-content {
+    background-color: #1a1a1a;
+    border: 1px solid #333;
+}
+
+.dark-theme .dropdown-content a:hover {
+    background-color: #333;
+}
+
+.dark-theme footer {
+    background-color: #1a1a1a;
+    color: #e0e0e0;
+    border-top: 1px solid #333;
+}
+
+/* Supprimer le padding-top du body */
+body {
+    padding-top: 0;
 }
 
 

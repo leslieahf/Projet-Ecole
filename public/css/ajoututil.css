@@ -121,3 +121,62 @@ body {
     margin-bottom: 30px; /* Espacement avant le formulaire */
     width: 100%; /* S'assurer que le titre prend toute la largeur du conteneur */
 }
+
+/* Styles pour le thème sombre */
+.dark-theme {
+    background-color: #1a1a1a;
+    color: #e0e0e0;
+}
+
+.dark-theme h1,
+.dark-theme h2,
+.dark-theme p {
+    color: #60a5fa;
+}
+
+.dark-theme form {
+    background-color: #2d2d2d;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.dark-theme form h2 {
+    color: #60a5fa;
+}
+
+.dark-theme label {
+    color: #60a5fa;
+}
+
+.dark-theme input[type='text'],
+.dark-theme select,
+.dark-theme input[type='date'] {
+    background-color: #333333;
+    border-color: #4a4a4a;
+    color: #e0e0e0;
+}
+
+.dark-theme input[type='text']:focus,
+.dark-theme select:focus,
+.dark-theme input[type='date']:focus {
+    border-color: #60a5fa;
+    box-shadow: 0 0 0 3px rgba(96, 165, 250, 0.2);
+}
+
+.dark-theme .error {
+    color: #ef4444;
+}
+
+.dark-theme .btn-add {
+    background-color: #2563eb;
+    color: white;
+}
+
+.dark-theme .btn-add:hover {
+    background-color: #1d4ed8;
+    box-shadow: 0 4px 10px rgba(37, 99, 235, 0.4);
+}
+
+.dark-theme .btn-add:active {
+    background-color: #1e40af;
+    box-shadow: 0 4px 10px rgba(37, 99, 235, 0.6);
+}

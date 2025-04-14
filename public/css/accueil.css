@@ -1,5 +1,5 @@
- /* Global Styles */
- * {
+/* Global Styles */
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -9,10 +9,101 @@ body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
     background-color: #f7fafc;
+    color: #2d3748;
 }
 
 a {
     text-decoration: none;
+}
+
+/* Style du bandeau de navigation */
+.nav-header {
+    background-color: #003366;
+    padding: 1rem 2rem;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.logo-container img {
+    height: 40px;
+    margin-right: 1rem;
+}
+
+.logo-container h1 {
+    color: white;
+    font-size: 1.5rem;
+    margin: 0;
+}
+
+.nav-buttons {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.nav-btn {
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.nav-btn-primary {
+    background-color: #14589c;
+    color: white;
+    border: 1px solid #14589c;
+}
+
+.nav-btn-primary:hover {
+    background-color: #0d3d6b;
+    border-color: #0d3d6b;
+}
+
+.nav-btn-secondary {
+    background-color: transparent;
+    color: white;
+    border: 1px solid white;
+}
+
+.nav-btn-secondary:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Style pour le bouton de thème */
+.theme-toggle {
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    padding: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+    transition: background-color 0.3s ease;
+}
+
+.theme-toggle:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.theme-toggle i {
+    font-size: 1.2rem;
 }
 
 /* Hero Section */
@@ -25,6 +116,7 @@ a {
     justify-content: center;
     align-items: center;
     position: relative;
+    margin-top: -70px; /* Pour que le hero prenne tout l'écran malgré le padding-top */
 }
 
 .overlay {
@@ -142,6 +234,7 @@ p {
     flex: 1 1 280px;
     max-width: 320px;
     text-align: center;
+    color: #2d3748;
 }
 
 .card:hover {
@@ -151,10 +244,12 @@ p {
 .card h3 {
     font-size: 1.5rem;
     font-weight: bold;
+    color: #003366;
 }
 
 .card p {
     font-size: 1rem;
+    color: #4a5568;
 }
 
 /* Events Section */
@@ -180,6 +275,7 @@ p {
     flex: 1 1 280px;
     max-width: 320px;
     text-align: center;
+    color: #2d3748;
 }
 
 .event-card:hover {
@@ -189,6 +285,7 @@ p {
 .event-card h3 {
     font-size: 1.5rem;
     font-weight: bold;
+    color: #003366;
 }
 
 .event-card.hidden {
@@ -203,9 +300,10 @@ p {
     margin-top: 10px;
 }
 
-.container h2{
-    color:#003366
+.container h2 {
+    color: #003366;
 }
+
 /* Connexion Section */
 .inscription {
     padding: 50px 20px;
@@ -305,5 +403,74 @@ form.recherche button:hover {
     background-color: #003366; /* Bleu plus foncé au survol */
     transform: translateY(-2px); /* Léger effet de profondeur */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.main-container {
+    padding-top: 70px; /* Pour compenser la hauteur du bandeau fixe */
+}
+
+/* Styles pour le thème sombre */
+.dark-theme {
+    background-color: #1a1a1a;
+    color: #ffffff;
+}
+
+.dark-theme .presentation {
+    background-color: #2d2d2d;
+}
+
+.dark-theme .events {
+    background-color: #1a1a1a;
+}
+
+.dark-theme .container h2 {
+    color: #ffffff;
+}
+
+.dark-theme .card,
+.dark-theme .event-card {
+    background-color: #333333;
+    color: #ffffff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.dark-theme .card h3,
+.dark-theme .event-card h3 {
+    color: #ffffff;
+}
+
+.dark-theme .card p,
+.dark-theme .event-card p,
+.dark-theme .presentation p {
+    color: #e0e0e0;
+}
+
+.dark-theme .date {
+    color: #b0b0b0;
+}
+
+.dark-theme .inscription {
+    background-color: #2d2d2d;
+}
+
+.dark-theme .inscription h2,
+.dark-theme .inscription p {
+    color: #ffffff;
+}
+
+.dark-theme form.recherche input[type="text"],
+.dark-theme form.recherche select {
+    background-color: #333333;
+    border-color: #4a4a4a;
+    color: #ffffff;
+}
+
+.dark-theme form.recherche input[type="text"]::placeholder {
+    color: #888888;
+}
+
+.dark-theme footer {
+    background-color: #2d2d2d;
+    color: #e0e0e0;
 }
 
