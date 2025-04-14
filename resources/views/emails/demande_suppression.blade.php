@@ -1,10 +1,11 @@
-Bonjour,
-Une demande de suppression a été envoyée pour l'objet suivant :
-ID : {{ $objetid }}
-Nom : {{ $objetnom }}
-Utilisateur : {{ $utilmail }}
+Bonjour, <br><br>
+Une demande de suppression a été envoyée pour l'objet suivant : <br>
+<ul>
+<li>ID : {{ $objetid }} </li>
+<li>Nom : {{ $objetnom }}</li>
+<li>Utilisateur : {{ $utilmail }}</li>
+</ul> 
+Merci de traiter cette demande. <br><br>
 
-Merci de traiter cette demande.
-
-Cordialement,
-Votre application
+Cordialement, <br><br>
+Votre lycée IntelliSchool
