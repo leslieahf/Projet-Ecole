@@ -45,32 +45,35 @@ class DemandeSuppressionController extends Controller
             $total_radiateurs
         ];
 
-        // Générer des couleurs aléatoires pour chaque barre
-        $colors = [];
-        foreach ($types_objets as $type) {
-            $colors[] = '#' . substr(sha1(uniqid(rand(), true)), 0, 6); // Génère une couleur aléatoire
-        }
 
-        // Configuration du graphique avec l'axe X = type d'objet et l'axe Y = consommation totale
+        // couleur bleu 
+        $colors = array_fill(0, count($types_objets), 'rgba(0, 51, 102, 1)'); // Bleu IntelliSchool opaque
+
+        // Modifiez les options des graphiques comme suit :
         $chart_options = [
             'chart_title' => "Consommation par type d objet",
             'report_type' => 'group_by_string',
             'model' => 'App\Models\Objets',
-            'group_by_field' => 'type', // Axe X : type d'objet
-            'aggregate_function' => 'sum', // Aggrégation par somme
-            'aggregate_field' => 'conso_Wh', // Axe Y : consommation
+            'group_by_field' => 'type',
+            'aggregate_function' => 'sum',
+            'aggregate_field' => 'conso_Wh',
             'chart_type' => 'bar',
+            'colors' => ['#003366'], // Couleur principale
+            'background_color' => 'rgba(255, 255, 255, 1)', // Fond blanc opaque
+            'bar_border_color' => '#002244', // Bordure plus foncée
+            'bar_border_width' => 1,
             'dataset' => [
                 [
                     'name' => 'Consommation énergétique',
-                    'data' => $conso_par_type, // Valeurs de la consommation pour chaque type d'objet
-                    'backgroundColor' => $colors, // Couleurs des barres
-                    'borderColor' => $colors, // Couleurs des bordures
-                    'borderWidth' => 1, // Bordure de chaque barre
+                    'data' => $conso_par_type,
+                    'backgroundColor' => 'rgba(0, 51, 102, 1)', // Bleu opaque
+                    'borderColor' => 'rgba(0, 34, 68, 1)', // Bordure
+                    'borderWidth' => 1,
                 ]
             ],
-            'labels' => $types_objets, // Labels de l'axe X : Types d'objets
+            'labels' => $types_objets,
         ];
+
         
         $chart1 = new LaravelChart($chart_options);
         
@@ -82,12 +85,16 @@ class DemandeSuppressionController extends Controller
             'aggregate_function' => 'sum', // Aggrégation par somme
             'aggregate_field' => 'nbre_utilisations', // Axe Y : consommation
             'chart_type' => 'bar',
+            'colors' => ['#003366'], // Couleur principale
+            'background_color' => 'rgba(255, 255, 255, 1)', // Fond blanc opaque
+            'bar_border_color' => '#002244', // Bordure plus foncée
+            'bar_border_width' => 1,
             'dataset' => [
                 [
                     'name' => 'Consommation énergétique',
                     'data' => $conso_par_type, // Valeurs de la consommation pour chaque type d'objet
-                    'backgroundColor' => $colors, // Couleurs des barres
-                    'borderColor' => $colors, // Couleurs des bordures
+                    'backgroundColor' => 'rgba(0, 51, 102, 1)', // Bleu opaque
+                    'borderColor' => 'rgba(0, 34, 68, 1)', // Bordure
                     'borderWidth' => 1, // Bordure de chaque barre
                 ]
             ],

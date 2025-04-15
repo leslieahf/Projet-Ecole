@@ -28,7 +28,7 @@ body {
  * Centre le contenu et limite la largeur maximale
  */
 .container {
-    max-width: 1200px;       /* Largeur maximale du contenu */
+    max-width: 100%;       /* Largeur maximale du contenu */
     margin: 0 auto;          /* Centrage horizontal */
     padding: 20px;           /* Espacement intérieur */
 }
@@ -237,8 +237,15 @@ input, select {
  * Conteneur pour graphiques 
  */
 .chart-container {
-    height: 300px;          /* Hauteur fixe */
-    margin-top: 20px;       /* Marge en haut */
+    height: 800px !important; /* Augmentation significative de la hauteur */
+    min-height: 800px !important;
+    margin: 20px 0;
+}
+
+.chart-container canvas {
+    height: 100% !important;
+    min-height: 800px !important;
+    width: 100% !important;
 }
 
 /* 
@@ -503,4 +510,18 @@ input, select {
 .dark-theme .chart-container text {
     fill: #e0e0e0 !important;
     color: #e0e0e0 !important;
+}
+
+/* Styles pour les graphiques */
+.chart-container {
+    background-color: white !important;
+    padding: 20px;
+    border-radius: 8px;
+    margin: 20px 0;
+}
+
+.chart-container canvas {
+    background-color: white !important;
+    width: 100% !important;
+    height: 400px !important;
 }
