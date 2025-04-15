@@ -184,7 +184,6 @@
                             <tr>
                                 <td>{{ $outil->nom }}</td>
                                 <td>{{ $outil->description }}</td>
-                                @if(Auth::user()->niveau === 'Expert')
                                 <td>
                                     <form action="/administration/outil/{{ $outil->id }}" method="POST">
                                         @csrf
@@ -192,7 +191,6 @@
                                         <button type="submit" class="btn btn-danger">Supprimer</button>
                                     </form>
                                 </td>
-                                @endif
                             </tr>
                             @endforeach
                         </tbody>
@@ -293,16 +291,20 @@
                     </div>
                     -->
                 </div>
+                <div class="card">
+                <h1 class="table-caption">{{ $chart1->options['chart_title'] }}</h1>
+                        {!! $chart1->renderHtml() !!}
+            </div>
+
+            
             </div>
         </div>
         
-        
-        
-        
-        
-        
-        
     </div>
+
+    {!! $chart1->renderChartJsLibrary() !!}
+
+    {!! $chart1->renderJs() !!}
 
     <script>
         function openTab(tabName) {

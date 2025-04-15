@@ -50,6 +50,10 @@ composer require laracasts/flash
 ```php
 composer require barryvdh/laravel-dompdf
 ```
+
+```php
+composer require laraveldaily/laravel-charts
+```
 -->
 
 ### Environnement

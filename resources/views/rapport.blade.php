@@ -72,6 +72,17 @@ Nombre moyen de connexions : {{ $moy_connexions }} <br>
         </tbody>
     </table>
 
+
+    <h2 class="table-caption">{{ $chart1->options['chart_title'] }}</h2>
+    {!! $chart1->renderHtml() !!}
+
+    {!! $chart1->renderChartJsLibrary() !!}
+
+    {!! $chart1->renderJs() !!}
+
+
+
+
     <h2>Objets</h2>
 <div>
 Consommation énergétique totale : {{ $total_conso }} Wh <br>
