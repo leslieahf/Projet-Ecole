@@ -25,6 +25,7 @@ class Objets extends Model implements Authenticatable
         'niveau_encre',
         'niveau_remplissage',
         'conso_Wh',
+        'nbre_utilisations',
     ];
 
     public $incrementing = false;

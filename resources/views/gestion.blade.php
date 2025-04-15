@@ -63,6 +63,7 @@
                     <th>Niveau d'encre</th>
                     <th>Niveau de remplissage</th>
                     <th style="text-align: center;">Consommation (Wh)</th>
+                    <th style="text-align: center;">Nombre d'utilisations</th>
                     <th>Actions</th> 
                 </tr>
                 @foreach($objets as $objet)
@@ -79,6 +80,7 @@
                     <td style="text-align: center;">{{ $objet->niveau_encre ?? 'NULL' }}</td>
                     <td style="text-align: center;">{{ $objet->niveau_remplissage ?? 'NULL' }}</td>
                     <td style="text-align: center;">{{ $objet->conso_Wh ?? 'NULL' }}</td>
+                    <td style="text-align: center;">{{ $objet->nbre_utilisations ?? 'NULL' }}</td>
                     <td>
                     <form action="/gestion/demandesup/{{ $objet->id }}" method="post" style="display:inline;">
                         @csrf

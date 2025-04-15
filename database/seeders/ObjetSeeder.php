@@ -28,7 +28,8 @@ class ObjetSeeder extends Seeder
                 'temperature' => 0,
                 'niveau_encre' => null,
                 'niveau_remplissage' => null,
-                'conso_Wh' => 1200
+                'conso_Wh' => 1200,
+                'nbre_utilisations' => 150,
             ]);
         }
 
@@ -45,7 +46,8 @@ class ObjetSeeder extends Seeder
                 'temperature' => 0,
                 'niveau_encre' => null,
                 'niveau_remplissage' => null,
-                'conso_Wh' => 700
+                'conso_Wh' => 700,
+                'nbre_utilisations' => 100,
             ]);
         }
 
@@ -63,7 +65,8 @@ class ObjetSeeder extends Seeder
                 'temperature' => 0,
                 'niveau_encre' => null,
                 'niveau_remplissage' => null,
-                'conso_Wh' => 800
+                'conso_Wh' => 800,
+                'nbre_utilisations' => 70,
             ]);
         }
 
@@ -80,7 +83,8 @@ class ObjetSeeder extends Seeder
                 'temperature' => null,
                 'niveau_encre' => null,
                 'niveau_remplissage' => null,
-                'conso_Wh' => 750
+                'conso_Wh' => 750,
+                'nbre_utilisations' => 150,
             ]);
         }
 
@@ -97,7 +101,8 @@ class ObjetSeeder extends Seeder
                 'temperature' => null,
                 'niveau_encre' => null,
                 'niveau_remplissage' => null,
-                'conso_Wh' => 800
+                'conso_Wh' => 800,
+                'nbre_utilisations' => 42,
             ]);
         }
 
@@ -114,7 +119,8 @@ class ObjetSeeder extends Seeder
                 'temperature' => null,
                 'niveau_encre' => null,
                 'niveau_remplissage' => null,
-                'conso_Wh' => 950
+                'conso_Wh' => 950,
+                'nbre_utilisations' => 114,
             ]);
         }
 
@@ -131,7 +137,8 @@ class ObjetSeeder extends Seeder
                 'temperature' => null,
                 'niveau_encre' => null,
                 'niveau_remplissage' => 70,
-                'conso_Wh' => 400
+                'conso_Wh' => 400,
+                'nbre_utilisations' => 300,
             ]);
         }
 
@@ -148,7 +155,8 @@ class ObjetSeeder extends Seeder
                 'temperature' => null,
                 'niveau_encre' => null,
                 'niveau_remplissage' => 10,
-                'conso_Wh' => 620
+                'conso_Wh' => 620,
+                'nbre_utilisations' => 170,
             ]);
         }
 
@@ -165,7 +173,8 @@ class ObjetSeeder extends Seeder
                 'temperature' => null,
                 'niveau_encre' => null,
                 'niveau_remplissage' => 30,
-                'conso_Wh' => 500
+                'conso_Wh' => 500,
+                'nbre_utilisations' => 50,
             ]);
         }
 
@@ -182,7 +191,8 @@ class ObjetSeeder extends Seeder
                 'temperature' => null,
                 'niveau_encre' => 45,
                 'niveau_remplissage' => null,
-                'conso_Wh' => 1000
+                'conso_Wh' => 1000,
+                'nbre_utilisations' => 168,
             ]);
         }
 
@@ -199,7 +209,8 @@ class ObjetSeeder extends Seeder
                 'temperature' => null,
                 'niveau_encre' => 20,
                 'niveau_remplissage' => null,
-                'conso_Wh' => 1300
+                'conso_Wh' => 1300,
+                'nbre_utilisations' => 180,
             ]);
         }
 
@@ -216,7 +227,8 @@ class ObjetSeeder extends Seeder
                 'temperature' => null,
                 'niveau_encre' => 85,
                 'niveau_remplissage' => null,
-                'conso_Wh' => 1500
+                'conso_Wh' => 1500,
+                'nbre_utilisations' => 200,
             ]);
         }
 
@@ -233,7 +245,8 @@ class ObjetSeeder extends Seeder
                 'temperature' => null,
                 'niveau_encre' => null,
                 'niveau_remplissage' => null,
-                'conso_Wh' => 550
+                'conso_Wh' => 550,
+                'nbre_utilisations' => 30,
             ]);
         }
 
@@ -250,7 +263,8 @@ class ObjetSeeder extends Seeder
                 'temperature' => null,
                 'niveau_encre' => null,
                 'niveau_remplissage' => null,
-                'conso_Wh' => 800
+                'conso_Wh' => 800,
+                'nbre_utilisations' => 87,
             ]);
         }
 
@@ -267,7 +281,8 @@ class ObjetSeeder extends Seeder
                 'temperature' => null,
                 'niveau_encre' => null,
                 'niveau_remplissage' => null,
-                'conso_Wh' => 700
+                'conso_Wh' => 700,
+                'nbre_utilisations' => 65,
             ]);
         }
     }
