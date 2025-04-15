@@ -291,7 +291,7 @@
         <div id="rapports" class="tab-content">
             <div class="card">
                 <h2>Génération de rapports</h2>
-                <div class="form-group">
+                {{-- <div class="form-group">
                     <label for="periode">Période</label>
                     <select id="periode">
                         <option value="jour">Journalier</option>
@@ -299,9 +299,9 @@
                         <option value="mois">Mensuel</option>
                         <option value="custom">Personnalisé</option>
                     </select>
-                </div>
+                </div> --}}
                 
-                <div class="form-group">
+{{--                 <div class="form-group">
                     <label for="type-rapport">Type de rapport</label>
                     <select id="type-rapport">
                         <option value="energie">Consommation énergétique</option>
@@ -309,21 +309,37 @@
                         <option value="maintenance">Historique de maintenance</option>
                         <option value="complet">Rapport complet</option>
                     </select>
-                </div>
+                </div> --}}
                 
-                <button class="btn btn-primary">Générer le rapport</button>
+                <button class='btn btn-primary'><a class='add' href='/rapportgestion'>Générer le rapport PDF</a></button>
+                {{-- 
+                <button class="btn btn-primary">Générer le rapport PDF</button>
                 <button class="btn btn-secondary">Exporter en PDF</button>
-                
+                 --}}
+
                 <div class="chart-container">
                     <!-- Espace réservé pour un graphique -->
                     <p style="text-align: center; padding: 50px; background: var(--light-bg); border-radius: 4px;">
-                        [Graphique de consommation énergétique apparaîtra ici]
+                        {{-- [Graphique de consommation énergétique apparaîtra ici] --}}
+                        {!! $chart1->renderHtml() !!}
                     </p>
+                    <p style="text-align: center; padding: 50px; background: var(--light-bg); border-radius: 4px;">
+                        {!! $chart2->renderHtml() !!}
+                    </p>
+
+
+
                 </div>
             </div>
         </div>
     </div>
     
+    {!! $chart1->renderChartJsLibrary() !!}
+    {!! $chart2->renderChartJsLibrary() !!}
+
+    {!! $chart1->renderJs() !!}
+    {!! $chart2->renderJs() !!}
+
     <script>
         function openTab(tabName) {
             // Masquer tous les onglets

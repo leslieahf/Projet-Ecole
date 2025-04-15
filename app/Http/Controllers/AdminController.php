@@ -27,7 +27,7 @@ class AdminController extends Controller
         $total_radiateurs =  Objets::where('type', 'Radiateur')->count();
 
         // Créations de diagrammes à batons
-        
+            
         // Récupération des utilisateurs et de leurs connexions
         //$utilisateurs = Utilisateurs::select('login', 'nbre_connexions')->get();
 

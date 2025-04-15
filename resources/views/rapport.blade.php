@@ -44,7 +44,7 @@
 </head>
 <body>
     <div class="date">Date: {{ date('d/m/Y') }}</div>
-    <h1>Rapport d'Utilisation</h1>
+    <h1>Rapport d'utilisation</h1>
 
     <h2>Utilisateurs</h2>
 <div>
@@ -59,27 +59,29 @@ Nombre moyen de connexions : {{ $moy_connexions }} <br>
                 <th>Login</th>
                 <th>Nombre de connexions</th>
                 <th>Nombre de consultations</th>
+                <th>Taux de connexions</th>
             </tr>
         </thead>
         <tbody>
             @foreach($utilisateurs as $utilisateur)
                 <tr>
                     <td>{{ $utilisateur->login }}</td>
-                    <td>{{ $utilisateur->nbre_connexions }}</td>
-                    <td>{{ $utilisateur->nbre_consultations }}</td>
+                    <td style="text-align: center;">{{ $utilisateur->nbre_connexions }}</td>
+                    <td style="text-align: center;">{{ $utilisateur->nbre_consultations }}</td>
+                    <td style="text-align: center;">{{ (($utilisateur->nbre_connexions)/$total_connexions)*100 }}%</td>
                 </tr>
             @endforeach
         </tbody>
     </table>
 
-
+{{-- 
     <h2 class="table-caption">{{ $chart1->options['chart_title'] }}</h2>
     {!! $chart1->renderHtml() !!}
 
     {!! $chart1->renderChartJsLibrary() !!}
 
     {!! $chart1->renderJs() !!}
-
+ --}}
 
 
 
@@ -98,14 +100,14 @@ Nombre de projecteurs : {{ $total_projecteurs }} <br>
         <thead>
             <tr>
                 <th>ID</th>
-                <th>Consommation (Wh)</th>
+                <th style="text-align: center;">Consommation (Wh)</th>
             </tr>
         </thead>
         <tbody>
             @foreach($objets as $objet)
                 <tr>
                     <td>{{ $objet->id }}</td>
-                    <td>{{ $objet->conso_wh }}</td>
+                    <td style="text-align: center;">{{ $objet->conso_wh }}</td>
                 </tr>
             @endforeach
         </tbody>
