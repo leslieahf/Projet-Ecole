@@ -24,8 +24,14 @@ class ControlerStatutController extends Controller
         ];
         $statutActuel = $objet->statut;
         if (array_key_exists($statutActuel, $transitions)) {
+            
             $objet->statut = $transitions[$statutActuel];
+
+            // Incrémenter le nombre d'utilisations de l'objet
+            $objet->nbre_utilisations += 1;
+
             $objet->save();
+
             return redirect()->back()->with('success_stat', "Statut mis à jour avec succès !");
         }
         return redirect()->back()->with('error', 'Statut non pris en charge.');
