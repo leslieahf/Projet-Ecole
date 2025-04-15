@@ -19,6 +19,7 @@
             margin-bottom: 15px;
         }
         table {
+            margin-top: 20px;
             width: 100%;
             border-collapse: collapse;
             margin-bottom: 30px;
@@ -46,12 +47,18 @@
     <h1>Rapport d'Utilisation</h1>
 
     <h2>Utilisateurs</h2>
+<div>
+Nombre total d'utilisateurs : {{ $total_utilisateurs }} <br>
+Nombre total de connexions : {{ $total_connexions }} <br>
+Nombre moyen de connexions : {{ $moy_connexions }} <br>
+
+</div>
     <table>
         <thead>
             <tr>
                 <th>Login</th>
-                <th>Nombre de Connexions</th>
-                <th>Nombre de Consultations</th>
+                <th>Nombre de connexions</th>
+                <th>Nombre de consultations</th>
             </tr>
         </thead>
         <tbody>
@@ -66,6 +73,16 @@
     </table>
 
     <h2>Objets</h2>
+<div>
+Consommation énergétique totale : {{ $total_conso }} Wh <br>
+Nombre total d'objets : {{ $total_objets }} <br>
+Nombre d'imprimantes  : {{ $total_imprimantes }} <br>
+Nombre de radiateurs : {{ $total_radiateurs }} <br>
+Nombre de poubelles : {{ $total_poubelles }} <br>
+Nombre de radiateurs : {{ $total_radiateurs }} <br>
+Nombre de projecteurs : {{ $total_projecteurs }} <br>
+
+</div>
     <table>
         <thead>
             <tr>

@@ -206,10 +206,10 @@
             <div class="card">
                 <h2>Génération de rapports</h2>
 
-                <div class="mb-3">
-                    <form method="POST" action="/generer-rapport">
-                        @csrf
-                        <div class="mb-3">
+                <!--<div class="mb-3">
+                    <form method="POST" action="/generer-rapport"> -->
+                        
+                        <!--<div class="mb-3">
                             <label for="type_rapport" class="form-label">Type de rapport</label>
                             <select class="form-select" id="type_rapport" name="type_rapport" required>
                                 <option value="">Sélectionner un type</option>
@@ -242,7 +242,7 @@
                                     <input type="date" class="form-control" id="date_fin" name="date_fin">
                                 </div>
                             </div>
-                        </div>
+                        </div>-->
 
                         <div class="mb-3">
                             <label for="format" class="form-label">Format d'export</label>
@@ -253,8 +253,10 @@
                             </select>
                         </div>
 
-                        <button type="submit" class="btn btn-primary">Générer le rapport</button>
-                    </form>
+                        <a href="/rapport" class="btn btn-primary">Générer le rapport</a>
+
+                        <!--<button type="submit" class="btn btn-primary">Générer le rapport</button>-->
+                    <!-- </form> -->
                 </div>
 
                 <!-- Section pour afficher les statistiques -->
@@ -266,17 +268,19 @@
                     <div class="col-md-4">
                         <div class="card">
                             <h3>Consommation énergétique</h3>
-                            <p>Total: {{ $stats['conso_totale'] ?? 0 }} Wh</p>
-                            <p>Moyenne/jour: {{ $stats['conso_moyenne'] ?? 0 }} Wh</p>
+                            <p>Total: {{ $total_conso ?? 0 }} Wh</p>
+                            <!--<p>Moyenne/jour: {{ $stats['conso_moyenne'] ?? 0 }} Wh</p>-->
                         </div>
                     </div>
                     <div class="col-md-4">
                         <div class="card">
                             <h3>Utilisateurs</h3>
-                            <p>Taux de connexion: {{ $stats['taux_connexion'] ?? 0 }}%</p>
-                            <p>Actifs (7j): {{ $stats['utilisateurs_actifs'] ?? 0 }}</p>
+                            <p>Nombre total de connexion: {{ $total_connexions ?? 0 }} </p>
+                            <!--<p>Taux de connexion: {{ $stats['taux_connexion'] ?? 0 }}%</p>-->
+                            <!--<p>Actifs (7j): {{ $stats['utilisateurs_actifs'] ?? 0 }}</p>-->
                         </div>
                     </div>
+                    <!--
                     <div class="col-md-4">
                         <div class="card">
                             <h3>Services</h3>
@@ -287,6 +291,7 @@
                             @endif
                         </div>
                     </div>
+                    -->
                 </div>
             </div>
         </div>
