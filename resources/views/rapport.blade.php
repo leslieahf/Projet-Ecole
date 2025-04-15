@@ -68,7 +68,7 @@ Nombre moyen de connexions : {{ $moy_connexions }} <br>
                     <td>{{ $utilisateur->login }}</td>
                     <td style="text-align: center;">{{ $utilisateur->nbre_connexions }}</td>
                     <td style="text-align: center;">{{ $utilisateur->nbre_consultations }}</td>
-                    <td style="text-align: center;">{{ (($utilisateur->nbre_connexions)/$total_connexions)*100 }}%</td>
+                    <td style="text-align: center;">{{ round((($utilisateur->nbre_connexions)/$total_connexions)*100,2) }}%</td>
                 </tr>
             @endforeach
         </tbody>
