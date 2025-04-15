@@ -246,8 +246,8 @@
                             <label for="format" class="form-label">Format d'export</label>
                             <select class="form-select" id="format" name="format" required>
                                 <option value="pdf">PDF</option>
-                                <option value="csv">CSV</option>
-                                <option value="excel">Excel</option>
+                                <!-- <option value="csv">CSV</option>
+                                <option value="excel">Excel</option>-->
                             </select>
                         </div>
 

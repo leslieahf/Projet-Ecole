@@ -485,3 +485,111 @@ form.recherche button:hover {
     transform: scale(1.05);
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
+
+/* Styles pour la section événements phares */
+.featured-events {
+    text-align: center;
+    margin: 30px 0;
+    padding: 20px;
+    background-color: rgba(0, 51, 102, 0.05);
+    border-radius: 8px;
+}
+
+.featured-events h3 {
+    color: #003366;
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+}
+
+.event-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.btn-event {
+    background-color: #003366;
+    color: white;
+    padding: 12px 25px;
+    border-radius: 8px;
+    font-size: 1rem;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border: 2px solid #14589c;
+}
+
+.btn-event:hover {
+    background-color: #14589c;
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+/* Amélioration des cartes d'événements */
+.event-card {
+    position: relative;
+    padding-bottom: 60px; /* Espace pour le bouton */
+}
+
+.event-card .btn-secondary {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: calc(100% - 40px);
+    text-align: center;
+}
+
+/* Styles pour la section événements phares */
+.featured-events {
+    text-align: center;
+    margin: 30px 0;
+    padding: 20px;
+    background-color: rgba(0, 51, 102, 0.05);
+    border-radius: 8px;
+}
+
+.featured-events h3 {
+    color: #003366;
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+}
+
+.event-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.btn-event {
+    background-color: #003366;
+    color: white;
+    padding: 12px 25px;
+    border-radius: 8px;
+    font-size: 1rem;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border: 2px solid #14589c;
+}
+
+.btn-event:hover {
+    background-color: #14589c;
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+/* Amélioration des cartes d'événements */
+.event-card {
+    position: relative;
+    padding-bottom: 60px; /* Espace pour le bouton */
+}
+
+.event-card .btn-secondary {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: calc(100% - 40px);
+    text-align: center;
+}

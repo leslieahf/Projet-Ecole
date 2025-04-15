@@ -97,16 +97,21 @@ Route::post('/gestion/demandesup/{id}', [DemandeSuppressionController::class, 'd
 
 Route::post('/gestion/controlstatut/{id}', [ControlerStatutController::class, 'controlstatut'])->middleware('auth.advanced_or_expert');
 
-<<<<<<< HEAD
-Route::post('/gestion/controlstatut/{id}', [ControlerStatutController::class, 'controlstatut'])->middleware('auth.advanced_or_expert');
-
 Route::post('/gestion/association/{id}', [AssocierObjPiecesController::class, 'associer'])->middleware('auth.advanced_or_expert');
-=======
-Route::view('/formations', 'formations')->name('formations');
-Route::view('/evenements', 'evenements')->name('evenements'); 
-Route::view('/transports', 'transports')->name('transports');
 
-// Routes pour les détails
-Route::get('/formation/{id}', [FormationController::class, 'show'])->name('formation.details');
-Route::get('/evenement/{id}', [EvenementController::class, 'show'])->name('event.details');
->>>>>>> ae0ec4a (ajout des pages formations, evenements et transports)
+
+Route::view('/evenements/hackathon', 'hackathon')->name('event.hackathon');
+Route::view('/evenements/festival-arts', 'festival-arts')->name('event.festival');
+Route::view('/evenements/journee-portes-ouvertes', 'jpo')->name('event.jpo');
+
+Route::get('/formations', function () {
+    return view('formations');
+})->name('formations');
+
+Route::get('/evenements', function () {
+    return view('evenements');
+})->name('evenements');
+
+Route::get('/transports', function () {
+    return view('transports');
+})->name('transports');

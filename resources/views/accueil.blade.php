@@ -57,61 +57,64 @@
         <div class="container">
             <h2>Événements à venir</h2>
 
-<!--            <nav>
-                <form class='recherche' id="filterForm">
-                    <input type="text" id="searchInput" placeholder="Rechercher par nom ou description">
-                    <select id="modeSelect">
-                        <option value="">Tous les événements</option>
-                        <option value="Scolaire">Scolaire</option>
-                        <option value="Extra-Scolaire">Extra-Scolaire</option>
+            <!-- Barre de recherche -->
+            <nav>
+                <form class='recherche' id="filterForm" action="/#events" method="get">
+                    <input type="text" name="search" placeholder="Rechercher par titre ou description" value="{{ request('search') }}">
+                    <select name="annee">
+                        <option value="" disabled {{ request('annee') == '' ? 'selected' : '' }}>Filtrer par année</option>
+                        <option value="2025" {{ request('annee') == '2025' ? 'selected' : '' }}>2025</option>
+                        <option value="2026" {{ request('annee') == '2026' ? 'selected' : '' }}>2026</option>
+                        <option value="">Pas de filtre</option>
                     </select>
-                    <button type="button" id="searchButton">Rechercher</button>
+                    <input type='submit' value='Rechercher'/>
                 </form>
             </nav>
 
+            <!-- Événements phares 
+            <div class="featured-events">
+                <h3>Événements phares</h3>
+                <div class="event-buttons">
+                    <a href="{{ route('event.hackathon') }}" class="btn-event">Hackathon Jr</a>
+                    <a href="{{ route('event.festival') }}" class="btn-event">Festival des Arts</a>
+                    <a href="{{ route('event.jpo') }}" class="btn-event">Portes Ouvertes</a>
+                </div>
+            </div>-->
+
+            <!-- Résultats de recherche -->
+            @if(request('search') || request('annee'))
             <div class="event-cards">
-                <div class="event-card" data-title="Journée Portes Ouvertes" data-mode="Scolaire">
-                    <h3>Journée Portes Ouvertes</h3>
-                    <p>Venez découvrir notre établissement le 15 septembre !</p>
-                    <p class="date">Date: 15 Septembre 2025</p>
+                @foreach($evenements as $evenement)
+                <div class="event-card">
+                    <h3>{{ $evenement->titre }}</h3>
+                    <p>{{ $evenement->description }}</p>
+                    <p class="date">Date: {{ $evenement->date->locale('fr')->isoFormat('D MMMM YYYY') }}</p>
                 </div>
-                <div class="event-card" data-title="Concours d'Informatique" data-mode="Scolaire">
-                    <h3>Concours d'Informatique</h3>
+                @endforeach
+            </div>
+            @else
+            <!-- Événements par défaut quand aucun filtre -->
+            <div class="event-cards">
+                <div class="event-card">
+                    <h3>Hackathon Jr</h3>
                     <p>Inscrivez-vous pour participer à notre concours de codage annuel !</p>
-                    <p class="date">Date: 20 Octobre 2025</p>
+                    <p class="date">Date: 24 octobre 2025</p>
+                    <a href="{{ route('event.hackathon') }}" class="btn-secondary">Voir détails</a>
                 </div>
-                <div class="event-card" data-title="Festival des Arts" data-mode="Extra-Scolaire">
+                <div class="event-card">
                     <h3>Festival des Arts</h3>
                     <p>Venez admirer les créations artistiques de nos élèves !</p>
-                    <p class="date">Date: 5 Décembre 2025</p>
+                    <p class="date">Date: 27 novembre 2025</p>
+                    <a href="{{ route('event.festival') }}" class="btn-secondary">Voir détails</a>
+                </div>
+                <div class="event-card">
+                    <h3>Journée Portes Ouvertes</h3>
+                    <p>Venez découvrir notre établissement !</p>
+                    <p class="date">Date: 15 janvier 2026</p>
+                    <a href="{{ route('event.jpo') }}" class="btn-secondary">Voir détails</a>
                 </div>
             </div>
-        -->
-
-                <nav>
-                    <form class='recherche' id="filterForm" action="/#events" method="get">
-                        <input type="text" name="search" placeholder="Rechercher par titre ou description" value="{{ request('search') }}">
-                        <select name="annee">
-                            <option value="" disabled {{ request('annee') == '' ? 'selected' : '' }}>Filtrer par année</option>
-                            <option value="2025" {{ request('annee') == '2025' ? 'selected' : '' }}>2025</option>
-                            <option value="2026" {{ request('annee') == '2026' ? 'selected' : '' }}>2026</option>
-                            <option value="">Pas de filtre</option>
-                        </select>
-                        <input type='submit' value='Rechercher'/>
-                    </form>
-                </nav>
-
-                @if(request('search') || request('annee'))
-                <div class="event-cards">
-                    @foreach($evenements as $evenement)
-                    <div class="event-card">
-                        <h3>{{ $evenement->titre }}</h3>
-                        <p>{{ $evenement->description }}</p>
-                        <p class="date">Date: {{ $evenement->date->locale('fr')->isoFormat('D MMMM YYYY') }}</p>
-                    </div>
-                    @endforeach
-                </div>
-                @endif
+            @endif
         </div>
     </section>
 

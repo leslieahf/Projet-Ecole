@@ -1,35 +1,221 @@
+/* formations.css - Version améliorée */
+
+/* Styles de base */
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Police moderne et lisible */
-    line-height: 1.6;         /* Espacement entre les lignes */
-    color: #333;              /* Couleur de texte principale (gris foncé) */
-    margin: 0;                /* Supprime les marges par défaut */
-    padding: 0;               /* Supprime les paddings par défaut */
-    background-color: #f9f9f9; /* Couleur de fond légèrement grisée */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
 }
 
-.formations-container { 
-    max-width: 1200px; 
-    margin: 0 auto; 
-    padding: 2rem; 
+/* Conteneur principal */
+.formations-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
 }
 
-.hero-banner { 
-    text-align: center; 
-    padding: 3rem 0; 
-    background-color: #003366; 
-    color: white; 
-    margin-bottom: 2rem; 
+/* Bannière Hero */
+.hero-banner {
+    text-align: center;
+    padding: 3rem 0;
+    margin-bottom: 2rem;
+    background: linear-gradient(135deg, #003366 0%, #004080 100%);
+    color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    margin-top: 50px;
 }
 
-.formations-grid { 
-    display: grid; 
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); 
-    gap: 1.5rem; 
+.hero-banner h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
 }
 
-.formation-card { 
-    background: white; 
-    padding: 1.5rem; 
-    border-radius: 8px; 
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1); 
+.hero-banner p {
+    font-size: 1.2rem;
+    max-width: 600px;
+    margin: 0 auto;
+    opacity: 0.9;
+}
+
+/* Grille des formations */
+.formations-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+
+/* Cartes de formation */
+.formation-card {
+    background: white;
+    padding: 1.8rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-top: 4px solid transparent;
+}
+
+.formation-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    border-top-color: #009688;
+}
+
+.formation-header {
+    margin-bottom: 1rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.formation-header h2 {
+    color: #003366;
+    margin: 0 0 0.5rem 0;
+    font-size: 1.5rem;
+}
+
+.level-badge {
+    display: inline-block;
+    background: #f5f7fa;
+    color: #455A64;
+    padding: 0.3rem 0.8rem;
+    border-radius: 50px;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.formation-card p {
+    color: #455A64;
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+}
+
+.formation-details {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    font-size: 0.9rem;
+    color: #607D8B;
+}
+
+.formation-details span {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+/* Navigation Bar Styles */
+.main-nav {
+    background: #ffffff;
+    padding: 0.8rem 0;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+    position: sticky;
+    top: 70px; /* Égal à la hauteur du header */
+    z-index: 900; /* Inférieur au menu burger */
+    border-bottom: 1px solid #e0e0e0;
+    margin-top: 20px;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.nav-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: #455A64;
+    padding: 0.5rem 1.2rem;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    background: transparent;
+}
+
+.nav-btn:hover {
+    background: #f5f7fa;
+    color: #009688;
+}
+
+.nav-btn.active {
+    background: #f5f7fa;
+    color: #009688;
+    font-weight: 600;
+}
+
+.nav-btn.active::after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 3px;
+    background: #009688;
+    margin-top: 5px;
+    border-radius: 3px;
+}
+
+.nav-icon {
+    font-size: 1.5rem;
+    margin-bottom: 0.3rem;
+    transition: all 0.3s ease;
+}
+
+.nav-btn:hover .nav-icon {
+    transform: scale(1.1);
+}
+
+.nav-text {
+    font-size: 0.9rem;
+    font-weight: 500;
+    letter-spacing: 0.3px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero-banner h1 {
+        font-size: 2rem;
+    }
+    
+    .hero-banner p {
+        font-size: 1rem;
+    }
+    
+    .formations-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .nav-container {
+        gap: 0.8rem;
+    }
+    
+    .nav-btn {
+        padding: 0.5rem 0.8rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .formations-container {
+        padding: 1.5rem;
+    }
+    
+    .formation-card {
+        padding: 1.2rem;
+    }
+    
+    .nav-container {
+        flex-wrap: wrap;
+        gap: 0.5rem;
+    }
+    
+    .nav-btn {
+        padding: 0.4rem 0.6rem;
+        flex: 1;
+        min-width: 100px;
+    }
 }

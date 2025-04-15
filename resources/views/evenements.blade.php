@@ -6,6 +6,23 @@
 @endsection
 
 @section('contenu')
+<nav class="main-nav">
+    <div class="nav-container">
+        <a href="{{ route('formations') }}" class="nav-btn">
+            <span class="nav-icon">🎓</span>
+            <span class="nav-text">Formations</span>
+        </a>
+        <a href="{{ route('evenements') }}" class="nav-btn active">
+            <span class="nav-icon">📅</span>
+            <span class="nav-text">Événements</span>
+        </a>
+        <a href="{{ route('transports') }}" class="nav-btn">
+            <span class="nav-icon">🚌</span>
+            <span class="nav-text">Transports</span>
+        </a>
+    </div>
+</nav>
+
 <div class="events-container">
     <section class="hero-banner">
         <h1>Événements du Lycée</h1>
@@ -45,5 +62,15 @@
             </div>
         </div>
     </div>
+    
+    <div class="featured-events">
+    <h3>Événements phares</h3>
+    <div class="event-buttons">
+        <a href="{{ route('event.hackathon') }}" class="btn-event">Hackathon Jr</a>
+        <a href="{{ route('event.festival') }}" class="btn-event">Festival des Arts</a>
+        <a href="{{ route('event.jpo') }}" class="btn-event">Journée Portes Ouvertes</a>
+    </div>
+</div>
+    
 </div>
 @endsection

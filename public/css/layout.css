@@ -18,17 +18,21 @@ html, body {
 
 .main-content {
     flex: 1;
+    margin-top: 70px; /* Égal à la hauteur du header */
 }
-
 
 .header-content {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #003366; /* Couleur bleu */
+    background-color: #003366;
     color: white;
     padding: 20px;
-    position: relative;
+    position: fixed; /* Changé de relative à fixed */
+    width: 100%;
+    top: 0;
+    z-index: 1000; /* Haut z-index */
+    height: 70px; /* Hauteur fixe */
 }
 
 /* Section du menu déroulant */
@@ -105,9 +109,13 @@ html, body {
 .dropdown-content {
     display: none;
     position: absolute;
-    background-color: #f9f9f9;
+    top: 100%;
+    left: 0;
+    background-color: #003366;
     min-width: 160px;
-    z-index: 1;
+    z-index: 1100; /* Plus élevé que le header */
+    border-radius: 0 0 5px 5px;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.2);
 }
 
 .dropdown:hover .dropdown-content {
@@ -209,7 +217,7 @@ footer {
     border-top: 1px solid #333;
 }
 
-/* Supprimer le padding-top du body */
+/* padding-top du body */
 body {
     padding-top: 0;
 }

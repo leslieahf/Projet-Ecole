@@ -6,6 +6,23 @@
 @endsection
 
 @section('contenu')
+<nav class="main-nav">
+    <div class="nav-container">
+        <a href="{{ route('formations') }}" class="nav-btn">
+            <span class="nav-icon">🎓</span>
+            <span class="nav-text">Formations</span>
+        </a>
+        <a href="{{ route('evenements') }}" class="nav-btn">
+            <span class="nav-icon">📅</span>
+            <span class="nav-text">Événements</span>
+        </a>
+        <a href="{{ route('transports') }}" class="nav-btn active">
+            <span class="nav-icon">🚌</span>
+            <span class="nav-text">Transports</span>
+        </a>
+    </div>
+</nav>
+
 <div class="transport-container">
     <section class="hero-banner">
         <h1>Informations Transports</h1>
