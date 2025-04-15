@@ -22,6 +22,8 @@ class Objets extends Model implements Authenticatable
         'temperature',
         'niveau_encre',
         'niveau_remplissage',
+        'conso_Wh',
+        'pieces',
     ];
 
     public $incrementing = false;

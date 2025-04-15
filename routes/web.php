@@ -19,6 +19,7 @@ use App\Http\Controllers\RapportController;
 use App\Http\Controllers\DemandeSuppressionController;
 use App\Http\Controllers\ControlerStatutController;
 use App\Http\Controllers\ModifObjetsController;
+use App\Http\Controllers\AssocierObjPiecesController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -89,3 +90,7 @@ Route::post('/gestion/{id}', [ModifObjetsController::class, 'update'])->middlewa
 Route::post('/gestion/demandesup/{id}', [DemandeSuppressionController::class, 'demandesup'])->middleware('auth.advanced_or_expert');
 
 Route::post('/gestion/controlstatut/{id}', [ControlerStatutController::class, 'controlstatut'])->middleware('auth.advanced_or_expert');
+
+Route::post('/gestion/controlstatut/{id}', [ControlerStatutController::class, 'controlstatut'])->middleware('auth.advanced_or_expert');
+
+Route::post('/gestion/association/{id}', [AssocierObjPiecesController::class, 'associer'])->middleware('auth.advanced_or_expert');

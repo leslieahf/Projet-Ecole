@@ -25,6 +25,12 @@
    </script>
 @endif
 
+@if (session('success_assoc'))
+   <script>
+       alert("{{ session('success_assoc') }}");
+   </script>
+@endif
+
 @section('contenu')
     <section class="welcome-section">
         <h1 class="header-title">Gestion des Objets Connectés</h1>
@@ -146,28 +152,34 @@
         <div id="configuration" class="tab-content">
             <div class="card">
                 <h2>Associer des objets à des zones</h2>
+            <form action='/gestion/association/{{ $objet->id }}' method='post'>
+                @csrf
                 <div class="form-group">
                     <label for="objet">Objet connecté</label>
-                    <select id="objet">
-                        <option value="">Sélectionner un objet</option>
-                        <option value="thermostat1">Thermostat - Salle A1</option>
-                        <option value="lumiere2">Lumière - Couloir principal</option>
-                        <option value="capteur3">Capteur de CO2 - Labo informatique</option>
+                    <select name='objet' id="objet">
+                        <option value="" disabled selected>Sélectionner un objet</option>
+                        @foreach($objets as $objet)
+                        <option value="{{ $objet->id }}">{{ $objet->nom }}</option>
+                        @endforeach
                     </select>
                 </div>
                 
                 <div class="form-group">
-                    <label for="zone">Zone/pièce</label>
-                    <select id="zone">
-                        <option value="">Sélectionner une zone</option>
-                        <option value="salle_a1">Salle A1</option>
+                    <label for="piece">Zone/pièce</label>
+                    <select name='piece' id="piece">
+                        <option value="" disabled selected>Sélectionner une pièce</option>
+                        <option value="salle_de_classe">Salle de classe</option>
                         <option value="couloir_principal">Couloir principal</option>
-                        <option value="labo_info">Labo informatique</option>
                         <option value="cantine">Cantine</option>
+                        <option value="bureau_du_principal">Bureau du principal</option>
+                        <option value="salle_de_reunion">Salle de réunion</option>
+                        <option value="toilettes">Toilettes</option>
+                        <option value="bibliotheque">Bibliothèque</option>
                     </select>
                 </div>
                 
-                <button class="btn btn-primary">Associer</button>
+                <button class="btn btn-primary" type='submit'>Associer</button>
+            </form>
             </div>
             
             <div class="card">
