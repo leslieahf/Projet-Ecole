@@ -226,6 +226,12 @@ input, select {
 
 select{cursor: pointer;}
 
+/* Pour les erreurs de validation */
+.error {
+    color: red;
+    font-size: 14px;
+}
+
 /* 
  * Grille responsive 
  */
@@ -270,4 +276,239 @@ select{cursor: pointer;}
 .status-danger {
     background-color: #f8d7da; /* Fond rouge pâle */
     color: #721c24;         /* Texte rouge foncé */
+}
+
+/* Styles pour le thème sombre */
+.dark-theme {
+    background-color: #1a1a1a;
+    color: #e0e0e0;
+}
+
+.dark-theme .container {
+    background-color: #1a1a1a;
+}
+
+.dark-theme .welcome-section {
+    background: #2d2d2d;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.dark-theme .section-title {
+    color: #60a5fa;
+    border-bottom-color: #60a5fa;
+}
+
+.dark-theme h1,
+.dark-theme h2,
+.dark-theme h3 {
+    color: #60a5fa;
+}
+
+.dark-theme .card {
+    background: #2d2d2d;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.dark-theme .tabs {
+    border-bottom-color: #4a4a4a;
+}
+
+.dark-theme .tab {
+    color: #e0e0e0;
+}
+
+.dark-theme .tab.active {
+    border-bottom-color: #60a5fa;
+    color: #60a5fa;
+}
+
+.dark-theme .tab:hover {
+    background-color: #333333;
+}
+
+.dark-theme .table-caption {
+    color: #60a5fa;
+}
+
+.dark-theme table {
+    color: #e0e0e0;
+}
+
+.dark-theme th {
+    background-color: #1e3a8a;
+    color: #e0e0e0;
+}
+
+.dark-theme td {
+    border-bottom-color: #4a4a4a;
+}
+
+.dark-theme tr:hover {
+    background-color: #333333;
+}
+
+.dark-theme .btn {
+    border: 1px solid #4a4a4a;
+}
+
+.dark-theme .btn-primary {
+    background-color: #2563eb;
+    color: white;
+}
+
+.dark-theme .btn-primary:hover {
+    background-color: #1d4ed8;
+}
+
+.dark-theme .btn-secondary {
+    background-color: #059669;
+    color: white;
+}
+
+.dark-theme .btn-secondary:hover {
+    background-color: #047857;
+}
+
+.dark-theme .btn-warning {
+    background-color: #d97706;
+    color: white;
+}
+
+.dark-theme .btn-warning:hover {
+    background-color: #b45309;
+}
+
+.dark-theme .btn-danger {
+    background-color: #dc2626;
+    color: white;
+}
+
+.dark-theme .btn-danger:hover {
+    background-color: #b91c1c;
+}
+
+.dark-theme .add {
+    color: #e0e0e0;
+}
+
+.dark-theme label {
+    color: #60a5fa;
+}
+
+.dark-theme input,
+.dark-theme select {
+    background-color: #333333;
+    border-color: #4a4a4a;
+    color: #e0e0e0;
+}
+
+.dark-theme input:focus,
+.dark-theme select:focus {
+    border-color: #60a5fa;
+    box-shadow: 0 0 0 3px rgba(96, 165, 250, 0.2);
+}
+
+.dark-theme .status-badge {
+    background-color: #2d2d2d;
+    border: 1px solid #4a4a4a;
+}
+
+.dark-theme .status-normal {
+    background-color: #064e3b;
+    color: #6ee7b7;
+}
+
+.dark-theme .status-warning {
+    background-color: #854d0e;
+    color: #fcd34d;
+}
+
+.dark-theme .status-danger {
+    background-color: #991b1b;
+    color: #fca5a5;
+}
+
+/* Styles spécifiques pour les graphiques en mode sombre */
+.dark-theme .chart-container {
+    background-color: #2d2d2d !important;
+    border-radius: 8px;
+    padding: 15px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.dark-theme canvas {
+    background-color: #2d2d2d !important;
+}
+
+/* Styles spécifiques pour Chart.js en mode sombre */
+.dark-theme .chartjs-render-monitor,
+.dark-theme canvas.chartjs-render-monitor {
+    background-color: #2d2d2d !important;
+    color: #e0e0e0 !important;
+}
+
+/* Forcer le fond sombre pour tous les éléments du graphique */
+.dark-theme .chart-container > * {
+    background-color: #2d2d2d !important;
+}
+
+.dark-theme .chart-container canvas {
+    background-color: #2d2d2d !important;
+}
+
+/* Style pour les axes et les labels */
+.dark-theme .chart-container .chartjs-axis-title,
+.dark-theme .chart-container .chartjs-text {
+    color: #e0e0e0 !important;
+    fill: #e0e0e0 !important;
+}
+
+/* Style pour la grille */
+.dark-theme .chart-container .chartjs-grid-line {
+    stroke: #4a4a4a !important;
+}
+
+/* Style pour les points et les lignes du graphique */
+.dark-theme .chart-container .chartjs-point,
+.dark-theme .chart-container .chartjs-line {
+    border-color: #60a5fa !important;
+    background-color: #60a5fa !important;
+}
+
+/* Style pour les tooltips */
+.dark-theme .chartjs-tooltip {
+    background-color: #333333 !important;
+    color: #e0e0e0 !important;
+    border-color: #4a4a4a !important;
+}
+
+/* Style pour les légendes */
+.dark-theme .chartjs-legend,
+.dark-theme .chart-legend,
+.dark-theme .chart-container .chartjs-legend {
+    color: #e0e0e0 !important;
+    background-color: #2d2d2d !important;
+}
+
+/* Style pour le texte des axes */
+.dark-theme .chart-container .chartjs-axis-label {
+    color: #e0e0e0 !important;
+    fill: #e0e0e0 !important;
+}
+
+/* Style pour le titre du graphique */
+.dark-theme .chart-container .chartjs-title {
+    color: #e0e0e0 !important;
+    fill: #e0e0e0 !important;
+}
+
+/* Assurer que le conteneur du graphique est en mode sombre */
+.dark-theme div[style*="position: relative"] {
+    background-color: #2d2d2d !important;
+}
+
+/* Style pour tous les éléments texte dans le graphique */
+.dark-theme .chart-container text {
+    fill: #e0e0e0 !important;
+    color: #e0e0e0 !important;
 }

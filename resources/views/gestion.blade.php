@@ -59,35 +59,39 @@
                 <tr>
                     <th>ID</th>
                     <th>Nom</th>
+                    <th>Type</th>
                     <th>Connectivité</th>
-                    <th>Statut</th>
+                    <th style="text-align: center;">Statut</th>
                     <th>Mode</th>
-                    <th>Etat de la batterie</th>
+                    <th style="text-align: center;">Etat de la batterie</th>
                     <th>Température</th>
                     <th>Niveau d'encre</th>
                     <th>Niveau de remplissage</th>
-                    <th>Consommation (Wh)</th>
+                    <th style="text-align: center;">Consommation (Wh)</th>
+                    <th style="text-align: center;">Nombre d'utilisations</th>
                     <th>Actions</th> 
                 </tr>
                 @foreach($objets as $objet)
                 <tr>
                     <td>{{ $objet->id }}</td>
                     <td>{{ $objet->nom }}</td>
-                    <td>{{ $objet->connectivite }}</td>
-                    <td>{{ $objet->statut }}</td>
+                    <td>{{ $objet->type }}</td>
+                    <td style="text-align: center;">{{ $objet->connectivite }}</td>
+                    <td style="text-align: center;">{{ $objet->statut }}</td>
                     <td>{{ $objet->mode }}</td>
                     <td style="text-align: center;">{{ $objet->etat_batterie }}</td>
                     <td style="text-align: center;">{{ $objet->temperature ?? 'NULL' }}</td>
                     <td style="text-align: center;">{{ $objet->niveau_encre ?? 'NULL' }}</td>
                     <td style="text-align: center;">{{ $objet->niveau_remplissage ?? 'NULL' }}</td>
                     <td style="text-align: center;">{{ $objet->conso_Wh ?? 'NULL' }}</td>
+                    <td style="text-align: center;">{{ $objet->nbre_utilisations ?? 'NULL' }}</td>
                     <td>
                     <form action="/gestion/demandesup/{{ $objet->id }}" method="post" style="display:inline;">
                         @csrf
-                        <button class="btn btn-primary" type='submit'>Demander la suppression</button></br>
+                        <button class="btn btn-primary" type='submit'>Demander la suppression</button>
                     </form>
                     <div style="display: flex; gap: 3px;">
-                    <button class="btn btn-warning"><a class="add" href="/gestion/{{ $objet->id }}">Modifier</a></button></br>
+                    <button class="btn btn-warning"><a class="add" href="/gestion/{{ $objet->id }}">Modifier</a></button>
                     @php
                         // Définir les classes & libellés selon le statut
                         $statut = $objet->statut;
@@ -151,9 +155,18 @@
         <!-- Onglet Configuration -->
         <div id="configuration" class="tab-content">
             <div class="card">
-                <h2>Associer des objets à des zones</h2>
+                <h2>Associer des objets à des zones</h2></br>
             <form action='/gestion/association/{{ $objet->id }}' method='post'>
                 @csrf
+                @if ($errors->any())
+                <div class="error">
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+                @endif
                 <div class="form-group">
                     <label for="objet">Objet connecté</label>
                     <select name='objet' id="objet">
@@ -168,13 +181,13 @@
                     <label for="piece">Zone/pièce</label>
                     <select name='piece' id="piece">
                         <option value="" disabled selected>Sélectionner une pièce</option>
-                        <option value="salle_de_classe">Salle de classe</option>
-                        <option value="couloir_principal">Couloir principal</option>
-                        <option value="cantine">Cantine</option>
-                        <option value="bureau_du_principal">Bureau du principal</option>
-                        <option value="salle_de_reunion">Salle de réunion</option>
-                        <option value="toilettes">Toilettes</option>
-                        <option value="bibliotheque">Bibliothèque</option>
+                        <option value="Salle de classe">Salle de classe</option>
+                        <option value="Couloir principal">Couloir principal</option>
+                        <option value="Cantine">Cantine</option>
+                        <option value="Bureau du principal">Bureau du principal</option>
+                        <option value="Salle de réunion">Salle de réunion</option>
+                        <option value="Toilettes">Toilettes</option>
+                        <option value="Bibliothèque">Bibliothèque</option>
                     </select>
                 </div>
                 
@@ -296,8 +309,8 @@
         <!-- Onglet Rapports -->
         <div id="rapports" class="tab-content">
             <div class="card">
-                <h2>Génération de rapports</h2>
-                <div class="form-group">
+                <h2>Génération de rapports</h2></br>
+                {{-- <div class="form-group">
                     <label for="periode">Période</label>
                     <select id="periode">
                         <option value="jour">Journalier</option>
@@ -305,9 +318,9 @@
                         <option value="mois">Mensuel</option>
                         <option value="custom">Personnalisé</option>
                     </select>
-                </div>
+                </div> --}}
                 
-                <div class="form-group">
+{{--                 <div class="form-group">
                     <label for="type-rapport">Type de rapport</label>
                     <select id="type-rapport">
                         <option value="energie">Consommation énergétique</option>
@@ -315,21 +328,37 @@
                         <option value="maintenance">Historique de maintenance</option>
                         <option value="complet">Rapport complet</option>
                     </select>
-                </div>
+                </div> --}}
                 
-                <button class="btn btn-primary">Générer le rapport</button>
+                <button class='btn btn-primary'><a class='add' href='/rapportgestion'>Générer le rapport PDF</a></button></br></br>
+                {{-- 
+                <button class="btn btn-primary">Générer le rapport PDF</button>
                 <button class="btn btn-secondary">Exporter en PDF</button>
-                
+                 --}}
+
                 <div class="chart-container">
                     <!-- Espace réservé pour un graphique -->
                     <p style="text-align: center; padding: 50px; background: var(--light-bg); border-radius: 4px;">
-                        [Graphique de consommation énergétique apparaîtra ici]
+                        {{-- [Graphique de consommation énergétique apparaîtra ici] --}}
+                        {!! $chart1->renderHtml() !!}
                     </p>
+                    <p style="text-align: center; padding: 50px; background: var(--light-bg); border-radius: 4px;">
+                        {!! $chart2->renderHtml() !!}
+                    </p>
+
+
+
                 </div>
             </div>
         </div>
     </div>
     
+    {!! $chart1->renderChartJsLibrary() !!}
+    {!! $chart2->renderChartJsLibrary() !!}
+
+    {!! $chart1->renderJs() !!}
+    {!! $chart2->renderJs() !!}
+
     <script>
         function openTab(tabName) {
             // Masquer tous les onglets

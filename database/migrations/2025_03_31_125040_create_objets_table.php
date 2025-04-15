@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('objets', function (Blueprint $table) {
             $table->string('id');
             $table->string('nom');
+            $table->string('type');
             $table->string('connectivite');
             $table->string('statut');
             $table->string('mode');
@@ -23,6 +24,7 @@ return new class extends Migration
             $table->integer('niveau_remplissage')->nullable();
             $table->integer('conso_Wh')->default(0)->nullable();
             $table->string('pieces')->nullable();
+            $table->integer('nbre_utilisations')->default(0)->nullable();
             $table->timestamps();
         });
     }

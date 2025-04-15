@@ -83,6 +83,14 @@
                             </div>
                         </div>
                         @endif
+                        @if($objet->niveau_remplissage)
+                        <div class="detail">
+                            <span class="detail-label">Niveau de remplissage:</span>
+                            <div class="ink-level">
+                                <div class="ink-level-bar" style="width: {{ $objet->niveau_remplissage }}%"></div>
+                            </div>
+                        </div>
+                        @endif
                     </div>
                 </div>
             @endforeach

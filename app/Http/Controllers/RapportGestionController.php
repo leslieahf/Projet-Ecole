@@ -8,7 +8,7 @@ use Barryvdh\DomPDF\Facade\Pdf;
 use LaravelDaily\LaravelCharts\Classes\LaravelChart;
 
 
-class RapportController extends Controller
+class RapportGestionController extends Controller
 {
     public function generatePDF()
     {
@@ -17,6 +17,20 @@ class RapportController extends Controller
         
         // Récupérer les données des objets
         $objets = Objets::select('id', 'conso_wh','nbre_utilisations')->get();
+
+        // Récupérer les objets avec la consommation la plus élevée par type
+        $max_conso_imprimante = Objets::where('type', 'Imprimante')->orderBy('conso_wh', 'desc')->first();
+        $max_conso_projecteur = Objets::where('type', 'Projecteur')->orderBy('conso_wh', 'desc')->first();
+        $max_conso_poubelle = Objets::where('type', 'Poubelle')->orderBy('conso_wh', 'desc')->first();
+        $max_conso_serrure = Objets::where('type', 'Serrure')->orderBy('conso_wh', 'desc')->first();
+        $max_conso_radiateur = Objets::where('type', 'Radiateur')->orderBy('conso_wh', 'desc')->first();
+
+        // Récupérer les objets les plus utilisés par type
+        $max_utilisations_imprimante = Objets::where('type', 'Imprimante')->orderBy('nbre_utilisations', 'desc')->first();
+        $max_utilisations_projecteur = Objets::where('type', 'Projecteur')->orderBy('nbre_utilisations', 'desc')->first();
+        $max_utilisations_poubelle = Objets::where('type', 'Poubelle')->orderBy('nbre_utilisations', 'desc')->first();
+        $max_utilisations_serrure = Objets::where('type', 'Serrure')->orderBy('nbre_utilisations', 'desc')->first();
+        $max_utilisations_radiateur = Objets::where('type', 'Radiateur')->orderBy('nbre_utilisations', 'desc')->first();
 
         $total_conso = Objets::sum('conso_Wh'); // Somme de la colonne 'conso_Wh'
         $total_connexions = Utilisateurs::sum('nbre_connexions');
@@ -55,7 +69,7 @@ class RapportController extends Controller
         */
 
         // Générer le PDF
-        $pdf = PDF::loadView('rapport', [
+        $pdf = PDF::loadView('rapportgestion', [
             'utilisateurs' => $utilisateurs,
             'objets' => $objets,
             'total_conso' => $total_conso,
@@ -69,8 +83,18 @@ class RapportController extends Controller
             'total_radiateurs' => $total_radiateurs,
             'moy_connexions' => $moy_connexions,
             //'chart1' => $chart1,
+            'max_conso_imprimante' => $max_conso_imprimante,
+            'max_conso_projecteur' => $max_conso_projecteur,
+            'max_conso_poubelle' => $max_conso_poubelle,
+            'max_conso_serrure' => $max_conso_serrure,
+            'max_conso_radiateur' => $max_conso_radiateur,
+            'max_utilisations_imprimante' => $max_utilisations_imprimante ,
+            'max_utilisations_projecteur' => $max_utilisations_projecteur,
+            'max_utilisations_poubelle' => $max_utilisations_poubelle ,
+            'max_utilisations_serrure' => $max_utilisations_serrure ,
+            'max_utilisations_radiateur' => $max_utilisations_radiateur, 
         ]);
 
-        return $pdf->download('rapport.pdf');
+        return $pdf->download('rapportgestion.pdf');
     }
 } 

@@ -31,6 +31,18 @@
                     <input type='text' name='nom' id='nom' value="{{ old('nom', $objet->nom) }}"/>
                 </div>
 
+                <!-- Type -->
+                <div class="form-group">
+                    <label for='type'>Type:</label>
+                    <select name='type' id='type'>
+                        <option value="Imprimante" {{ old('type') == 'Imprimante' ? 'selected' : '' }}>Imprimante</option>
+                        <option value="Projecteur" {{ old('type') == 'Projecteur' ? 'selected' : '' }}>Projecteur</option>
+                        <option value="Poubelle" {{ old('type') == 'Poubelle' ? 'selected' : '' }}>Poubelle</option>
+                        <option value="Radiateur" {{ old('type') == 'Radiateur' ? 'selected' : '' }}>Radiateur</option>
+                        <option value="Serrure" {{ old('type') == 'Serrure' ? 'selected' : '' }}>Serrure</option>
+                    </select>
+                </div>
+
                 <!-- Connectivité -->
                 <div class="form-group">
                     <label for='con'>Connectivité:</label>
@@ -75,19 +87,19 @@
                 </div>
 
                 <!-- Température -->
-                <div class="form-group">
+                <div class="form-group" id="temp-group">
                     <label for='temp'>Température:</label>
                     <input type='text' name='temperature' id='temp' value="{{ old('temperature', $objet->temperature) }}"/>
                 </div>
 
                 <!-- Niveau d'encre -->
-                <div class="form-group">
+                <div class="form-group" id="niv_encr-group">
                     <label for='niv_encr'>Niveau d'encre:</label>
                     <input type='text' name='niveau_encre' id='niv_encr' value="{{ old('niveau_encre', $objet->niveau_encre) }}"/>
                 </div>
 
                 <!-- Niveau de remplissage -->
-                <div class="form-group">
+                <div class="form-group" id="niv_remp-group">
                     <label for='niv_remp'>Niveau de remplissage:</label>
                     <input type='text' name='niveau_remplissage' id='niv_remp' value="{{ old('niveau_remplissage', $objet->niveau_remplissage) }}"/>
                 </div>
@@ -102,6 +114,47 @@
             </form>
         </div>
     </div>
+
+    <script>
+        document.getElementById('type').addEventListener('change', function() {
+            var type = this.value;
+            
+            // Cache tous les groupes d'éléments
+            document.getElementById('niv_encr-group').style.display = 'none';
+            document.getElementById('niv_remp-group').style.display = 'none';
+            document.getElementById('temp-group').style.display = 'none';
+            // Montre les champs en fonction du type sélectionné
+            if (type == 'Radiateur') {
+                document.getElementById('niv_encr-group').style.display = 'none';
+                document.getElementById('niv_remp-group').style.display = 'none';
+                document.getElementById('temp-group').style.display = 'flex';
+            }
+            else if (type == 'Serrure') {
+                document.getElementById('niv_encr-group').style.display = 'none';
+                document.getElementById('niv_remp-group').style.display = 'none';
+                document.getElementById('temp-group').style.display = 'none';
+            }
+            else if (type == 'Projecteur') {
+                document.getElementById('niv_encr-group').style.display = 'none';
+                document.getElementById('niv_remp-group').style.display = 'none';
+                document.getElementById('temp-group').style.display = 'none';
+            }
+            else if (type == 'Poubelle') {
+                document.getElementById('niv_encr-group').style.display = 'none';
+                document.getElementById('temp-group').style.display = 'none';
+                document.getElementById('niv_remp-group').style.display = 'flex';
+    
+            }
+            else if (type == 'Imprimante') {
+                document.getElementById('niv_remp-group').style.display = 'none';
+                document.getElementById('temp-group').style.display = 'none';
+                document.getElementById('niv_encr-group').style.display = 'flex';
+            }
+        });
+    
+        // Simuler le changement pour appliquer le style dès le début (si une valeur est déjà sélectionnée)
+        document.getElementById('type').dispatchEvent(new Event('change'));
+    </script>
 
 @endsection
 

@@ -253,4 +253,139 @@ select:focus {
         gap: 1rem;
     }
 }
-    
+
+/* Styles pour la réinitialisation de mot de passe */
+.password-reset-section {
+    background-color: #fff5f5;
+    padding: 1.5rem;
+    border-radius: 8px;
+    border-left: 4px solid #e53e3e;
+}
+
+.btn-secondary {
+    background-color: #e53e3e;
+    color: white;
+    border: none;
+}
+
+.btn-secondary:hover {
+    background-color: #c53030;
+}
+
+#passwordResetForm {
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Styles pour le thème sombre */
+.dark-theme {
+    background-color: #1a1a1a;
+    color: #e0e0e0;
+}
+
+.dark-theme .bg-white {
+    background-color: #2d2d2d;
+}
+
+.dark-theme nav {
+    background-color: #2d2d2d;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.dark-theme nav a {
+    color: #e0e0e0;
+}
+
+.dark-theme nav a:hover,
+.dark-theme nav a#current {
+    color: #ffffff;
+    background-color: #2563eb;
+}
+
+.dark-theme .alert-success {
+    background-color: #064e3b;
+    color: #6ee7b7;
+    border-color: #059669;
+}
+
+.dark-theme .text-3xl {
+    color: #60a5fa;
+}
+
+.dark-theme .text-lg {
+    color: #9ca3af;
+}
+
+.dark-theme .card {
+    background-color: #2d2d2d;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.dark-theme .card:hover {
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.3);
+}
+
+.dark-theme .points {
+    background-color: #333333;
+}
+
+.dark-theme .pfont1,
+.dark-theme .pfont2 {
+    color: #60a5fa;
+}
+
+.dark-theme label {
+    color: #60a5fa;
+}
+
+.dark-theme input[type="text"],
+.dark-theme input[type="password"],
+.dark-theme input[type="date"],
+.dark-theme select {
+    background-color: #333333;
+    border-color: #4a4a4a;
+    color: #e0e0e0;
+}
+
+.dark-theme input[type="text"]:focus,
+.dark-theme input[type="password"]:focus,
+.dark-theme input[type="date"]:focus,
+.dark-theme select:focus {
+    border-color: #60a5fa;
+    box-shadow: 0 0 0 3px rgba(96, 165, 250, 0.2);
+}
+
+.dark-theme input[type='file']::-webkit-file-upload-button {
+    background-color: #2563eb;
+    color: white;
+}
+
+.dark-theme input[type='file']::-webkit-file-upload-button:hover {
+    background-color: #1d4ed8;
+}
+
+.dark-theme .btn-primary {
+    background-color: #2563eb;
+    color: white;
+}
+
+.dark-theme .btn-primary:hover {
+    background-color: #1d4ed8;
+}
+
+.dark-theme .password-reset-section {
+    background-color: #7f1d1d;
+    border-left-color: #dc2626;
+}
+
+.dark-theme .btn-secondary {
+    background-color: #dc2626;
+}
+
+.dark-theme .btn-secondary:hover {
+    background-color: #b91c1c;
+}    
