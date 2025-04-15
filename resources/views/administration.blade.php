@@ -294,13 +294,10 @@
                 <div class="card">
                 <h1 class="table-caption">{{ $chart1->options['chart_title'] }}</h1>
                         {!! $chart1->renderHtml() !!}
-            </div>
-
-            
+                </div>
             </div>
         </div>
-        
-    </div>
+
 
     {!! $chart1->renderChartJsLibrary() !!}
 

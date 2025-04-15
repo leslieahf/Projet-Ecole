@@ -31,24 +31,24 @@ class AdminController extends Controller
         // Récupération des utilisateurs et de leurs connexions
         //$utilisateurs = Utilisateurs::select('login', 'nbre_connexions')->get();
 
-        // Générer des couleurs aléatoires
-        $colors = [];
-        foreach ($utilisateurs as $utilisateur) {
-            //$colors[] = '#' . substr(md5(rand()), 0, 6); // Génère une couleur aléatoire en hexadécimal
-            $colors[] = '#' . substr(sha1(uniqid(rand(), true)), 0, 6); // Génère une couleur aléatoire en hexadécimal
+        // palette fixe pour le chart (bleu IntelliSchool)
+        $colors = array_fill(0, count($utilisateurs), '#003366'); // Toutes les barres en bleu IntelliSchool
 
-        }
+        
         // Configuration du premier graphique avec l'axe X = pseudo et l'axe Y = nbre_connexions
         $chart_options = [
-            'chart_title' => "Nombre de connexions par utilisateur",
-            'report_type' => 'group_by_string',
-            'model' => 'App\Models\Utilisateurs',
-            'group_by_field' => 'login',
-            'aggregate_function' => 'sum',
-            'aggregate_field' => 'nbre_connexions',
-            'chart_type' => 'bar',
-            'backgroundColor' => $colors, // Définition des couleurs ici
-            'labels' => $utilisateurs->pluck('login')->toArray(),
+        'chart_title' => "Nombre de connexions par utilisateur",
+        'report_type' => 'group_by_string',
+        'model' => 'App\Models\Utilisateurs',
+        'group_by_field' => 'login',
+        'aggregate_function' => 'sum',
+        'aggregate_field' => 'nbre_connexions',
+        'chart_type' => 'bar',
+        'colors' => ['#003366'], // Couleur unique pour toutes les barres
+        'color' => '#003366', // Alternative
+        'background_color' => 'transparent',
+        'chart_color' => '0,51,102', // Format RGB
+        'bar_opacity' => 1, // Opacité à 100%
         ];
         
         $chart1 = new LaravelChart($chart_options);

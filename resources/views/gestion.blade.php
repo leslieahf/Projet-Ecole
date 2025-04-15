@@ -338,13 +338,12 @@
 
                 <div class="chart-container">
                     <!-- Espace réservé pour un graphique -->
-                    <p style="text-align: center; padding: 50px; background: var(--light-bg); border-radius: 4px;">
-                        {{-- [Graphique de consommation énergétique apparaîtra ici] --}}
+                    <div class="chart-container" style="flex: 1; min-height: 500px;">
                         {!! $chart1->renderHtml() !!}
-                    </p>
-                    <p style="text-align: center; padding: 50px; background: var(--light-bg); border-radius: 4px;">
+                    </div>
+                    <div class="chart-container" style="flex: 1; min-height: 500px;">
                         {!! $chart2->renderHtml() !!}
-                    </p>
+                    </div>
 
 
 
@@ -358,6 +357,8 @@
 
     {!! $chart1->renderJs() !!}
     {!! $chart2->renderJs() !!}
+
+    
 
     <script>
         function openTab(tabName) {
