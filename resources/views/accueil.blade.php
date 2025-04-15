@@ -82,13 +82,24 @@
             </div>-->
 
             <!-- Résultats de recherche -->
-            @if(request('search') || request('annee'))
+                   @if(request('search') || request('annee'))
             <div class="event-cards">
                 @foreach($evenements as $evenement)
                 <div class="event-card">
                     <h3>{{ $evenement->titre }}</h3>
                     <p>{{ $evenement->description }}</p>
                     <p class="date">Date: {{ $evenement->date->locale('fr')->isoFormat('D MMMM YYYY') }}</p>
+
+                    @php
+                        $routes = [
+                            'Hackathon Jr' => 'event.hackathon',
+                            'Festival des Arts' => 'event.festival',
+                            'Journée Portes Ouvertes' => 'event.jpo'
+                        ];
+                        $route = $routes[$evenement->titre] ?? '#';
+                    @endphp
+
+                    <a href="{{ route($route) }}" class="btn-secondary">Voir détails</a>
                 </div>
                 @endforeach
             </div>
