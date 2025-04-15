@@ -30,19 +30,25 @@
             <h2>Découvrez notre établissement</h2>
             <p>IntelliSchool est un établissement innovant, dédié à l'excellence académique et à l'éducation moderne. Nos formations couvrent un large éventail de domaines, de la science aux arts, en passant par la technologie.</p>
             <div class="cards">
+            <a href="{{ route('formations') }}" class="card-link">
                 <div class="card">
                     <h3>📚 Formations</h3>
                     <p>Explorez nos programmes dans les sciences, les lettres, la technologie, et plus encore.</p>
                 </div>
+            </a>
+            <a href="{{ route('evenements') }}" class="card-link">
                 <div class="card">
                     <h3>🎉 Événements</h3>
                     <p>Suivez les événements à venir comme les journées portes ouvertes, les concours, et plus.</p>
                 </div>
+            </a>
+            <a href="{{ route('transports') }}" class="card-link">
                 <div class="card">
                     <h3>🚌 Transports</h3>
                     <p>Accédez aux informations de transport scolaire pour faciliter vos trajets.</p>
                 </div>
-            </div>
+            </a>
+        </div>
         </div>
     </section>
 

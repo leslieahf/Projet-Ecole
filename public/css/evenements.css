@@ -1,0 +1,31 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Police moderne et lisible */
+    line-height: 1.6;         /* Espacement entre les lignes */
+    color: #333;              /* Couleur de texte principale (gris foncé) */
+    margin: 0;                /* Supprime les marges par défaut */
+    padding: 0;               /* Supprime les paddings par défaut */
+    background-color: #f9f9f9; /* Couleur de fond légèrement grisée */
+}
+
+.events-container { 
+    max-width: 800px; 
+    margin: 0 auto; 
+    padding: 2rem; 
+}
+
+.event-item { display: flex; 
+    gap: 1.5rem; 
+    margin-bottom: 2rem; 
+    background: white; 
+    padding: 1.5rem; 
+    border-radius: 8px; 
+}
+
+.event-date { 
+    background: #003366; 
+    color: white; 
+    padding: 1rem; 
+    border-radius: 8px; 
+    min-width: 80px; 
+    text-align: center; 
+}
