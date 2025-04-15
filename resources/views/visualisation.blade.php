@@ -69,6 +69,10 @@
                                 {{ $objet->etat_batterie }}%
                             </span>
                         </div>
+                        <div class="detail">
+                            <span class="detail-label">Pièce:</span>
+                            <span>{{ $objet->pieces }}</span>
+                        </div>
                         @if($objet->temperature)
                         <div class="detail">
                             <span class="detail-label">Température:</span>

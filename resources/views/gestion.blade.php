@@ -41,7 +41,7 @@
         <div class="tabs">
             <div class="tab active" onclick="openTab('gestion')">Gestion</div>
             <div class="tab" onclick="openTab('configuration')">Configuration</div>
-            <div class="tab" onclick="openTab('surveillance')">Surveillance</div>
+            {{-- <div class="tab" onclick="openTab('surveillance')">Surveillance</div> --}}
             <div class="tab" onclick="openTab('rapports')">Rapports</div>
         </div>
         
@@ -60,6 +60,7 @@
                     <th>ID</th>
                     <th>Nom</th>
                     <th>Type</th>
+                    <th style="text-align: center;">Pièce</th>
                     <th>Connectivité</th>
                     <th style="text-align: center;">Statut</th>
                     <th>Mode</th>
@@ -76,15 +77,16 @@
                     <td>{{ $objet->id }}</td>
                     <td>{{ $objet->nom }}</td>
                     <td>{{ $objet->type }}</td>
+                    <td style="text-align: center;">{{ $objet->pieces }}</td>
                     <td style="text-align: center;">{{ $objet->connectivite }}</td>
                     <td style="text-align: center;">{{ $objet->statut }}</td>
                     <td>{{ $objet->mode }}</td>
                     <td style="text-align: center;">{{ $objet->etat_batterie }}</td>
-                    <td style="text-align: center;">{{ $objet->temperature ?? 'NULL' }}</td>
-                    <td style="text-align: center;">{{ $objet->niveau_encre ?? 'NULL' }}</td>
-                    <td style="text-align: center;">{{ $objet->niveau_remplissage ?? 'NULL' }}</td>
-                    <td style="text-align: center;">{{ $objet->conso_Wh ?? 'NULL' }}</td>
-                    <td style="text-align: center;">{{ $objet->nbre_utilisations ?? 'NULL' }}</td>
+                    <td style="text-align: center;">{{ $objet->temperature ?? '-' }}</td>
+                    <td style="text-align: center;">{{ $objet->niveau_encre ?? '-' }}</td>
+                    <td style="text-align: center;">{{ $objet->niveau_remplissage ?? '-' }}</td>
+                    <td style="text-align: center;">{{ $objet->conso_Wh ?? '-' }}</td>
+                    <td style="text-align: center;">{{ $objet->nbre_utilisations ?? '-' }}</td>
                     <td>
                     <form action="/gestion/demandesup/{{ $objet->id }}" method="post" style="display:inline;">
                         @csrf
@@ -195,7 +197,7 @@
             </form>
             </div>
             
-            <div class="card">
+            {{-- <div class="card">
                 <h2>Configuration des paramètres</h2>
                 <div class="grid">
                     <div>
@@ -233,11 +235,11 @@
                         <button class="btn btn-secondary">Appliquer</button>
                     </div>
                 </div>
-            </div>
+            </div> --}}
         </div>
         
         <!-- Onglet Surveillance -->
-        <div id="surveillance" class="tab-content">
+        {{-- <div id="surveillance" class="tab-content">
             <div class="card">
                 <h2>État des objets connectés</h2>
                 <table>
@@ -283,8 +285,8 @@
                         </tr>
                     </tbody>
                 </table>
-            </div>
-            
+            </div> --}}
+            {{-- 
             <div class="card">
                 <h2>Optimisation énergétique</h2>
                 <div class="grid">
@@ -305,7 +307,7 @@
                 </div>
             </div>
         </div>
-        
+         --}}
         <!-- Onglet Rapports -->
         <div id="rapports" class="tab-content">
             <div class="card">
