@@ -219,3 +219,92 @@ body {
         min-width: 100px;
     }
 }
+
+/* Styles pour le thème sombre */
+.dark-theme {
+    background-color: #1a1a1a;
+    color: #e0e0e0;
+}
+
+.dark-theme .formations-container {
+    background-color: #1a1a1a;
+}
+
+.dark-theme .hero-banner {
+    background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 100%);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.dark-theme .hero-banner h1,
+.dark-theme .hero-banner p {
+    color: #e0e0e0;
+}
+
+.dark-theme .formations-grid {
+    gap: 1.5rem;
+}
+
+.dark-theme .formation-card {
+    background: #2d2d2d;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    border-top: 4px solid transparent;
+}
+
+.dark-theme .formation-card:hover {
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    border-top-color: #2563eb;
+    transform: translateY(-5px);
+}
+
+.dark-theme .formation-header {
+    border-bottom-color: #4a4a4a;
+}
+
+.dark-theme .formation-header h2 {
+    color: #60a5fa;
+}
+
+.dark-theme .level-badge {
+    background: #333333;
+    color: #e0e0e0;
+}
+
+.dark-theme .formation-card p {
+    color: #e0e0e0;
+}
+
+.dark-theme .formation-details {
+    color: #9ca3af;
+}
+
+/* Navigation en mode sombre */
+.dark-theme .main-nav {
+    background: #2d2d2d;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    border-bottom-color: #4a4a4a;
+}
+
+.dark-theme .nav-btn {
+    color: #e0e0e0;
+}
+
+.dark-theme .nav-btn:hover {
+    background: #333333;
+    color: #60a5fa;
+}
+
+.dark-theme .nav-btn.active {
+    background: #333333;
+    color: #60a5fa;
+}
+
+.dark-theme .nav-btn.active::after {
+    background: #60a5fa;
+}
+
+/* Responsive en mode sombre */
+@media (max-width: 768px) {
+    .dark-theme .formation-card {
+        background: #2d2d2d;
+    }
+}

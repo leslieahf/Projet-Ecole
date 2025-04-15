@@ -316,3 +316,117 @@ body {
         min-width: 100px;
     }
 }
+
+/* Styles pour le thème sombre */
+.dark-theme {
+    background-color: #1a1a1a;
+    color: #e0e0e0;
+}
+
+.dark-theme .events-container {
+    background-color: #1a1a1a;
+}
+
+.dark-theme .hero-banner {
+    background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 100%);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.dark-theme .hero-banner h1 {
+    color: #e0e0e0;
+}
+
+.dark-theme .hero-banner p {
+    color: #e0e0e0;
+}
+
+.dark-theme .event-item {
+    background: #2d2d2d;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    border-left-color: transparent;
+}
+
+.dark-theme .event-item:hover {
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    border-left-color: #60a5fa;
+    transform: translateY(-5px);
+}
+
+.dark-theme .event-date {
+    background: #1e3a8a;
+    color: #e0e0e0;
+}
+
+.dark-theme .event-content h2 {
+    color: #60a5fa;
+}
+
+.dark-theme .event-content p {
+    color: #e0e0e0;
+}
+
+.dark-theme .event-meta {
+    color: #9ca3af;
+}
+
+.dark-theme .featured-events {
+    background: #2d2d2d;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.dark-theme .featured-events h3 {
+    color: #60a5fa;
+}
+
+.dark-theme .featured-events h3::after {
+    background: #60a5fa;
+}
+
+.dark-theme .btn-event {
+    background: #333333;
+    color: #e0e0e0;
+    border-color: #4a4a4a;
+}
+
+.dark-theme .btn-event:hover {
+    background: #2563eb;
+    color: white;
+    border-color: #2563eb;
+    box-shadow: 0 5px 15px rgba(37, 99, 235, 0.3);
+}
+
+/* Navigation en mode sombre */
+.dark-theme .main-nav {
+    background: #2d2d2d;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    border-bottom-color: #4a4a4a;
+}
+
+.dark-theme .nav-btn {
+    color: #e0e0e0;
+}
+
+.dark-theme .nav-btn:hover {
+    background: #333333;
+    color: #60a5fa;
+}
+
+.dark-theme .nav-btn.active {
+    background: #333333;
+    color: #60a5fa;
+}
+
+.dark-theme .nav-btn.active::after {
+    background: #60a5fa;
+}
+
+/* Responsive en mode sombre */
+@media (max-width: 768px) {
+    .dark-theme .event-item {
+        background: #2d2d2d;
+    }
+    
+    .dark-theme .event-date {
+        background: #1e3a8a;
+    }
+}

@@ -375,3 +375,139 @@
     50% { transform: translateY(-20px) rotate(5deg); }
     100% { transform: translateY(0) rotate(0deg); }
 }
+
+/* Styles pour le thème sombre */
+.dark-theme {
+    background-color: #1a1a1a;
+    color: #e0e0e0;
+}
+
+/* Hero Section en mode sombre */
+.dark-theme .event-hero {
+    background-image: 
+        linear-gradient(135deg, rgba(156, 39, 176, 0.4) 0%, rgba(233, 30, 99, 0.5) 100%),
+        url('https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f') !important;
+}
+
+.dark-theme .event-hero::after {
+    opacity: 0.2;
+}
+
+@keyframes colorPulseDark {
+    0% { background-color: rgba(156, 39, 176, 0.4); }
+    50% { background-color: rgba(233, 30, 99, 0.4); }
+    100% { background-color: rgba(103, 58, 183, 0.4); }
+}
+
+.dark-theme .event-hero {
+    animation: colorPulseDark 12s ease infinite alternate;
+}
+
+/* Content Section en mode sombre */
+.dark-theme .event-content {
+    background: linear-gradient(to bottom, #1a1a1a 0%, #242424 100%);
+}
+
+.dark-theme .event-content::before {
+    background: radial-gradient(circle, rgba(233, 30, 99, 0.15) 0%, rgba(233, 30, 99, 0) 70%);
+}
+
+.dark-theme .event-details h2 {
+    background: linear-gradient(90deg, #ce93d8 0%, #f48fb1 100%);
+    -webkit-background-clip: text;
+}
+
+.dark-theme .event-details h2::after {
+    background: linear-gradient(90deg, #ce93d8 0%, #f48fb1 100%);
+}
+
+/* Cartes artistiques en mode sombre */
+.dark-theme .info-card {
+    background: #2d2d2d;
+    box-shadow: 0 8px 25px rgba(156, 39, 176, 0.2);
+}
+
+.dark-theme .info-card::before {
+    background: linear-gradient(135deg, rgba(156, 39, 176, 0.1) 0%, rgba(233, 30, 99, 0.05) 100%);
+}
+
+.dark-theme .info-card:nth-child(1) {
+    border-left-color: #ce93d8;
+}
+
+.dark-theme .info-card:nth-child(2) {
+    border-left-color: #b39ddb;
+}
+
+.dark-theme .info-card:nth-child(3) {
+    border-left-color: #ffb74d;
+}
+
+.dark-theme .info-card:hover {
+    box-shadow: 0 15px 35px rgba(156, 39, 176, 0.3);
+}
+
+.dark-theme .info-card h3 {
+    color: #ce93d8;
+}
+
+/* Galerie artistique en mode sombre */
+.dark-theme .art-item {
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.dark-theme .art-item:hover {
+    box-shadow: 0 15px 30px rgba(156, 39, 176, 0.4);
+}
+
+.dark-theme .art-item::after {
+    background: linear-gradient(to top, rgba(156, 39, 176, 0.8) 0%, transparent 50%);
+}
+
+/* Boutons artistiques en mode sombre */
+.dark-theme .btn-primary {
+    background: linear-gradient(135deg, #9c27b0 0%, #d81b60 100%);
+    box-shadow: 0 5px 20px rgba(156, 39, 176, 0.3);
+}
+
+.dark-theme .btn-primary:hover {
+    box-shadow: 0 10px 30px rgba(156, 39, 176, 0.5);
+}
+
+.dark-theme .btn-primary::after {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0) 100%);
+}
+
+.dark-theme .btn-secondary {
+    background: #2d2d2d;
+    border-color: #ce93d8;
+    color: #ce93d8;
+    box-shadow: 0 5px 20px rgba(156, 39, 176, 0.2);
+}
+
+.dark-theme .btn-secondary:hover {
+    background: #ce93d8;
+    color: #1a1a1a;
+    box-shadow: 0 10px 30px rgba(156, 39, 176, 0.4);
+}
+
+/* Effets spéciaux en mode sombre */
+.dark-theme .paint-splatter {
+    opacity: 0.15;
+}
+
+.dark-theme .paint-splatter-1,
+.dark-theme .paint-splatter-2 {
+    filter: hue-rotate(30deg) brightness(0.8);
+}
+
+/* Ajustements responsifs pour le mode sombre */
+@media (max-width: 768px) {
+    .dark-theme .info-card {
+        background: #2d2d2d;
+    }
+    
+    .dark-theme .art-gallery {
+        gap: 15px;
+    }
+}

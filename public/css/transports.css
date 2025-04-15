@@ -250,3 +250,104 @@ body {
         min-width: 100px;
     }
 }
+
+/* Styles pour le thème sombre */
+.dark-theme {
+    background-color: #1a1a1a;
+    color: #e0e0e0;
+}
+
+.dark-theme .transport-container {
+    background-color: #1a1a1a;
+}
+
+.dark-theme .hero-banner {
+    background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 100%);
+    color: #e0e0e0;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.dark-theme .hero-banner h1,
+.dark-theme .hero-banner p {
+    color: #e0e0e0;
+}
+
+/* Carte et conteneur */
+.dark-theme .transport-map,
+.dark-theme .transport-lines {
+    background: #2d2d2d;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.dark-theme .transport-lines h2 {
+    color: #60a5fa;
+    border-bottom-color: #4a4a4a;
+}
+
+/* Liste des bus */
+.dark-theme .bus-lines li {
+    background: #333333;
+    border-left-color: transparent;
+    color: #e0e0e0;
+}
+
+.dark-theme .bus-lines li:hover {
+    background: #404040;
+    border-left-color: #60a5fa;
+}
+
+.dark-theme .line-number {
+    background: #1e3a8a;
+    color: #e0e0e0;
+}
+
+.dark-theme .line-details {
+    color: #e0e0e0;
+}
+
+.dark-theme .line-schedule {
+    color: #9ca3af;
+}
+
+/* Navigation en mode sombre */
+.dark-theme .main-nav {
+    background: #2d2d2d;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    border-bottom-color: #4a4a4a;
+}
+
+.dark-theme .nav-btn {
+    color: #e0e0e0;
+}
+
+.dark-theme .nav-btn:hover {
+    background: #333333;
+    color: #60a5fa;
+}
+
+.dark-theme .nav-btn.active {
+    background: #333333;
+    color: #60a5fa;
+}
+
+.dark-theme .nav-btn.active::after {
+    background: #60a5fa;
+}
+
+/* Responsive en mode sombre */
+@media (max-width: 900px) {
+    .dark-theme .transport-map,
+    .dark-theme .transport-lines {
+        background: #2d2d2d;
+    }
+}
+
+@media (max-width: 480px) {
+    .dark-theme .bus-lines li {
+        background: #333333;
+    }
+    
+    .dark-theme .line-number {
+        background: #1e3a8a;
+    }
+}
